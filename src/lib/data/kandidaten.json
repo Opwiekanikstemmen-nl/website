@@ -1,0 +1,88 @@
+[
+    {
+        "id": "1",
+        "name": "Pieter van der Meulen",
+        "party": "Tulip Union",
+        "place_of_birth": "Amsterdam",
+        "current_living_place": "Rotterdam",
+        "date_of_birth": "Thu Apr 12 1985 00:00:00 GMT+0200 (Central European Summer Time)"
+    },
+    {
+        "id": "2",
+        "name": "Elise Jansen",
+        "party": "Waterway Progressives",
+        "place_of_birth": "Rotterdam",
+        "current_living_place": "Utrecht",
+        "date_of_birth": "Fri Nov 23 1990 00:00:00 GMT+0100 (Central European Time)"
+    },
+    {
+        "id": "3",
+        "name": "Jeroen de Graaf",
+        "party": "Tulip Union",
+        "place_of_birth": "Groningen",
+        "current_living_place": "Groningen",
+        "date_of_birth": "Tue Feb 06 1978 00:00:00 GMT+0100 (Central European Time)",
+        "tk2021": {
+            "party": "Orange Democracy"
+        }
+    },
+    {
+        "id": "4",
+        "name": "Anna van Leeuwen",
+        "party": "Canal Centrists",
+        "place_of_birth": "Utrecht",
+        "current_living_place": "Amsterdam",
+        "date_of_birth": "Mon May 17 1988 00:00:00 GMT+0200 (Central European Summer Time)"
+    },
+    {
+        "id": "5",
+        "name": "Martijn Bakker",
+        "party": "Orange Democracy",
+        "place_of_birth": "Maastricht",
+        "current_living_place": "Eindhoven",
+        "date_of_birth": "Tue Jun 09 1993 00:00:00 GMT+0200 (Central European Summer Time)"
+    },
+    {
+        "id": "6",
+        "name": "Sophie Verbeek",
+        "party": "Waterway Progressives",
+        "place_of_birth": "The Hague",
+        "current_living_place": "Rotterdam",
+        "date_of_birth": "Sat Sep 10 1995 00:00:00 GMT+0200 (Central European Summer Time)",
+        "tk2021": {
+            "party": "Tulip Union"
+        }
+    },
+    {
+        "id": "7",
+        "name": "Liam de Vries",
+        "party": "Orange Democracy",
+        "place_of_birth": "Eindhoven",
+        "current_living_place": "Den Bosch",
+        "date_of_birth": "Fri Dec 15 1982 00:00:00 GMT+0100 (Central European Time)"
+    },
+    {
+        "id": "8",
+        "name": "Eva Smits",
+        "party": "Canal Centrists",
+        "place_of_birth": "Breda",
+        "current_living_place": "The Hague",
+        "date_of_birth": "Fri Jan 29 1999 00:00:00 GMT+0100 (Central European Time)"
+    },
+    {
+        "id": "9",
+        "name": "Oscar van Dijk",
+        "party": "Tulip Union",
+        "place_of_birth": "Leeuwarden",
+        "current_living_place": "Amsterdam",
+        "date_of_birth": "Tue Mar 18 1975 00:00:00 GMT+0100 (Central European Time)"
+    },
+    {
+        "id": "10",
+        "name": "Isabelle de Boer",
+        "party": "Canal Centrists",
+        "place_of_birth": "Alkmaar",
+        "current_living_place": "Leiden",
+        "date_of_birth": "Fri Aug 22 1980 00:00:00 GMT+0200 (Central European Summer Time)"
+    }
+]

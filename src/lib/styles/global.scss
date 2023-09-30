@@ -2,6 +2,42 @@
 @import './fonts.scss';
 @import './variables.scss';
 
+html,
 body {
-    font-family: "Inter";
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background: rgb(var(--color));
+    color: rgb(var(--foreground));
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: 768px) {
+        font-size: 18px;
+    }
+}
+
+#app {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+a {
+    color: rgba(var(--foreground), 1);
+    text-decoration: underline;
+    // Works in 2023
+    text-decoration-offset: 1px;
 }
