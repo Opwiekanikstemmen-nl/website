@@ -3,14 +3,13 @@
 
 	import { page } from '$app/stores';
 
-	import slugify from '$lib/util/slug.js'
-	import { getAge } from '$lib/util/age.js';
+	import { getAge, slugify } from '$lib/util/candidate.js';
 
 	const kandidaat = $page.data.kandidaten.find(kandidaat => slugify(kandidaat.name) === $page.params.slug)
 </script>
 
 <svelte:head>
-	<title>Op wie kan ik stemmen?</title>
+	<title>Op wie kan ik stemmen? | {kandidaat.name || 'Niet gevonden'}</title>
 	<meta name="description" content="Op wie kan in stemmen? TK2023" />
 </svelte:head>
 

@@ -25,11 +25,20 @@
     </section>
     <section>
         <h3>Sitemap</h3>
-
+        <ul>
+            <li><a href="/" title="Home">Home</a></li>
+            <li><a href="/kandidaten" title="kandidaten">Kandidaten</li>
+            <li><a href="/partijen" title="Partijen">Partijen</a></li>
+            <li><a href="/veelgestelde-vragen" title="Veelgestelde vragen">Veelgestelde vragen</a></li>
+            <li><a href="/over" title="Over">Over</a></li>
+            <li><a href="/partners" title="Partners">Partners</li>
+            <li><a href="/privacy" title="Privacy">Privacy</a></li>
+        </ul>
     </section>
     <section>
         <h3>Cookies</h3>
         <p>We plaatsen geen cookies.</p>
+        <a href="/privacy" title="Privacy">Ons privacybeleid</a>
     </section>
 
     <section>
@@ -43,10 +52,22 @@
         display: flex;
         flex-flow: row wrap;
         padding: 3em var(--base-padding);
+        margin-top: var(--base-padding);
+        background: rgba(var(--background), 1);
     }
 
     section {
         max-width: 20em;
-        width: 100%;
+        width: 12.5em;
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    li, p {
+        margin: 1.5em 0;
     }
 </style>

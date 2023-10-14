@@ -3,7 +3,9 @@
 </script>
 
 <header class={$page.url.pathname === '/' ? 'home' : ''}>
-    <a href="/" title="Op wie kan ik stemmen?" class="logo">Home</a>
+    <a href="/" title="Op wie kan ik stemmen?" class={`logo ${$page.url.pathname !== '/' ? 'content' : ''}`}>
+        {$page.url.pathname === '/' ? 'home' : 'Op wie kan ik stemmen?'}
+    </a>
     <nav>
         <ul>
             <li><a href="/about">Partners</a></li>
