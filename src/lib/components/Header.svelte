@@ -11,8 +11,15 @@
 	</a>
 	<nav>
 		<ul>
-			<li><a href="/about">Partners</a></li>
-			<li><a href="/over">Over ons</a></li>
+			<li>
+				<a href="/partners">Partners</a>
+			</li>
+			<li>
+				<a href="/kandidaten">Kandidaten</a>
+			</li>
+			<li>
+				<a href="https://opwiekanikstemmen.nl/over">Over</a>
+			</li>
 		</ul>
 	</nav>
 </header>
@@ -88,11 +95,11 @@
 	nav ul {
 		display: flex;
 		flex-flow: row nowrap;
-		gap: 1rem;
-	}
+		gap: 1.5em;
 
-	nav ul a {
-		padding: 1em .75em 1em 0;
+		& > li {
+			padding: 1em 0;
+		}
 	}
 
 
