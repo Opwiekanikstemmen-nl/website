@@ -23,6 +23,7 @@
 <main>
 	<section>
 		<h1>Op wie kan ik stemmen?</h1>
+		<p class="tagline">Vind het antwoord op één simpele vraag: op wie kan ik stemmen bij de verkiezingen?</p>
 	</section>
 	<section>
 		<ul>
@@ -85,6 +86,13 @@
 			margin-right: .5em;
 			margin-bottom: .2rem;
 		}
+	}
+
+	.tagline {
+		font-size: 1.45em;
+		line-height: 1.1;
+		margin: 1.5em 0;
+		max-width: 44ch;
 	}
 
 	h2 {
