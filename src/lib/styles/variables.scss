@@ -1,17 +1,17 @@
 :root {
-    --background: 255, 255, 255;
-    --foreground: 0, 0, 0;
-    --color: 254, 225, 194; // rgb(254, 225, 194);
+	--background: 255, 255, 255;
+	--foreground: 0, 0, 0;
+	--color: 254, 225, 194; // rgb(254, 225, 194);
 
-    --base-padding: max(6.5vw, 1.5em);
+	--base-padding: max(6.5vw, 1.5em);
 
-    @media (prefers-color-scheme: dark) {
-      --background: 0, 0, 0;
-      --foreground: 196, 156, 114;// rgb(196, 156, 114);
-      --color: 20, 20, 20; // rgb(20, 20, 20);
-    }
+	@media (prefers-color-scheme: dark) {
+		--background: 0, 0, 0;
+		--foreground: 196, 156, 114;// rgb(196, 156, 114);
+		--color: 20, 20, 20; // rgb(20, 20, 20);
+	}
 
-    @media (min-width: 1920px) {
-      --base-padding: 10vw;
-    }
+	@media (min-width: 1920px) {
+		--base-padding: 10vw;
+	}
 }

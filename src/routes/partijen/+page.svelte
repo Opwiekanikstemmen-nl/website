@@ -1,7 +1,7 @@
 <script>
-    export let data;
+	export let data;
 
-    import { slugify, groupByParty } from '$lib/util/candidates';
+	import { slugify, groupByParty } from '$lib/util/candidates';
 
 	const parties = groupByParty(data.kandidaten);
 
