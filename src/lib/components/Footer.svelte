@@ -63,11 +63,8 @@
 		flex-shrink: 0;
 	}
 
-	h3 {
-		font-size: 1.5em;
-	}
-
-	li, p {
-		margin: 1.5em 0;
+	li,
+	p {
+		margin: 1em 0;
 	}
 </style>
