@@ -32,5 +32,12 @@ li {
 
 a {
 	color: rgba(var(--foreground), 1);
-	text-decoration: underline;
+
+	&:visited {
+		text-decoration-color: purple;
+	}
+
+	&[href^="https://"]::after {
+		content: " ↗";
+	}
 }
