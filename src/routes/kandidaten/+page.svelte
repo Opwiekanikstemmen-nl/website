@@ -1,17 +1,11 @@
 <script>
 	import { getAge, groupByParty } from '$lib/util/candidates';
+	import { meta } from '$lib/stores/meta';
 
 	export let data;
 
-	// data.kandidaten.forEach(kandidaat => {
-	// 	console.log(getAge(kandidaat.date_of_birth))
-	// });
+	console.log($meta);
 
-	// const parties = groupByParty(data.kandidaten);
-
-	// Object.entries(parties).forEach(party => {
-	// 	console.log(`${party[0]}: ${party[1].length}`);
-	// });
 </script>
 
 <svelte:head>
@@ -20,6 +14,9 @@
 </svelte:head>
 
 <section>
+	<h1>Kandidaten</h1>
+
+	<p>Filter de {$meta.kandidaten ? $meta.kandidaten : ''} kandidaten van de {$meta.partijen} politieke partijen op kenmerken die jij belangrijk vindt.</p>
 	<ul>
 		{#each data.kandidaten as kandidaat}
 			<li>
@@ -33,6 +30,9 @@
 	ul {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		
+	}
+
+	li {
+		padding: 1em;
 	}
 </style>

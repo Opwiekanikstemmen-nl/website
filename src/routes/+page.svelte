@@ -1,17 +1,15 @@
 <script>
 	import { getAge, groupByParty } from '$lib/util/candidates';
 
+	import{ meta } from '$lib/stores/meta';
+
 	export let data;
 
-	data.kandidaten.forEach(kandidaat => {
-		// console.log(getAge(kandidaat.date_of_birth))
-	});
+	meta.set({
+		kandidaten: data.kandidaten.length,
+		partijen: Object.keys(groupByParty(data.kandidaten)).length
+	})
 
-	const parties = groupByParty(data.kandidaten);
-
-	Object.entries(parties).forEach(party => {
-		// console.log(`${party[0]}: ${party[1].length}`);
-	});
 
 </script>
 
