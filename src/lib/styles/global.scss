@@ -35,6 +35,10 @@ ul, li {
 }
 
 
+h1 {
+    font-size: min(15vw, 7em);
+}
+
 a {
     color: rgba(var(--foreground), 1);
     text-decoration: underline;

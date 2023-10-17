@@ -75,7 +75,6 @@
 
 	h1 {
 		flex-grow: 0;
-		font-size: min(15vw, 7em);
 		line-height: 1;
 		margin-top: 6rem;
 		width: 7.5ch;
@@ -127,8 +126,8 @@
 		}
 
 		@media (min-width: 768px) {
-			padding: 1em;
-			padding-right: 3em;
+			padding: 2em;
+			padding-right: 4em;
 		}
 
 	}

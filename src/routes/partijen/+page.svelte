@@ -23,11 +23,11 @@
 			{#each Object.entries(parties) as party}
 			<div>
 				<h2>{party[0]}</h2>
-				<ul>
+				<ol>
 					{#each party[1] as candidate}
 						<li><a href="{`/kandidaat/${slugify(candidate.name)}`}">{candidate.name}</a></li>
 					{/each}
-				</ul>
+				</ol>
 			</div>
 		{/each}
 	</section>
@@ -44,6 +44,7 @@
 	#list {
 		display: flex;
 		flex-flow: row nowrap;
+		margin-top: 2em;
 	}
 
 	div {
@@ -67,7 +68,22 @@
 	h2 {
 		border-bottom: .1em solid rgb(var(--foreground));
 		margin: 0;
-		padding-bottom: .75em;
+		padding-bottom: .33em;
+	}
+
+	p {
+		margin-top: 1em;
+	}
+
+	ol {
+		margin-top: .5em;
+		list-style-type: decimal;
+		padding-left: 1em;
+	}
+
+	li {
+		list-style-type: decimal;
+		margin-bottom: .5em;
 	}
 
 </style>

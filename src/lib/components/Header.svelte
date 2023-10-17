@@ -3,9 +3,17 @@
 </script>
 
 <header class={$page.url.pathname === '/' ? 'home' : ''}>
-    <a href="/" title="Op wie kan ik stemmen?" class={`logo ${$page.url.pathname !== '/' ? 'content' : ''}`}>
-        {$page.url.pathname === '/' ? 'home' : 'Op wie kan ik stemmen?'}
-    </a>
+    {#if $page.url.pathname === '/'}
+        <a href="/" title="Op wie kan ik stemmen?" class={`logo ${$page.url.pathname !== '/' ? 'content' : ''}`}>
+            {$page.url.pathname === '/' ? 'home' : 'Op wie kan ik stemmen?'}
+        </a>
+    {:else}
+        <a href="/" title="Op wie kan ik stemmen?">
+            <span class="logo"></span>
+            <span>Op wie kan ik stemmen?</span>
+        </a>
+    {/if}
+
     <nav>
         <ul>
             <li><a href="/about">Partners</a></li>
@@ -70,6 +78,13 @@
 
     nav ul a {
         padding: 1em .75em 1em 0;
+    }
+
+    header > a {
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        text-decoration: none;
     }
 
 
