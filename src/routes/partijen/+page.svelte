@@ -20,7 +20,19 @@
 	<h1>Partijen</h1>
 	<p>De kandidatenlijsten zoals ook te zien op jouw stembiljet.</p>
 		<section id="list">
-			{#each Object.entries(parties) as party}
+		{#each Object.entries(parties) as party}
+			<div>
+				<h2>{party[0]}</h2>
+				<ol>
+					{#each party[1] as candidate}
+						<li><a href="{`/kandidaat/${slugify(candidate.naam)}`}">{candidate.naam}</a></li>
+					{/each}
+				</ol>
+			</div>
+		{/each}
+	</section>
+
+<!--
 			<div>
 				<h2>{party[0]}</h2>
 				<ol>
@@ -29,8 +41,9 @@
 					{/each}
 				</ol>
 			</div>
-		{/each}
-	</section>
+
+-->
+
 </section>
 
 <style lang="scss">
@@ -39,12 +52,18 @@
 		max-width: 100vw;
 		overflow-x: auto;
 		padding: calc(var(--base-padding) / 2) var(--base-padding) 0;
+		padding-right: 0;
 	}
 
 	#list {
 		display: flex;
 		flex-flow: row nowrap;
 		margin-top: 2em;
+		padding-right: var(--base-padding);
+	}
+
+	h1 {
+		margin-top: 0;
 	}
 
 	div {
@@ -79,6 +98,7 @@
 		margin-top: .5em;
 		list-style-type: decimal;
 		padding-left: 1em;
+		overflow: auto;
 	}
 
 	li {

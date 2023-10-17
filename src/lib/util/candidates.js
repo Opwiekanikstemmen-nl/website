@@ -2,11 +2,11 @@ export function groupByParty(candidates) {
 	if(!candidates || candidates.length < 1) return null;
 
 	return candidates.reduce((acc, candidate) => {
-		if(!acc[candidate.party]) {
-			acc[candidate.party] = [];
+		if(!acc[candidate.verkiezingen.tk2023.partij_naam]) {
+			acc[candidate.verkiezingen.tk2023.partij_naam] = [];
 		}
 
-		acc[candidate.party].push(candidate);
+		acc[candidate.verkiezingen.tk2023.partij_naam].push(candidate);
 
 		return acc;
 	}, {});

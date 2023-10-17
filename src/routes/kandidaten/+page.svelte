@@ -3,15 +3,15 @@
 
 	export let data;
 
-	data.kandidaten.forEach(kandidaat => {
-		console.log(getAge(kandidaat.date_of_birth))
-	});
+	// data.kandidaten.forEach(kandidaat => {
+	// 	console.log(getAge(kandidaat.date_of_birth))
+	// });
 
-	const parties = groupByParty(data.kandidaten);
+	// const parties = groupByParty(data.kandidaten);
 
-	Object.entries(parties).forEach(party => {
-		console.log(`${party[0]}: ${party[1].length}`);
-	});
+	// Object.entries(parties).forEach(party => {
+	// 	console.log(`${party[0]}: ${party[1].length}`);
+	// });
 </script>
 
 <svelte:head>
@@ -23,12 +23,16 @@
 	<ul>
 		{#each data.kandidaten as kandidaat}
 			<li>
-				{kandidaat.name}, {`${getAge(kandidaat.date_of_birth)} jaar oud`}
+				({kandidaat.verkiezingen.tk2023.lijstnummer}) {kandidaat.naam}, {kandidaat.verkiezingen.tk2023.partij_naam}
 			</li>
 		{/each}
 	</ul>
 </section>
 
 <style lang="scss">
-
+	ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		
+	}
 </style>

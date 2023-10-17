@@ -4,13 +4,13 @@
 	export let data;
 
 	data.kandidaten.forEach(kandidaat => {
-		console.log(getAge(kandidaat.date_of_birth))
+		// console.log(getAge(kandidaat.date_of_birth))
 	});
 
 	const parties = groupByParty(data.kandidaten);
 
 	Object.entries(parties).forEach(party => {
-		console.log(`${party[0]}: ${party[1].length}`);
+		// console.log(`${party[0]}: ${party[1].length}`);
 	});
 
 </script>
