@@ -17,12 +17,13 @@
 
 <svelte:head>
 	<title>Op wie kan ik stemmen?</title>
-	<meta name="description" content="Op wie kan in stemmen? TK2023" />
+	<meta name="description" content="Op wie kan in stemmen? TK2023">
 </svelte:head>
 
 <main>
 	<section>
 		<h1>Op wie kan ik stemmen?</h1>
+		<p class="tagline">Vind het antwoord op één simpele vraag: op wie kan ik stemmen bij de verkiezingen?</p>
 	</section>
 	<section>
 		<ul>
@@ -41,28 +42,11 @@
 		</ul>
 	</section>
 
-	<!-- <ul>
-		{#each Object.entries(parties) as party}
-			<li>
-				{party[0]}: {party[1].length}
-			</li>
-		{/each}
-	</ul>
-
-	<br />
-
-	<ul>
-		{#each data.kandidaten as kandidaat}
-			<li>
-				{kandidaat.name}, {`${getAge(kandidaat.date_of_birth)} jaar oud`}
-			</li>
-		{/each}
-	</ul> -->
-
 </main>
 
 <style lang="scss">
 	main {
+		margin-top: 4rem;
 		min-height: 100%;
 		padding: 0 var(--base-padding) 1em;
 
@@ -76,7 +60,7 @@
 	h1 {
 		flex-grow: 0;
 		line-height: 1;
-		margin-top: 6rem;
+		margin: 0;
 		width: 7.5ch;
 		margin-bottom: .75em;
 
@@ -86,42 +70,43 @@
 		}
 	}
 
-	h2 {
-		margin-bottom: .5em;
+	.tagline {
+		font-size: 1.45em;
+		line-height: 1.1;
+		margin: 1.5em 0;
+		max-width: 44ch;
 	}
 
-	a {
-		display: flex;
-		flex-flow: column nowrap;
-		position: relative;
-
-		padding: .5em;
-		padding-right: 1em;
-
-		background: rgb(var(--background));
-		border-radius: .5em;
-		box-shadow: 0px 5px 20px rgba(var(--foreground), 0.15);
-		color: rgb(var(--foreground));
-		font-family: inherit;
-		margin-bottom: 1em;
-		transition: all 100ms ease-out;
+	h2 {
+		margin: 0 0 .5em;
 
 		&::after {
 			content: "\2192";
 			display: block;
-			position: absolute;
-			right: 1.5em;
-			top: 50%;
-			transform: translateY(-50%);
+			float: right;
 			transition: all 100ms ease-out;
-
 		}
+	}
+
+	a {
+		background: rgb(var(--background));
+		border-radius: .5em;
+		box-shadow: 0px 5px 20px rgba(var(--foreground), 0.15);
+		color: rgb(var(--foreground));
+		display: block;
+		margin-bottom: 1em;
+		padding: 1em;
+		transition: all 100ms ease-out;
+		text-decoration: none;
 
 		&:hover,
 		&:focus {
+			box-shadow: 0px 5px 25px rgba(var(--foreground), 0.2);
+			text-decoration: underline;
+			transform: translateY(-.15em);
 
-			&::after {
-				right: 1em;
+			& > h2::after {
+				transform: translateX(.25em);
 			}
 		}
 

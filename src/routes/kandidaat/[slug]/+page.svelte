@@ -14,7 +14,7 @@
 </svelte:head>
 
 <section>
-    {#if kandidaat}
+	{#if kandidaat}
 		<p>Naam: {kandidaat.name}</p>
 		<p>Partij: {kandidaat.party}</p>
 		<p>Woonplaats: {kandidaat.current_living_place}</p>
