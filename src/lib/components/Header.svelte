@@ -106,12 +106,12 @@
 		}
 	}
 
-    header > a {
-        display: flex;
-        align-items: center;
-        gap: .5em;
-        text-decoration: none;
-    }
+	header > a {
+		display: flex;
+		align-items: center;
+		gap: .5em;
+		text-decoration: none;
+	}
 
 
 </style>
