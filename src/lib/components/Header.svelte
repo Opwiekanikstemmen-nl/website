@@ -3,16 +3,12 @@
 </script>
 
 <header class={$page.url.pathname === '/' ? 'home' : ''}>
-    {#if $page.url.pathname === '/'}
-        <a href="/" title="Op wie kan ik stemmen?" class={`logo ${$page.url.pathname !== '/' ? 'content' : ''}`}>
-            {$page.url.pathname === '/' ? 'home' : 'Op wie kan ik stemmen?'}
-        </a>
-    {:else}
-        <a href="/" title="Op wie kan ik stemmen?">
-            <span class="logo"></span>
-            <span>Op wie kan ik stemmen?</span>
-        </a>
-    {/if}
+	<a href="/" title="Op wie kan ik stemmen?" class="logo">
+		<span class="icon">Home</span>
+		{#if $page.url.pathname !== '/'}
+			<span class="title">Op wie kan ik stemmen?</span>
+		{/if}
+	</a>
 	<nav>
 		<ul>
 			<li>
