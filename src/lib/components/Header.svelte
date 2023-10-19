@@ -27,13 +27,12 @@
 <style lang="scss">
 
 	header {
+		align-items: center;
 		display: flex;
 		flex-flow: row nowrap;
-		align-items: center;
-		justify-content: space-between;;
-
-		width: 100%;
+		justify-content: space-between;
 		padding: 4.5vw var(--base-padding) 2em;
+		width: 100%;
 
 		&.home {
 			padding-top: var(--base-padding);
