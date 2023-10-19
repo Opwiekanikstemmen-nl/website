@@ -27,15 +27,20 @@
 <style lang="scss">
 
 	header {
-		align-items: center;
+		align-items: start;
 		display: flex;
-		flex-flow: row nowrap;
+		flex-flow: column;
 		justify-content: space-between;
 		padding: 4.5vw var(--base-padding) 2em;
 		width: 100%;
 
 		&.home {
 			padding-top: var(--base-padding);
+		}
+
+		@media (min-width: 600px) {
+			align-items: center;
+			flex-flow: row nowrap;
 		}
 	}
 
