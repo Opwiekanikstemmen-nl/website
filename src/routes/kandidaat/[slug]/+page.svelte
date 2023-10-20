@@ -7,6 +7,12 @@
 
 	const kandidaat = $page.data.kandidaten.find(kandidaat => kandidaat.naam === $page.params.slug);
 	const verkiezing = kandidaat.verkiezingen.tk2023;
+
+	const newsLink = {
+		'url': `https://news.google.com/search?q=${kandidaat.naam} ${kandidaat.partij}&hl=nl&gl=NL&ceid=NL:nl`,
+		'description': `${kandidaat.naam} op Google News`
+	};
+	const hyperlinks = kandidaat.links ? [newsLink].concat(kandidaat.links) : [newsLink];
 </script>
 
 <svelte:head>
@@ -49,6 +55,18 @@
 				</ul>
 			{/if}
 		</section>
+
+		<div class="links">
+			<ul>
+				{#each hyperlinks as link}
+					<li>
+						<a href="{link.url}">
+							{link.description}
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
 	{:else}
 		<p>Kan kandidaat niet vinden</p>
 	{/if}
