@@ -25,7 +25,7 @@
 				<h2>{party[0]}</h2>
 				<ol>
 					{#each party[1] as candidate}
-						<li><a href="{`/kandidaat/${slugify(candidate.naam)}`}">{candidate.naam}</a></li>
+						<li><a href="{`/kandidaat/${candidate.naam}`}">{candidate.naam}</a></li>
 					{/each}
 				</ol>
 			</div>

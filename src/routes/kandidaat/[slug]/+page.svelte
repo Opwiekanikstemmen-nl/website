@@ -5,7 +5,7 @@
 
 	import { getAge, slugify } from '$lib/util/candidates';
 
-	const kandidaat = $page.data.kandidaten.find(kandidaat => slugify(kandidaat.name) === $page.params.slug)
+	const kandidaat = $page.data.kandidaten.find(kandidaat => kandidaat.naam === $page.params.slug);
 </script>
 
 <svelte:head>
