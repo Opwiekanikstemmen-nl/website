@@ -23,6 +23,10 @@ body {
 	min-height: 100dvh;
 }
 
+main {
+	padding: 0 var(--base-padding);
+}
+
 ul,
 li {
 	margin: 0;
@@ -33,6 +37,14 @@ li {
 
 h1 {
 	font-size: min(15vw, 7em);
+	margin: 1.5rem 0;
+}
+
+h2,
+h3,
+h4 {
+	margin-top: 2em;
+	margin-bottom: 1em;
 }
 
 a {

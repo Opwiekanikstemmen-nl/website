@@ -13,7 +13,7 @@
 	<meta name="description" content="Op wie kan in stemmen? TK2023" />
 </svelte:head>
 
-<section>
+<main>
 	<h1>Kandidaten</h1>
 
 	<p>Filter de {$meta.kandidaten ? $meta.kandidaten : ''} kandidaten van de {$meta.partijen} politieke partijen op kenmerken die jij belangrijk vindt.</p>
@@ -24,7 +24,7 @@
 			</li>
 		{/each}
 	</ul>
-</section>
+</main>
 
 <style lang="scss">
 	ul {
