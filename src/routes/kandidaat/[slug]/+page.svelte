@@ -3,7 +3,7 @@
 
 	import { page } from '$app/stores';
 
-	import { getAge, slugify } from '$lib/util/candidate.js';
+	import { getAge, slugify } from '$lib/util/candidates';
 
 	const kandidaat = $page.data.kandidaten.find(kandidaat => slugify(kandidaat.name) === $page.params.slug)
 </script>
