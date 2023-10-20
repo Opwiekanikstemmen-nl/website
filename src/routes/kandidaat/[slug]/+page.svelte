@@ -13,7 +13,7 @@
 	<meta name="description" content="Op wie kan in stemmen? TK2023" />
 </svelte:head>
 
-<section>
+<main>
 	{#if kandidaat}
 		<p>Naam: {kandidaat.name}</p>
 		<p>Partij: {kandidaat.party}</p>
@@ -22,7 +22,7 @@
 	{:else}
 		<p>Kan kandidaat niet vinden</p>
 	{/if}
-</section>
+</main>
 
 <style lang="scss">
 
