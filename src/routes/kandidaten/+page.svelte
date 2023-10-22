@@ -26,10 +26,8 @@
 <style lang="scss">
 	ul {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-
-	li {
-		padding: 1em;
+		grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
+		margin: 1em 0;
+		gap: 1em;
 	}
 </style>
