@@ -52,7 +52,7 @@
 		border-radius: .5em;
 		box-shadow: 0 0 10px rgba(var(--foreground), 0.15);
 		flex-shrink: 0;
-		height: calc(82.5vh - 4em - 8vw);
+		height: max(calc(82.5vh), 15em);
 		margin-right: 1em;
 		overflow: hidden;
 		padding: 1em 1em 0;
