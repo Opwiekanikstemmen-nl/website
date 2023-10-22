@@ -27,9 +27,3 @@ export function getAge(dateString) {
 
 	return age;
 }
-
-export function sortReversedAlphabetically(candidates) {
-	return [...candidates].sort((a, b) => {
-		return (a.naam > b.naam) ? -1 : (a.naam > b.naam) ? 1 : 0;
-	});
-}
