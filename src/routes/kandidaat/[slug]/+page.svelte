@@ -57,6 +57,7 @@
 		</section>
 
 		<div class="links">
+			<h2>Links</h2>
 			<ul>
 				{#each hyperlinks as link}
 					<li>
