@@ -27,7 +27,3 @@ export function getAge(dateString) {
 
 	return age;
 }
-
-export function slugify(string, prefix = '') {
-	return prefix + string.toString().toLowerCase().trim().replace("'", "").replace(/[\s\W-]+/g, '-')
-}

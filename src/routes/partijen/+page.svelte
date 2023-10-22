@@ -1,7 +1,7 @@
 <script>
 	export let data;
 
-	import { slugify, groupByParty } from '$lib/util/candidates';
+	import { groupByParty } from '$lib/util/candidates';
 
 	const parties = groupByParty(data.kandidaten);
 
@@ -31,19 +31,6 @@
 			</div>
 		{/each}
 	</section>
-
-<!--
-			<div>
-				<h2>{party[0]}</h2>
-				<ol>
-					{#each party[1] as candidate}
-						<li><a href="{`/kandidaat/${slugify(candidate.name)}`}">{candidate.name}</a></li>
-					{/each}
-				</ol>
-			</div>
-
--->
-
 </main>
 
 <style lang="scss">

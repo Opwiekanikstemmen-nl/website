@@ -3,7 +3,7 @@
 
 	import { page } from '$app/stores';
 
-	import { getAge, slugify } from '$lib/util/candidates';
+	import { getAge } from '$lib/util/candidates';
 
 	const kandidaat = $page.data.kandidaten.find(kandidaat => kandidaat.naam === $page.params.slug);
 	const verkiezing = kandidaat.verkiezingen.tk2023;
