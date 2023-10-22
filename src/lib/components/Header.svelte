@@ -12,9 +12,6 @@
 	<nav>
 		<ul>
 			<li>
-				<a href="/partners">Partners</a>
-			</li>
-			<li>
 				<a href="/kandidaten">Kandidaten</a>
 			</li>
 			<li>
