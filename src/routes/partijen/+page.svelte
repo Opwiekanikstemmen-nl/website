@@ -12,8 +12,8 @@
 </script>
 
 <svelte:head>
-	<title>Op wie kan ik stemmen? | Partijen</title>
-	<meta name="description" content="Op wie kan in stemmen? TK2023" />
+	<title>Partijen - Op wie kan ik stemmen?</title>
+	<meta name="description" content="Het stembiljet, maar dan digitaal: alle kandidaten van alle partijen">
 </svelte:head>
 
 <section>

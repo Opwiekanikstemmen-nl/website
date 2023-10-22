@@ -6,8 +6,8 @@
 </script>
 
 <svelte:head>
-	<title>Op wie kan ik stemmen? | Kandidaten</title>
-	<meta name="description" content="Op wie kan in stemmen? TK2023" />
+	<title>Kandidaten - Op wie kan ik stemmen?</title>
+	<meta name="description" content="De complete lijst met alle kandidaten in alle kieskringen.">
 </svelte:head>
 
 <main>

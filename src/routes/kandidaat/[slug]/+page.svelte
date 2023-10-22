@@ -16,8 +16,8 @@
 </script>
 
 <svelte:head>
-	<title>Op wie kan ik stemmen? | {kandidaat.naam || 'Niet gevonden'}</title>
-	<meta name="description" content="Op wie kan in stemmen? TK2023" />
+	<title>{kandidaat.naam || 'Niet gevonden'} - Op wie kan ik stemmen?</title>
+	<meta name="description" content="{`Wat wij weten over ${kandidaat.naam}` || 'Deze kandidaat is niet gevonden'}">
 </svelte:head>
 
 <main>
