@@ -17,7 +17,7 @@
 	<ul>
 		{#each data.kandidaten as kandidaat}
 			<li>
-				({kandidaat.verkiezingen.tk2023.lijstnummer}) {kandidaat.naam}, {kandidaat.verkiezingen.tk2023.partij_naam}
+				<a href="{`/kandidaat/${kandidaat.naam}`}">{kandidaat.naam}</a>
 			</li>
 		{/each}
 	</ul>
