@@ -16,10 +16,10 @@
 	<meta name="description" content="Het stembiljet, maar dan digitaal: alle kandidaten van alle partijen">
 </svelte:head>
 
-<section>
+<main>
 	<h1>Partijen</h1>
 	<p>De kandidatenlijsten zoals ook te zien op jouw stembiljet.</p>
-		<section id="list">
+	<section id="list">
 		{#each Object.entries(parties) as party}
 			<div>
 				<h2>{party[0]}</h2>
@@ -44,26 +44,18 @@
 
 -->
 
-</section>
+</main>
 
 <style lang="scss">
 
-	section:not(#list) {
+	#list {
 		max-width: 100vw;
 		overflow-x: auto;
-		padding: calc(var(--base-padding) / 2) var(--base-padding) 0;
-		padding-right: 0;
-	}
-
-	#list {
 		display: flex;
 		flex-flow: row nowrap;
 		margin-top: 2em;
-		padding-right: var(--base-padding);
-	}
-
-	h1 {
-		margin-top: 0;
+		padding: 0 var(--base-padding) var(--base-padding);
+		margin: 2em calc(-1 * var(--base-padding)) calc(-1 * var(--base-padding)) ;
 	}
 
 	div {
@@ -85,7 +77,7 @@
 	}
 
 	h2 {
-		border-bottom: .1em solid rgb(var(--foreground));
+		border-bottom: .05em solid rgb(var(--foreground));
 		margin: 0;
 		padding-bottom: .33em;
 	}
@@ -95,9 +87,9 @@
 	}
 
 	ol {
-		margin-top: .5em;
+		margin: 0;
 		list-style-type: decimal;
-		padding-left: 1em;
+		padding: 1em 0 1em 2em;
 		overflow: auto;
 	}
 
