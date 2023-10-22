@@ -1,10 +1,7 @@
 <script>
-	import { getAge, groupByParty } from '$lib/util/candidates';
 	import { meta } from '$lib/stores/meta';
 
 	export let data;
-
-	console.log($meta);
 
 </script>
 
