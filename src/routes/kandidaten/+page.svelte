@@ -3,6 +3,10 @@
 
 	export let data;
 
+	data.kandidaten.sort((a, b) => {
+		return (a.naam > b.naam) ? -1 : (a.naam > b.naam) ? 1 : 0;
+	})
+
 </script>
 
 <svelte:head>
