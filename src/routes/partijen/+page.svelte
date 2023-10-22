@@ -5,9 +5,9 @@
 
 	const parties = groupByParty(data.kandidaten);
 
-	Object.entries(parties).forEach(party => {
-		console.log(`${party[0]}: ${party[1].length}`);
-	});
+	// Object.entries(parties).forEach(party => {
+	// 	console.log(`${party[0]}: ${party[1].length}`);
+	// });
 
 </script>
 
