@@ -17,7 +17,7 @@
 	<ul>
 		{#each data.gesorteerdeKandidaten as kandidaat}
 			<li>
-				<a href="{`/kandidaat/${kandidaat.naam}`}">{kandidaat.naam}</a>
+				<a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a>
 			</li>
 		{/each}
 	</ul>

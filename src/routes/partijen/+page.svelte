@@ -24,8 +24,8 @@
 			<div>
 				<h2>{party[0]}</h2>
 				<ol>
-					{#each party[1] as candidate}
-						<li><a href="{`/kandidaat/${candidate.naam}`}">{candidate.naam}</a></li>
+					{#each party[1] as kandidaat}
+						<li><a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a></li>
 					{/each}
 				</ol>
 			</div>

@@ -5,7 +5,7 @@
 
 	import { getAge } from '$lib/util/candidates';
 
-	const kandidaat = $page.data.kandidaten.find(kandidaat => kandidaat.naam === $page.params.slug);
+	const kandidaat = $page.data.kandidaten.find(kandidaat => kandidaat.id === $page.params.slug);
 	const verkiezing = kandidaat.verkiezingen.tk2023;
 
 	const newsLink = {
