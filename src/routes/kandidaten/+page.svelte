@@ -1,11 +1,11 @@
 <script>
 	import { meta } from '$lib/stores/meta';
 
+	import { sortReversedAlphabetically } from '$lib/util/candidates';
+
 	export let data;
 
-	data.kandidaten.sort((a, b) => {
-		return (a.naam > b.naam) ? -1 : (a.naam > b.naam) ? 1 : 0;
-	})
+	const sortedCandidates = sortReversedAlphabetically(data.kandidaten);
 
 </script>
 
@@ -19,7 +19,7 @@
 
 	<p>Filter de {$meta.kandidaten ? $meta.kandidaten : ''} kandidaten van de {$meta.partijen} politieke partijen op kenmerken die jij belangrijk vindt.</p>
 	<ul>
-		{#each data.kandidaten as kandidaat}
+		{#each sortedCandidates as kandidaat}
 			<li>
 				<a href="{`/kandidaat/${kandidaat.naam}`}">{kandidaat.naam}</a>
 			</li>
