@@ -12,6 +12,10 @@ export function groupByParty(candidates) {
 	}, {});
 }
 
+export function slugify(string, prefix = '') {
+	return prefix + string.toString().toLowerCase().trim().replace("'", "").replace(/[\s\W-]+/g, '-')
+  }
+
 export function getAge(dateString) {
 	if (dateString === null) return null;
 

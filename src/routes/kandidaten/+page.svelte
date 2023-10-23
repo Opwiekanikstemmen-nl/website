@@ -1,10 +1,23 @@
 <script>
 	import { meta } from '$lib/stores/meta';
+	import { filters } from '$lib/stores/filters';
+
+	import { groupByParty, slugify } from '$lib/util/candidates';
+	import { applyFilters } from '$lib/util/filters';
 
 	export let data;
 
-	let gesorteerdeKandidaten = [...data.kandidaten].sort((a, b) => {
-		return (a.naam > b.naam) ? -1 : (a.naam > b.naam) ? 1 : 0;
+	let parties = groupByParty(data.kandidaten);
+	$: kandidaten = data.kandidaten;
+
+	// let list = [...data.kandidaten].sort((a, b) => {
+	// 	return (a.naam > b.naam) ? -1 : (a.naam > b.naam) ? 1 : 0;
+	// })
+
+	filters.subscribe(update => {
+		if (update) {
+			kandidaten = applyFilters(data.kandidaten, update);
+		}
 	})
 
 </script>
@@ -15,15 +28,26 @@
 </svelte:head>
 
 <main>
-	<h1>Kandidaten {$meta.kandidaten ? `(${$meta.kandidaten})` : ''}</h1>
+	<h1>Kandidaten ({kandidaten.length || '...'})</h1>
 	<p>Filter de {$meta.kandidaten ? $meta.kandidaten : ''} kandidaten van de {$meta.partijen} politieke partijen op kenmerken die jij belangrijk vindt.</p>
 
-	<aside>
-		Hallo
-	</aside>
 	<section>
+		<!-- <aside>
+			<ul>
+				<li>
+					<input bind:value={$filters['naam']} type="text" id='naam' placeholder="Voer naam in" name="naam">
+					<label for="naam">Naam</label>
+				</li>
+				{#each Object.keys(parties) as party}
+					<li>
+						<input bind:group={$filters['verkiezingen.tk2023.partij_naam']} type="checkbox" id="{slugify(party)}" value="{slugify(party)}" name="{slugify(party)}" />
+						<label for="{slugify(party)}">{party}</label>
+					</li>
+				{/each}
+			</ul>
+		</aside> -->
 		<ul>
-			{#each gesorteerdeKandidaten as kandidaat}
+			{#each kandidaten as kandidaat}
 				<li>
 					<a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a>
 				</li>
