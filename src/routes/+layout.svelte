@@ -5,11 +5,17 @@
 	import Footer from '$lib/components/Footer.svelte';
 
 	import { onMount } from 'svelte';
-	onMount(() => {
-		page.subscribe(() => {
-			updateMatomo();
-		});
-	});
+
+	import { groupByParty } from '$lib/util/candidates';
+	import{ meta } from '$lib/stores/meta';
+
+	export let data;
+
+	meta.set({
+		kandidaten: data.kandidaten.length,
+		partijen: Object.keys(groupByParty(data.kandidaten)).length
+	})
+
 	function updateMatomo() {
 		if (typeof window !== 'undefined' && window._paq) {
 			window._paq.push(['setCustomUrl', window.location.href]);
@@ -17,6 +23,12 @@
 			window._paq.push(['trackPageView']);
 		}
 	}
+
+	onMount(() => {
+		page.subscribe(() => {
+			updateMatomo();
+		});
+	});
 </script>
 
 <svelte:head>

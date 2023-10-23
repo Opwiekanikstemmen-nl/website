@@ -1,16 +1,5 @@
 <script>
-	import { getAge, groupByParty } from '$lib/util/candidates';
-
-	import{ meta } from '$lib/stores/meta';
-
-	export let data;
-
-	meta.set({
-		kandidaten: data.kandidaten.length,
-		partijen: Object.keys(groupByParty(data.kandidaten)).length
-	})
-
-
+	// export let data;
 </script>
 
 <svelte:head>
