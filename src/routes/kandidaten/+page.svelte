@@ -2,21 +2,17 @@
 	import { meta } from '$lib/stores/meta';
 	import { filters } from '$lib/stores/filters';
 
-	import { groupByParty, slugify } from '$lib/util/candidates';
-	import { applyFilters } from '$lib/util/filters';
+	import { groupByParty } from '$lib/util/candidates';
+	import { applyFilters, sortData } from '$lib/util/filters';
 
 	export let data;
 
 	let parties = groupByParty(data.kandidaten);
-	$: kandidaten = data.kandidaten;
-
-	// let list = [...data.kandidaten].sort((a, b) => {
-	// 	return (a.naam > b.naam) ? -1 : (a.naam > b.naam) ? 1 : 0;
-	// })
+	$: kandidaten = sortData(data.kandidaten, 'naam', 'desc');
 
 	filters.subscribe(update => {
 		if (update) {
-			kandidaten = applyFilters(data.kandidaten, update);
+			kandidaten = sortData(applyFilters(data.kandidaten, update), 'naam', 'desc');
 		}
 	})
 

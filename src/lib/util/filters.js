@@ -37,3 +37,14 @@ export function applyFilters(data, filters) {
 		});
 	});
 }
+
+// Function to sort an array of objects by a given key in ascending or descending order
+export function sortData(data, key, direction = 'asc') {
+	return data.sort((a, b) => {
+		const valueA = getNestedProperty(a, key);
+		const valueB = getNestedProperty(b, key);
+		if (valueA < valueB) return direction === 'asc' ? -1 : 1;
+		if (valueA > valueB) return direction === 'asc' ? 1 : -1;
+		return 0;
+	});
+}
