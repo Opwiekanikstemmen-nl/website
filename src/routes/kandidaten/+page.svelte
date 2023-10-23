@@ -3,6 +3,10 @@
 
 	export let data;
 
+	let gesorteerdeKandidaten = [...data.kandidaten].sort((a, b) => {
+		return (a.naam > b.naam) ? -1 : (a.naam > b.naam) ? 1 : 0;
+	})
+
 </script>
 
 <svelte:head>
@@ -11,16 +15,22 @@
 </svelte:head>
 
 <main>
-	<h1>Kandidaten</h1>
-
+	<h1>Kandidaten {$meta.kandidaten ? `(${$meta.kandidaten})` : ''}</h1>
 	<p>Filter de {$meta.kandidaten ? $meta.kandidaten : ''} kandidaten van de {$meta.partijen} politieke partijen op kenmerken die jij belangrijk vindt.</p>
-	<ul>
-		{#each data.gesorteerdeKandidaten as kandidaat}
-			<li>
-				<a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a>
-			</li>
-		{/each}
-	</ul>
+
+	<aside>
+		Hallo
+	</aside>
+	<section>
+		<ul>
+			{#each gesorteerdeKandidaten as kandidaat}
+				<li>
+					<a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a>
+				</li>
+			{/each}
+		</ul>
+	</section>
+
 </main>
 
 <style lang="scss">
