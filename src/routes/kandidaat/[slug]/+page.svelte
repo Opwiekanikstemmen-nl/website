@@ -12,7 +12,13 @@
 		'url': `https://news.google.com/search?q=${kandidaat.naam} ${kandidaat.partij}&hl=nl&gl=NL&ceid=NL:nl`,
 		'description': `${kandidaat.naam} op Google News`
 	};
-	const hyperlinks = kandidaat.links ? [newsLink].concat(kandidaat.links) : [newsLink];
+	let hyperlinks = [newsLink];
+	for (const key in kandidaat.urls) {
+		hyperlinks.push({
+			'url': kandidaat.urls[key],
+			'description': key
+		});
+	}
 </script>
 
 <svelte:head>
