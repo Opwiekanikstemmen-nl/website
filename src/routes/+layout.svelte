@@ -7,6 +7,8 @@
 	import { onMount } from 'svelte';
 
 	import { groupByParty } from '$lib/util/candidates';
+
+	import { page } from '$app/stores';
 	import{ meta } from '$lib/stores/meta';
 
 	export let data;
