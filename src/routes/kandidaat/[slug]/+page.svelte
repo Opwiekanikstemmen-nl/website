@@ -30,49 +30,53 @@
 	{#if kandidaat}
 		<h1>{kandidaat.naam}</h1>
 
-		<ul class="properties">
-			<li>
-				Partij: <strong>{verkiezing.partij_naam}</strong>, op plaats {verkiezing.lijstnummer}
-			</li>
-			<li>
-				Woonplaats: <strong>{verkiezing.woonplaats}</strong>
-			</li>
-			{#if kandidaat.geboortedatum}
-			<li>
-				Leeftijd: <strong>{getAge(kandidaat.geboortedatum)}</strong>
-			</li>
-			{:else if kandidaat.leeftijd}
-			<li>
-				Leeftijd: <strong>{kandidaat.leeftijd}</strong>
-			</li>
-			{/if}
-		</ul>
-
-		<section class="kieskringen">
-			<h2>Kieskringen</h2>
-			{#if verkiezing.kieskringen.length == 20}
-				<p>Verkiesbaar in alle kieskringen.</p>
-			{:else}
-				<p>Verkiesbaar in {verkiezing.kieskringen.length} van de 20 kieskringen:</p>
+		<div class="properties">
+			<section class="basics card">
 				<ul>
-					{#each verkiezing.kieskringen as kieskring}
-						<li>{kieskring}</li>
+					<li>
+						Partij: <strong>{verkiezing.partij_naam}</strong>, op plaats {verkiezing.lijstnummer}
+					</li>
+					<li>
+						Woonplaats: <strong>{verkiezing.woonplaats}</strong>
+					</li>
+					{#if kandidaat.geboortedatum}
+					<li>
+						Leeftijd: <strong>{getAge(kandidaat.geboortedatum)}</strong>
+					</li>
+					{:else if kandidaat.leeftijd}
+					<li>
+						Leeftijd: <strong>{kandidaat.leeftijd}</strong>
+					</li>
+					{/if}
+				</ul>
+			</section>
+
+			<section class="links">
+				<h2>Links</h2>
+				<ul>
+					{#each hyperlinks as link}
+						<li>
+							<a class="card" href="{link.url}" rel="noreferrer">
+								{link.description}
+							</a>
+						</li>
 					{/each}
 				</ul>
-			{/if}
-		</section>
+			</section>
 
-		<div class="links">
-			<h2>Links</h2>
-			<ul>
-				{#each hyperlinks as link}
-					<li>
-						<a href="{link.url}">
-							{link.description}
-						</a>
-					</li>
-				{/each}
-			</ul>
+			<section class="kieskringen">
+				<h2>Kieskringen</h2>
+				{#if verkiezing.kieskringen.length == 20}
+					<p>Verkiesbaar in alle kieskringen.</p>
+				{:else}
+					<p>Verkiesbaar in {verkiezing.kieskringen.length} van de 20 kieskringen:</p>
+					<ul>
+						{#each verkiezing.kieskringen as kieskring}
+							<li>{kieskring}</li>
+						{/each}
+					</ul>
+				{/if}
+			</section>
 		</div>
 	{:else}
 		<p>Kan kandidaat niet vinden</p>
@@ -80,5 +84,55 @@
 </main>
 
 <style lang="scss">
+.properties {
+	@media (min-width: 50em) {
+		display: grid;
+		grid-column-gap: 3em;
+		grid-template-columns: [left] 1fr [right] 40vw;
+	}
+}
 
+.card {
+	background: rgb(var(--background));
+	border-radius: .5em;
+	box-shadow: 0px 5px 20px rgba(var(--foreground), 0.15);
+	break-inside: avoid-column;
+	color: rgb(var(--foreground));
+	font-family: inherit;
+	grid-column-start: left;
+	margin-bottom: 1em;
+	padding: 1em 1.5em;
+}
+
+li {
+	margin: .75em 0;
+}
+
+.links {
+	grid-column: right;
+	grid-row-start: 1;
+	grid-row-end: span 2;
+
+	& > h2 {
+		@media (min-width: 50em) {
+			margin-top: 0;
+		}
+	}
+
+	& > ul .card {
+		background: rgb(var(--background), .5);
+
+		&:hover {
+			background: rgb(var(--background), 1);
+		}
+	}
+}
+
+.links a {
+	display: block;
+
+	&::after {
+		float: right;
+	}
+}
 </style>
