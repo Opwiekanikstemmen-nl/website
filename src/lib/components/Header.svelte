@@ -31,11 +31,7 @@
 		padding: 4.5vw var(--base-padding) 2em;
 		width: 100%;
 
-		&.home {
-			padding-top: var(--base-padding);
-		}
-
-		@media (min-width: 600px) {
+		@media (min-width: 400px) {
 			align-items: center;
 			flex-flow: row nowrap;
 		}
@@ -51,14 +47,10 @@
 		align-items: center;
 		cursor: pointer;
 		display: flex;
-		height: 100%;
+		height: 3em;
 		justify-content: center;
-		max-height: 3em;
-		max-width: 3em;
-		min-height: 1em;
-		min-width: 1em;
 		position: relative;
-		width: 100%;
+		width: 3em;
 
 		&::after {
 			background: rgb(var(--background));
@@ -83,7 +75,7 @@
 		display: block;
 		font-size: 1.1em;
 		line-height: 1;
-		margin: .1em .75em;
+		margin: 0 .75em;
 		text-decoration: none;
 		width: 7ch;
 
