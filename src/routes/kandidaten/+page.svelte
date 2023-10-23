@@ -24,7 +24,7 @@
 </svelte:head>
 
 <main>
-	<h1>Kandidaten ({kandidaten.length || '...'})</h1>
+	<h1>Kandidaten ({kandidaten.length || '?'})</main>h1>
 	<p>Filter de {$meta.kandidaten ? $meta.kandidaten : ''} kandidaten van de {$meta.partijen} politieke partijen op kenmerken die jij belangrijk vindt.</p>
 
 	<section>
