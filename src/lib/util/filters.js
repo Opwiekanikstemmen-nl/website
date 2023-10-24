@@ -32,6 +32,12 @@ function matchesFilter(key, value, filter) {
 export function applyFilters(data, filters) {
 	return data.filter(item => {
 		return Object.keys(filters).every(key => {
+			const filterValue = filters[key];
+
+			// Skip empty filters
+			if (filterValue == null || (Array.isArray(filterValue) && filterValue.length === 0)) {
+				return true;
+			}
 			const value = getNestedProperty(item, key);
 			return matchesFilter(key, value, filters[key]);
 		});
