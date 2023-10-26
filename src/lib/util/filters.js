@@ -24,7 +24,7 @@ function matchesFilter(key, value, filter) {
 	if (key === 'verkiezingen.tk2023.kieskringen' && typeof filter === 'string') {
 		return value.includes(filter);
 	}
-	
+
 	if (Array.isArray(filter) && filter.length) {
 		return filter.includes(slugify(value));
 	}
