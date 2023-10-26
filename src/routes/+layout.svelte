@@ -15,7 +15,29 @@
 
 	meta.set({
 		kandidaten: data.kandidaten.length,
-		partijen: Object.keys(groupByParty(data.kandidaten)).length
+		partijen: Object.keys(groupByParty(data.kandidaten)).length,
+		kieskringen: [
+          "Groningen",
+          "Leeuwarden",
+          "Assen",
+          "Zwolle",
+          "Lelystad",
+          "Nijmegen",
+          "Arnhem",
+          "Utrecht",
+          "Amsterdam",
+          "Haarlem",
+          "Den Helder",
+          "'s-Gravenhage",
+          "Rotterdam",
+          "Dordrecht",
+          "Leiden",
+          "Middelburg",
+          "Tilburg",
+          "'s-Hertogenbosch",
+          "Maastricht",
+          "Bonaire"
+        ]
 	})
 
 	function updateMatomo() {

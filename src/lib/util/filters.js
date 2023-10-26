@@ -21,6 +21,10 @@ function matchesFilter(key, value, filter) {
 		return value.toLowerCase().indexOf(filter.toLowerCase()) !== -1;
 	}
 
+	if (key === 'verkiezingen.tk2023.kieskringen' && typeof filter === 'string') {
+		return value.includes(filter);
+	}
+	
 	if (Array.isArray(filter) && filter.length) {
 		return filter.includes(slugify(value));
 	}
@@ -39,6 +43,7 @@ export function applyFilters(data, filters) {
 				return true;
 			}
 			const value = getNestedProperty(item, key);
+
 			return matchesFilter(key, value, filters[key]);
 		});
 	});

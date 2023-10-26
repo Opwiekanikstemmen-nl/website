@@ -14,7 +14,6 @@
 
 	filters.subscribe(update => {
 		if (update) {
-			console.log(kandidaten);
 			kandidaten = sortData(applyFilters(data.kandidaten, update), 'naam', 'desc');
 		}
 	})
@@ -71,6 +70,19 @@
 								</li>
 							{/each}
 						</ul>
+					</details>
+				</li>
+				<li>
+					<details>
+						<summary><h3>Kieskring</h3></summary>
+						<p>Het stembiljet verschilt per stemlocatie. Kies de gemeente waar je stemt.</p>
+						<label for="kieskring">Kieskring</label>
+						<input bind:value={$filters['verkiezingen.tk2023.kieskringen']} type="search" placeholder="plaatsnaam" id="kieskring" list="kieskring_opties">
+						<datalist id="kieskring_opties">
+							{#each $meta.kieskringen as kieskring}
+								<option value="{kieskring}">{kieskring}</option>
+							{/each}
+						</datalist>
 					</details>
 				</li>
 			</ul>
