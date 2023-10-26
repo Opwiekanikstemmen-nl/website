@@ -19,8 +19,10 @@
 		}
 	})
 
-	function changeMenu() {
+	function changeMenu(event) {
 		filterMenu.classList.toggle('is-open');
+		event.target.nextElementSibling.toggleAttribute('hidden');
+		event.target.setAttribute('aria-expanded', event.target.getAttribute('aria-expanded') === 'false');
 	}
 
 </script>
@@ -35,13 +37,15 @@
 	<p>Filter de {$meta.kandidaten ? $meta.kandidaten : ''} kandidaten van de {$meta.partijen} politieke partijen op kenmerken die jij belangrijk vindt.</p>
 
 	<section>
+
 		<!-- <aside bind:this={filterMenu}>
-			<h2>
-				<button on:click={() => changeMenu() }>
+			<button on:click={changeMenu} aria-expanded="false" aria-controls="filters">
+				<h2>
+					<span aria-hidden="true">↑</span>
 					Filters
-				</button>
-			</h2>
-			<ul>
+				</h2>
+			</button>
+			<ul id="filters" hidden>
 				<li>
 					<details>
 						<summary>
