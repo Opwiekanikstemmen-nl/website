@@ -45,6 +45,9 @@
 					Filters
 				</h2>
 			</button>
+			<h2 class="large">
+				Filters
+			</h2>
 			<ul id="filters" hidden>
 				<li>
 					<details>
@@ -99,7 +102,6 @@
 		transform: translateY(calc(100vh - 5em));
 		transition: all .25s cubic-bezier(.19,1,.22,1);
 
-
 		& button {
 			padding: 1em;
 			width: 100%;
@@ -128,19 +130,55 @@
 		}
 	}
 
+	.large {
+		display: none;
+	}
+		
+	@media (min-width: 45em) {
+		section {
+			column-gap: 2em;
+			display: grid;
+			grid-template-columns: 20em 1fr;
+			margin-top: 2em;
+			align-items: start;
+		}
+
+		button {
+			display: none;
+		}
+
+		aside {
+			background: none;
+			border-radius: 0;
+			border-right: 1px solid rgba(var(--foreground), .5);
+			box-shadow: none;
+			position: static;
+			transform: none;
+			padding: 1em 2em 1em 0;
+		}
+
+		.large {
+			display: block;
+		}
+
+		#filters {
+			padding: 0;
+			margin-top: 1em;
+		}
+	}
+
 	details {
-		border-bottom: 1px solid rgba(var(--foreground), .5);
+		border-bottom: 1px solid rgba(var(--foreground), 1);
 		margin: 0 0 .5em;
 		padding: .5em 0 1em;
 	}
 
 	summary {
 		cursor: pointer;
-		margin-bottom: 1em;
-	}
 
-	label {
-		cursor: pointer;
+		& + * {
+			margin-top: .5em;
+		}
 	}
 
 	h3 {
@@ -172,7 +210,7 @@
 		display: block;
 		font-size: .9em;
 		font-weight: bold;
-		margin: 1.2rem 0 -1.7rem .8rem;
+		margin: 1.7rem 0 -1.7rem .8rem;
 		position: relative;
 	}
 
