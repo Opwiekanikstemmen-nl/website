@@ -1,7 +1,7 @@
 export function groupByParty(candidates) {
 	if(!candidates || candidates.length < 1) return null;
 
-	return candidates.reduce((acc, candidate) => {
+	const grouped = candidates.reduce((acc, candidate) => {
 		if(!acc[candidate.verkiezingen.tk2023.partij_naam]) {
 			acc[candidate.verkiezingen.tk2023.partij_naam] = [];
 		}
@@ -9,7 +9,18 @@ export function groupByParty(candidates) {
 		acc[candidate.verkiezingen.tk2023.partij_naam].push(candidate);
 
 		return acc;
-	}, {});
+	}, {})
+
+	Object.keys(grouped).forEach((key) => {
+		grouped[key].sort((a, b) => {
+			if (a.verkiezingen.tk2023.lijstnummer < b.verkiezingen.tk2023.lijstnummer) return -1;
+			if (a.verkiezingen.tk2023.lijstnummer > b.verkiezingen.tk2023.lijstnummer) return 1;
+			return 0;
+		});
+	});
+
+	return grouped;
+
 }
 
 export function slugify(string, prefix = '') {
