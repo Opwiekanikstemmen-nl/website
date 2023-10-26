@@ -50,10 +50,11 @@
 					<details>
 						<summary>
 							<h3>
-								<label for="naam">Naam</label>
+								Naam
 							</h3>
 						</summary>
-						<input bind:value={$filters['naam']} type="text" id='naam' placeholder="Voer naam in" name="naam">
+						<label for="naam">Naam kandidaat</label>
+						<input bind:value={$filters['naam']} type="text" id='naam' name="naam">
 					</details>
 				</li>
 				<li>
@@ -61,9 +62,9 @@
 						<summary><h3>Partij</h3></summary>
 						<ul>
 							{#each Object.keys(parties) as party}
-								<li>
+								<li class="inputWrapper">
 									<input bind:group={$filters['verkiezingen.tk2023.partij_naam']} type="checkbox" id="{slugify(party)}" value="{slugify(party)}" name="{slugify(party)}" />
-									<label for="{slugify(party)}">{party}</label>
+									<label class="option" for="{slugify(party)}">{party}</label>
 								</li>
 							{/each}
 						</ul>
@@ -71,6 +72,7 @@
 				</li>
 			</ul>
 		</aside> -->
+
 		<ul>
 			{#each kandidaten as kandidaat}
 				<li>
@@ -78,6 +80,7 @@
 				</li>
 			{/each}
 		</ul>
+
 	</section>
 
 </main>
@@ -90,47 +93,55 @@
 		left: 1.5em;
 		right: 1.5em;
 		bottom: 0;
-		padding: 1em;
-		background: rgba(var(--color), 1);
+		background: rgba(var(--background), 1);
 
 		transform: translateY(calc(100vh - 5em));
 
-		transition: transform .3s ease-in-out;
+		transition: all .25s cubic-bezier(.19,1,.22,1);
 		box-shadow: 1px 1px 10px rgba(var(--foreground), .25);
 		border-top-right-radius: .5em;
 		border-top-left-radius: .5em;
 
-		& > h2 {
-			margin-top: 0;
+		& button {
+			padding: 1em;
+			width: 100%;
+			box-shadow: none;
+		}
+
+		& h2 {
+			margin: 0;
+			pointer-events: none;
 		}
 
 		& > ul {
 			display: flex;
 			flex-flow: column nowrap;
-		}
-
-		& button {
-			all: unset;
-			width: 100%;
-			cursor: pointer;
+			margin: 0;
+			padding: 1em;
 		}
 
 		&.is-open {
 			transform: translateY(0);
+
+			& button span {
+				display: inline-block;
+				transform: rotate(180deg);
+			}
 		}
+	}
+
+	details {
+		border-bottom: 1px solid rgba(var(--foreground), .5);
+		margin: 0 0 .5em;
+		padding: .5em 0 1em;
 	}
 
 	summary {
 		cursor: pointer;
-		margin-bottom: .5em;
 	}
 
 	label {
 		cursor: pointer;
-	}
-
-	h3 label {
-		pointer-events: none;
 	}
 
 	h3 {
@@ -144,5 +155,75 @@
 		grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
 		margin: 1em 0;
 		gap: 1em;
+	}
+
+	.inputWrapper {
+		align-items: center;
+		display: flex;
+		flex-flow: row nowrap;
+		max-width: calc(100% - 1em);
+
+		&:focus-within {
+			outline: 5px auto Highlight;
+			outline: 5px auto -webkit-focus-ring-color;
+		}
+	}
+
+	label {
+		display: block;
+		font-size: .9em;
+		font-weight: bold;
+		margin: 1.7rem 0 -1.7rem .8rem;
+		position: relative;
+	}
+
+	.option {
+		align-items: center;
+		display: flex;
+		flex-flow: row nowrap;
+		font-size: 1em;
+		font-weight: 400;
+		line-height: 1.2;
+		margin: 0;
+		padding: .8em 0 .8em 1.5em;
+		position: relative;
+
+		&:before {
+			border: 2px solid rgba(var(--foreground), .5);
+			content: "";
+			height: .9em;
+			left: 0;
+			position: absolute;
+			width: .9em;
+		}
+	}
+
+
+	input {
+		background: rgb(var(--background));
+		border-radius: .25em;
+		border: .15em solid rgb(var(--foreground));
+		box-sizing: border-box;
+		color: rgb(var(--foreground));
+		font-size: 1em;
+		padding: 1.8em .7rem .7rem;
+		width: 100%;
+
+		&[type=checkbox] {
+			clip-path: inset(50%);
+			clip: rect(0 0 0 0);
+			display: inline-block;
+			height: 1px;
+			margin-right: .5em;
+			order: -1;
+			overflow: hidden;
+			position: absolute;
+			white-space: nowrap;
+			width: 1px;
+
+			&:checked + label:before {
+				background: rgba(var(--foreground), 1);
+			}
+		}
 	}
 </style>
