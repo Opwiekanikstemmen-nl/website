@@ -150,11 +150,11 @@
 		aside {
 			background: none;
 			border-radius: 0;
-			border-right: 1px solid rgba(var(--foreground), .5);
+			border-right: 1px solid rgba(var(--foreground), 1);
 			box-shadow: none;
 			position: static;
 			transform: none;
-			padding: 1em 2em 1em 0;
+			padding: 1em 2em 0 0;
 		}
 
 		.large {
@@ -165,10 +165,14 @@
 			padding: 0;
 			margin-top: 1em;
 		}
+
+		li:last-child details {
+			margin-bottom: 0;
+		}
 	}
 
 	details {
-		border-bottom: 1px solid rgba(var(--foreground), 1);
+		border-bottom: 1px solid rgba(var(--foreground), .5);
 		margin: 0 0 .5em;
 		padding: .5em 0 1em;
 	}
