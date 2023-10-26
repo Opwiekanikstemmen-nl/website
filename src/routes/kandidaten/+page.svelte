@@ -63,7 +63,7 @@
 					<details>
 						<summary><h3>Partij</h3></summary>
 						<ul>
-							{#each Object.keys(parties) as party}
+							{#each Object.keys(parties).sort() as party}
 								<li class="inputWrapper">
 									<input bind:group={$filters['verkiezingen.tk2023.partij_naam']} type="checkbox" id="{slugify(party)}" value="{slugify(party)}" name="{slugify(party)}" />
 									<label class="option" for="{slugify(party)}">{party}</label>
