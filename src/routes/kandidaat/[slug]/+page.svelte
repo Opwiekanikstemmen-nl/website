@@ -28,6 +28,23 @@
 
 <main>
 	{#if kandidaat}
+		<nav aria-label="overzichten">
+			<ul>
+				<li>
+					<a href="/kandidaten">
+						<span aria-hidden="true">{'<-'}</span>
+						Alle kandidaten
+					</a>
+				</li>
+				<li>
+					<a href="/partijen">
+						<span aria-hidden="true">{'<-'}</span>
+						Alle partijen
+					</a>
+				</li>
+			</ul>
+		</nav>
+	
 		<h1>{kandidaat.naam}</h1>
 
 		<div class="properties">
@@ -84,6 +101,10 @@
 </main>
 
 <style lang="scss">
+h1 {
+	margin-bottom: .5em;
+}
+
 .properties {
 	@media (min-width: 50em) {
 		display: grid;
@@ -106,6 +127,12 @@
 
 li {
 	margin: .75em 0;
+}
+
+[aria-label="overzichten"] ul {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 2em
 }
 
 .links {
