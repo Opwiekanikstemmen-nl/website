@@ -38,7 +38,7 @@
 
 	<section>
 
-		<!-- <aside bind:this={filterMenu}>
+		<aside bind:this={filterMenu}>
 			<button on:click={changeMenu} aria-expanded="false" aria-controls="filters">
 				<h2>
 					<span aria-hidden="true">↑</span>
@@ -71,9 +71,9 @@
 					</details>
 				</li>
 			</ul>
-		</aside> -->
+		</aside>
 
-		<ul>
+		<ul class="kandidaten">
 			{#each kandidaten as kandidaat}
 				<li>
 					<a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a>
@@ -88,19 +88,17 @@
 <style lang="scss">
 
 	aside {
+		background: rgba(var(--background), 1);
+		box-shadow: 0 0 1em rgba(var(--foreground), .25);
+		border-radius: .5em .5em 0 0;
 		position: fixed;
 		top: 1.5em;
 		left: 1.5em;
 		right: 1.5em;
 		bottom: 0;
-		background: rgba(var(--background), 1);
-
 		transform: translateY(calc(100vh - 5em));
-
 		transition: all .25s cubic-bezier(.19,1,.22,1);
-		box-shadow: 1px 1px 10px rgba(var(--foreground), .25);
-		border-top-right-radius: .5em;
-		border-top-left-radius: .5em;
+
 
 		& button {
 			padding: 1em;
@@ -138,6 +136,7 @@
 
 	summary {
 		cursor: pointer;
+		margin-bottom: 1em;
 	}
 
 	label {
@@ -150,7 +149,7 @@
 		padding-left: .5em;
 	}
 
-	ul {
+	.kandidaten {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
 		margin: 1em 0;
@@ -173,7 +172,7 @@
 		display: block;
 		font-size: .9em;
 		font-weight: bold;
-		margin: 1.7rem 0 -1.7rem .8rem;
+		margin: 1.2rem 0 -1.7rem .8rem;
 		position: relative;
 	}
 
@@ -227,3 +226,4 @@
 		}
 	}
 </style>
+ 
