@@ -19,12 +19,20 @@ export function countParties(parties) {
 	return amounts;
 }
 
-export function countUnkowns(list, property) {
+export function countUnkowns(list, properties) {
 	let amounts = {};
 
 	
 	for (const [key, item] of Object.entries(list)) {
-		const value = item[property[0]][property[1]][property[2]];
+		let value = item;
+		for (const level in properties) {
+			try {
+				value = value[properties[level]];
+			} catch(e) {
+				value = 'Onbekend';
+			}
+		}
+
 		if (value in amounts) {
 			amounts[value] += 1;
 		} else {
