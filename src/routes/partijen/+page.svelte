@@ -77,13 +77,11 @@
 
 	ol {
 		margin: 0;
-		list-style-type: decimal;
 		padding: 1em 0 1em 2em;
 		overflow: auto;
 	}
 
 	li {
-		list-style-type: decimal;
 		margin-bottom: .5em;
 	}
 
