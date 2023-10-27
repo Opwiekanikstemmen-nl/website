@@ -74,6 +74,20 @@
 				</li>
 				<li>
 					<details>
+						<summary><h3>Stedelijkheid</h3></summary>
+						<p>Het CBS deelt gemeentes, en daarmee woonplaatsen, in op <a href="https://www.cbs.nl/nl-nl/nieuws/2023/42/minder-huishoudelijk-afval-per-inwoner-in-2022/stedelijkheid">stedelijkheid</a>.</p>
+						<ul>
+							{#each $meta.stedelijkheidsNiveaus as level}
+								<li class="inputWrapper">
+									<input bind:group={$filters['verkiezingen.tk2023.gemeente.stedelijkheid']} type="checkbox" id="{slugify(level)}" value="{slugify(level)}" name="{slugify(level)}">
+									<label class="option" for="{slugify(level)}">{level}</label>
+								</li>
+							{/each}
+						</ul>
+					</details>
+				</li>
+				<li>
+					<details>
 						<summary><h3>Kieskring</h3></summary>
 						<p>Het stembiljet verschilt per stemlocatie. Kies de gemeente waar je stemt.</p>
 						<label for="kieskring">Kieskring</label>

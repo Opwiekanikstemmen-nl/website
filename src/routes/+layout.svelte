@@ -37,6 +37,13 @@
 		  "'s-Hertogenbosch",
 		  "Maastricht",
 		  "Bonaire"
+		],
+		stedelijkheidsNiveaus: [
+			"Zeer sterk stedelijk",
+			"Sterk stedelijk",
+			"Niet stedelijk",
+			"Matig stedelijk",
+			"Weinig stedelijk",
 		]
 	})
 
