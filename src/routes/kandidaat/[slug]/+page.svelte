@@ -114,15 +114,7 @@ h1 {
 }
 
 .card {
-	background: rgb(var(--background));
-	border-radius: .5em;
-	box-shadow: 0px 5px 20px rgba(var(--foreground), 0.15);
-	break-inside: avoid-column;
-	color: rgb(var(--foreground));
-	font-family: inherit;
 	grid-column-start: left;
-	margin-bottom: 1em;
-	padding: 1em 1.5em;
 }
 
 li {
