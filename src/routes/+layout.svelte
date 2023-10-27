@@ -9,7 +9,7 @@
 	import { groupByParty } from '$lib/util/candidates';
 
 	import { page } from '$app/stores';
-	import{ meta } from '$lib/stores/meta';
+	import { meta } from '$lib/stores/meta';
 
 	export let data;
 
@@ -17,27 +17,27 @@
 		kandidaten: data.kandidaten.length,
 		partijen: Object.keys(groupByParty(data.kandidaten)).length,
 		kieskringen: [
-          "Groningen",
-          "Leeuwarden",
-          "Assen",
-          "Zwolle",
-          "Lelystad",
-          "Nijmegen",
-          "Arnhem",
-          "Utrecht",
-          "Amsterdam",
-          "Haarlem",
-          "Den Helder",
-          "'s-Gravenhage",
-          "Rotterdam",
-          "Dordrecht",
-          "Leiden",
-          "Middelburg",
-          "Tilburg",
-          "'s-Hertogenbosch",
-          "Maastricht",
-          "Bonaire"
-        ]
+		  "Groningen",
+		  "Leeuwarden",
+		  "Assen",
+		  "Zwolle",
+		  "Lelystad",
+		  "Nijmegen",
+		  "Arnhem",
+		  "Utrecht",
+		  "Amsterdam",
+		  "Haarlem",
+		  "Den Helder",
+		  "'s-Gravenhage",
+		  "Rotterdam",
+		  "Dordrecht",
+		  "Leiden",
+		  "Middelburg",
+		  "Tilburg",
+		  "'s-Hertogenbosch",
+		  "Maastricht",
+		  "Bonaire"
+		]
 	})
 
 	function updateMatomo() {
