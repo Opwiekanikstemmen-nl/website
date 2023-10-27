@@ -115,9 +115,10 @@
 		transition: all .25s cubic-bezier(.19,1,.22,1);
 
 		& button {
+			box-shadow: none;
+			line-height: 1;
 			padding: 1em;
 			width: 100%;
-			box-shadow: none;
 		}
 
 		& h2 {
@@ -140,6 +141,11 @@
 				transform: rotate(180deg);
 			}
 		}
+	}
+
+	#filters {
+		max-height: calc(100vh - 1.5em - 3.65em);
+		overflow-y: scroll;
 	}
 
 	.large {
@@ -176,6 +182,8 @@
 		#filters {
 			padding: 0;
 			margin-top: 1em;
+			max-height: none;
+			overflow-y: visible;
 		}
 
 		li:last-child details {
