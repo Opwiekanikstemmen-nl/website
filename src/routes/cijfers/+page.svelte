@@ -11,6 +11,8 @@
 
 	const parties = groupByParty(data.kandidaten);
 	const woonplaatsen = countUnkowns(data.kandidaten, ['verkiezingen', 'tk2023', 'woonplaats']);
+	const stedelijkheid = countUnkowns(data.kandidaten, ['verkiezingen', 'tk2023', 'gemeente', 'stedelijkheid']);
+	const sharesStedelijkheid = {'Zeer sterk stedelijk': 0.257057929668623, 'Sterk stedelijk': 0.3033547987272405, 'Niet stedelijk': 0.07340226254998808, 'Matig stedelijk': 0.14899154040118648, 'Weinig stedelijk': 0.21719346865296188, 'Onbekend': 0};
 	const partySizes = countParties(parties);
 
 </script>
@@ -94,19 +96,44 @@
 				</details>
 			</div>
 		</article>
+		<article class="card">
+			<p class="label">Landelijk of stedelijk</p>
+			<div>
+				<h2><span class="number">{Math.round(stedelijkheid[0][1]/$meta.kandidaten*100)}%</span> woont in {stedelijkheid[0][0].toLowerCase()} gebied</h2>
+				<details>
+					<summary>Daarmee zijn die {stedelijkheid[0][0].toLowerCase()}e oververtegenwoordigd.</summary>
+					<p>Het CBS deelt gemeentes in op <a href="https://www.cbs.nl/nl-nl/nieuws/2023/42/minder-huishoudelijk-afval-per-inwoner-in-2022/stedelijkheid">stedelijkheid</a>. Op basis van de woonplaats van een kandidaat kunnen we dus zeggen of die in stedelijk of landelijk gebied woont.</p>
+					<p>Natuurlijk wonen er ook meer mensen in de (zeer) sterk stedelijke gebieden dan in de niet stedelijke. Ook als we dat in ons achterhoofd houden zijn de stedelingen oververtegenwoordigd op de kandidatenlijsten.</p>
+					<table>
+						<caption>
+							Het percentage kandidaten en inwoners per stedelijkheids-niveau
+						</caption>
+						<thead>
+							<tr>
+								<th>Niveau</th>
+								<th>Kand.</th>
+								<th>Inw.</th>
+							</tr>
+						</thead>
+						<tbody>
+							{#each ["Zeer sterk stedelijk", "Sterk stedelijk", "Matig stedelijk", "Weinig stedelijk", "Niet stedelijk", "Onbekend"] as level}
+								<tr>
+									<td>{stedelijkheid.filter((item) => item[0] === level)[0][0]}</td>
+									<td>{Math.round(stedelijkheid.filter((item) => item[0] === level)[0][1]/$meta.kandidaten*100)}%</td>
+									<td>{Math.round(sharesStedelijkheid[level] * 100)}%</td>
+								</tr>
+							{/each}
+						</tbody>
+					</table>
+				</details>
+			</div>
+		</article>
 		<!-- <article class="card">
 			<p class="label"></p>
 			<div>
 				<h2></h2>
 				<p>leeftijd: 18-25, 25-23, ... hoeveel zitten er in welke categorie?</p>
 				<p>1946-1964: hoe groot aandeel hebben de boomers? (silent >1945, gen x 1965-1980, millenials 1980-1995, gen z 1996+)</p>
-			</div>
-		</article>
-		<article class="card">
-			<p class="label"></p>
-			<div>
-				<h2></h2>
-				<p>stedelijk/landelijk: wat is de verhouding tussen het aantal meest stedelijke kandidaten en het aantal meest landelijke kandidaten?</p>
 			</div>
 		</article>
 		<article class="card">
