@@ -15,11 +15,13 @@
 
 <main>
 	<h1>Partijen</h1>
-	<p>De kandidatenlijsten zoals ook te zien op jouw stembiljet.</p>
-	<section id="list">
-		{#each Object.entries(parties) as party}
-			<div>
-				<h2>{party[0]}</h2>
+	<ol class="partijnamen card">
+		{#each partijen as party}
+			<li>
+				<a href="/partij/{party['simpele_naam']}">{party['simpele_naam']}</a>
+			</li>
+		{/each}
+	</ol>
 	<h2>De kandidatenlijsten</h2>
 	<p>Zoals ze ook te zien zijn op jouw stembiljet.</p>
 	<section id="ballot-list">
@@ -37,6 +39,29 @@
 </main>
 
 <style lang="scss">
+
+	.partijnamen {
+		padding: 2em 2em 2em 4em;
+
+		@media (min-width: 46em) {
+			column-count: 2;
+		}
+		@media (min-width: 65em) {
+			column-count: 3;
+		}
+		@media (min-width: 110em) {
+			column-count: 4;
+		}
+		@media (min-width: 160em) {
+			column-count: 6;
+		}
+
+		& li {
+			break-inside: avoid-column;
+			margin-bottom: .75em;
+			padding-right: 2em;
+		}
+	}
 
 	#ballot-list {
 		max-width: 100vw;

@@ -51,7 +51,7 @@
 			<section class="basics card">
 				<ul>
 					<li>
-						Partij: <strong>{verkiezing.partij_naam}</strong>, op plaats {verkiezing.lijstnummer}
+						Partij: <a href="/partij/{$page.data.partijen.find(partij => partij.naam === verkiezing.partij_naam).simpele_naam}">{verkiezing.partij_naam}</a>, op plaats {verkiezing.lijstnummer}
 					</li>
 					<li>
 						Woonplaats: <strong>{verkiezing.woonplaats}</strong>
