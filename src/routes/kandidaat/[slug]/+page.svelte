@@ -9,7 +9,7 @@
 	const verkiezing = kandidaat.verkiezingen.tk2023;
 
 	const newsLink = {
-		'url': `https://news.google.com/search?q=${kandidaat.naam} ${kandidaat.partij}&hl=nl&gl=NL&ceid=NL:nl`,
+		'url': `https://news.google.com/search?q=${kandidaat.naam} ${kandidaat.verkiezingen.tk2023.partij_naam}&hl=nl&gl=NL&ceid=NL:nl`,
 		'description': `${kandidaat.naam} op Google News`
 	};
 	let hyperlinks = [newsLink];
