@@ -29,7 +29,7 @@
 		<article class="card">
 			<p class="label">De langste lijst</p>
 			<div>
-				<h2><span class="number">{partySizes[0][1]}</span> zoveel kandidaten staan er op langste lijst</h2>
+				<h2><span class="number">{partySizes[0][1]}</span> zoveel kandidaten staan er op de langste lijst</h2>
 				<details>
 					<summary>De ‘kleinste’ partij heeft er maar {partySizes.at(-1)[1]}</summary>
 					<p>Een partij mag maximaal 80 kandidaten op de lijst zetten per kieskring <a href="https://wetten.overheid.nl/jci1.3:c:BWBR0004627&afdeling=II&hoofdstuk=H&artikel=H_6&z=2023-06-20&g=2023-06-20">volgens de kieswet (artikel H 6)</a>. Sommige partijen zetten lijstduwers op hun kandidatenlijst die verschillen per kieskring. Zo kan een partij het totaal-aantal kandidaten opkrikken.</p>
