@@ -176,7 +176,7 @@
 }
 
 .label {
-	color: rgba(var(--foreground), .7);
+	color: rgba(var(--foreground), .75);
 	font-size: .9rem;
 	margin-top: .5em;
 	text-transform: uppercase;
