@@ -15,7 +15,12 @@
 <main>
 	{#if partij}
 		<h1>{partij.naam}</h1>
-		<a href="{partij.urls.partijwebsite}" class="card">Partijwebsite</a>
+		<p>
+			Lijstnummer: {partij.lijstnummers['2023']}
+		</p>
+		<p>
+			<a href="{partij.urls.partijwebsite}" class="card">Partijwebsite</a>
+		</p>
 		<h2>Kandidatenlijst</h2>
 		<ol class="kandidaten">
 			{#each kandidaten[partij['naam']] as kandidaat}
@@ -28,6 +33,10 @@
 </main>
 
 <style lang="scss">
+	p {
+		margin: 2em 0 0;
+	}
+
 	.kandidaten {
 		@media (min-width: 50em) {
 			column-count: 2;
