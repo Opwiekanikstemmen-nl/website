@@ -4,12 +4,7 @@
 	import { groupByParty } from '$lib/util/candidates';
 
 	const parties = groupByParty(data.kandidaten);
-
-	console.log(parties);
-
-	// Object.entries(parties).forEach(party => {
-	// 	console.log(`${party[0]}: ${party[1].length}`);
-	// });
+	const partijen = data.partijen.sort((a, b) => a['lijstnummers']['2023'] > b['lijstnummers']['2023']);
 
 </script>
 
@@ -25,19 +20,25 @@
 		{#each Object.entries(parties) as party}
 			<div>
 				<h2>{party[0]}</h2>
+	<h2>De kandidatenlijsten</h2>
+	<p>Zoals ze ook te zien zijn op jouw stembiljet.</p>
+	<section id="ballot-list">
+		{#each partijen as party}
+			<article>
+				<h3>{party['naam']}</h3>
 				<ol>
-					{#each party[1] as kandidaat}
+					{#each parties[party['naam']] as kandidaat}
 						<li><a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a></li>
 					{/each}
 				</ol>
-			</div>
+			</article>
 		{/each}
 	</section>
 </main>
 
 <style lang="scss">
 
-	#list {
+	#ballot-list {
 		max-width: 100vw;
 		overflow-x: auto;
 		display: flex;
@@ -47,7 +48,7 @@
 		margin: 2em calc(-1 * var(--base-padding)) calc(-1 * var(--base-padding)) ;
 	}
 
-	div {
+	article {
 		display: flex;
 		flex-flow: column nowrap;
 		background: rgb(var(--background));
@@ -65,7 +66,7 @@
 		}
 	}
 
-	h2 {
+	h3 {
 		border-bottom: .05em solid rgb(var(--foreground));
 		margin: 0;
 		padding-bottom: .33em;

@@ -6,8 +6,6 @@
 
 	import { onMount } from 'svelte';
 
-	import { groupByParty } from '$lib/util/candidates';
-
 	import { page } from '$app/stores';
 	import { meta } from '$lib/stores/meta';
 
@@ -15,7 +13,7 @@
 
 	meta.set({
 		kandidaten: data.kandidaten.length,
-		partijen: Object.keys(groupByParty(data.kandidaten)).length,
+		partijen: data.partijen.length,
 		kieskringen: [
 		  "Groningen",
 		  "Leeuwarden",

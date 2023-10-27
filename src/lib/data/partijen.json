@@ -1,0 +1,298 @@
+[
+	{
+		"naam": "BBB",
+		"simpele_naam": "BBB",
+		"deelname_jaren": [2021, 2023],
+		"lijstnummers": {
+			"2023": 15
+		},
+		"urls": {
+			"partijwebsite": "https://boerburgerbeweging.nl/"
+		}
+	},
+	{
+		"naam": "BIJ1",
+		"simpele_naam": "BIJ1",
+		"oude_namen": ["Artikel 1"],
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 16
+		},
+		"urls": {
+			"partijwebsite": "https://bij1.org/"
+		}
+	},
+	{
+		"naam": "BVNL / Groep Van Haga",
+		"simpele_naam": "BVNL",
+		"deelname_jaren": [2023],
+		"lijstnummers": {
+			"2023": 18
+		},
+		"urls": {
+			"partijwebsite": "https://bvnl.nl/"
+		}
+	},
+	{
+		"naam": "CDA",
+		"simpele_naam": "CDA",
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 5
+		},
+		"urls": {
+			"partijwebsite": "https://www.cda.nl/"
+		}
+	},
+	{
+		"naam": "ChristenUnie",
+		"simpele_naam": "ChristenUnie",
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 9
+		},
+		"urls": {
+			"partijwebsite": "https://www.christenunie.nl/"
+		}
+	},
+	{
+		"naam": "DENK",
+		"simpele_naam": "DENK",
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 13
+		},
+		"urls": {
+			"partijwebsite": "https://www.bewegingdenk.nl/"
+		}
+	},
+	{
+		"naam": "D66",
+		"simpele_naam": "D66",
+		"oude_namen": ["Democraten 66 (D66)"],
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 2
+		},
+		"urls": {
+			"partijwebsite": "https://d66.nl/"
+		}
+	},
+	{
+		"naam": "Forum voor Democratie",
+		"simpele_naam": "Forum voor Democratie",
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 7
+		},
+		"urls": {
+			"partijwebsite": "https://fvd.nl"
+		}
+	},
+	{
+		"naam": "GROENLINKS / Partij van de Arbeid (PvdA)",
+		"simpele_naam": "GroenLinks - PvdA",
+		"oude_namen": ["GROENLINKS", "Partij van de Arbeid (P.v.d.A.)", "Partij van de Arbeid PvdA"],
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 3
+		},
+		"urls": {
+			"partijwebsite": "https://groenlinkspvda.nl/",
+			"GroenLinks": "https://groenlinks.nl/",
+			"PvdA": "https://pvda.nl"
+		}
+	},
+	{
+		"naam": "JA21",
+		"simpele_naam": "JA21",
+		"deelname_jaren": [2021, 2023],
+		"lijstnummers": {
+			"2023": 11
+		},
+		"urls": {
+			"partijwebsite": "https://ja21.nl/"
+		}
+	},
+	{
+		"naam": "LEF - Voor de Nieuwe Generatie",
+		"simpele_naam": "LEF",
+		"deelname_jaren": [2023],
+		"lijstnummers": {
+			"2023": 22
+		},
+		"urls": {
+			"partijwebsite": "https://www.lef.nl/"
+		}
+	},
+	{
+		"naam": "LP (Libertaire Partij)",
+		"simpele_naam": "LP",
+		"oude_namen": "Libertarische Partij (LP)",
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 21
+		},
+		"urls": {
+			"partijwebsite": "https://stemlp.nl/"
+		}
+	},
+	{
+		"naam": "Nederland met een PLAN",
+		"simpele_naam": "Nederland met een PLAN",
+		"deelname_jaren": [2023],
+		"lijstnummers": {
+			"2023": 24
+		},
+		"urls": {
+			"partijwebsite": "https://nlplan.nl/"
+		}
+	},
+	{
+		"naam": "Nieuw Sociaal Contract",
+		"simpele_naam": "Nieuw Sociaal Contract",
+		"deelname_jaren": [2023],
+		"lijstnummers": {
+			"2023": 19
+		},
+		"urls": {
+			"partijwebsite": "https://partijnieuwsociaalcontract.nl/"
+		}
+	},
+	{
+		"naam": "PartijvdSport",
+		"simpele_naam": "PartijvdSport",
+		"deelname_jaren": [2023],
+		"lijstnummers": {
+			"2023": 25
+		},
+		"urls": {
+			"partijwebsite": "https://www.partijvdsport.nl/"
+		}
+	},
+	{
+		"naam": "Partij voor de Dieren",
+		"simpele_naam": "Partij voor de Dieren",
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 8
+		},
+		"urls": {
+			"partijwebsite": "https://www.partijvoordedieren.nl/"
+		}
+	},
+	{
+		"naam": "Piratenpartij - De Groenen",
+		"simpele_naam": "Piratenpartij - De Groenen",
+		"oude_namen": ["Piratenpartij", "De Groenen"],
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 17
+		},
+		"urls": {
+			"partijwebsite": "https://degroenenbasispiraten.nl/",
+			"De Groenen": "https://degroenen.nl/",
+			"Piratenpartij": "https://piratenpartij.nl/"
+		}
+	},
+	{
+		"naam": "Politieke Partij voor Basisinkomen",
+		"simpele_naam": "Politieke Partij voor Basisinkomen",
+		"deelname_jaren": [2017, 2023],
+		"oude_namen": ["MenS en Spirit / Basisinkomen Partij / V-R"],
+		"lijstnummers": {
+			"2023": 26
+		},
+		"urls": {
+			"partijwebsite": "https://basisinkomenpartij.nl/"
+		}
+	},
+	{
+		"naam": "PVV (Partij voor de Vrijheid)",
+		"simpele_naam": "PVV",
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 4
+		},
+		"urls": {
+			"partijwebsite": "https://www.pvv.nl/"
+		}
+	},
+	{
+		"naam": "Samen voor Nederland",
+		"simpele_naam": "Samen voor Nederland",
+		"deelname_jaren": [2023],
+		"lijstnummers": {
+			"2023": 23
+		},
+		"urls": {
+			"partijwebsite": "https://samen-voor-nederland.nl/"
+		}
+	},
+	{
+		"naam": "SP (Socialistische Partij)",
+		"simpele_naam": "SP",
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 6
+		},
+		"urls": {
+			"partijwebsite": "https://www.sp.nl/"
+		}
+	},
+	{
+		"naam": "Splinter",
+		"simpele_naam": "Splinter",
+		"deelname_jaren": [2021, 2023],
+		"lijstnummers": {
+			"2023": 20
+		},
+		"urls": {
+			"partijwebsite": "https://www.splinterpolitiek.nl/"
+		}
+	},
+	{
+		"naam": "Staatkundig Gereformeerde Partij (SGP)",
+		"simpele_naam": "SGP",
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 12
+		},
+		"urls": {
+			"partijwebsite": "https://sgp.nl/home"
+		}
+	},
+	{
+		"naam": "Volt",
+		"simpele_naam": "Volt",
+		"deelname_jaren": [2021, 2023],
+		"lijstnummers": {
+			"2023": 10
+		},
+		"urls": {
+			"partijwebsite": "https://voltnederland.org/"
+		}
+	},
+	{
+		"naam": "VVD",
+		"simpele_naam": "VVD",
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 1
+		},
+		"urls": {
+			"partijwebsite": "https://www.vvd.nl/"
+		}
+	},
+	{
+		"naam": "50PLUS",
+		"simpele_naam": "50PLUS",
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 14
+		},
+		"urls": {
+			"partijwebsite": "https://50pluspartij.nl/"
+		}
+	}
+]
