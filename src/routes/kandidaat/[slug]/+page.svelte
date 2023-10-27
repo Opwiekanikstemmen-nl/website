@@ -101,10 +101,6 @@
 </main>
 
 <style lang="scss">
-h1 {
-	margin-bottom: .5em;
-}
-
 .properties {
 	@media (min-width: 50em) {
 		display: grid;
