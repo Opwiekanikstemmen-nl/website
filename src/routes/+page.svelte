@@ -46,6 +46,7 @@
 
 	h1 {
 		flex-grow: 0;
+		font-size: min(15vw, 6em);
 		line-height: 1;
 		margin: 0;
 		width: 7.5ch;
@@ -61,7 +62,7 @@
 		font-size: 1.45em;
 		line-height: 1.1;
 		margin: 1.5em 0;
-		max-width: 44ch;
+		max-width: 40ch;
 	}
 
 	h2 {
