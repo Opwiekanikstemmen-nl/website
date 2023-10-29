@@ -166,4 +166,10 @@ li {
 		float: right;
 	}
 }
+
+aside {
+	border-top: 1px solid rgba(var(--foreground), .8);
+	margin-top: 2em;
+	padding-top: 2em;
+}
 </style>
