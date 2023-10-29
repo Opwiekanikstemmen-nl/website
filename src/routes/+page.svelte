@@ -26,6 +26,12 @@
 					<span>Bekijk partijlijsten</span>
 				</a>
 			</li>
+			<li>
+				<a href="/partijen">
+					<h2>Cijfers</h2>
+					<span>Statistieken over de kandidaten</span>
+				</a>
+			</li>
 		</ul>
 	</section>
 

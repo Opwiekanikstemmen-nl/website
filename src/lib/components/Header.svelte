@@ -15,6 +15,12 @@
 				<a href="/kandidaten">Kandidaten</a>
 			</li>
 			<li>
+				<a href="/partijen">Partijen</a>
+			</li>
+			<li>
+				<a href="/cijfers">Cijfers</a>
+			</li>
+			<li>
 				<a href="https://opwiekanikstemmen.nl/over">Over</a>
 			</li>
 		</ul>
@@ -31,7 +37,7 @@
 		padding: 4.5vw var(--base-padding) 2em;
 		width: 100%;
 
-		@media (min-width: 400px) {
+		@media (min-width: 600px) {
 			align-items: center;
 			flex-flow: row nowrap;
 		}
@@ -79,7 +85,7 @@
 		text-decoration: none;
 		width: 7ch;
 
-		@media (min-width: 600px) {
+		@media (min-width: 650px) {
 			font-size: 1.375em;
 			width: 10ch;
 		}
