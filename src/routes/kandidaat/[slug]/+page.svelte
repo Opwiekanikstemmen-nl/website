@@ -5,27 +5,33 @@
 
 	import { getAge } from '$lib/util/candidates';
 
-	const kandidaat = $page.data.kandidaten.find(kandidaat => kandidaat.id === $page.params.slug);
-	const verkiezing = kandidaat.verkiezingen.tk2023;
 
-	const newsLink = {
-		'url': `https://news.google.com/search?q=${kandidaat.naam} ${kandidaat.verkiezingen.tk2023.partij_naam}&hl=nl&gl=NL&ceid=NL:nl`,
-		'description': `${kandidaat.naam} op Google News`
-	};
-	let hyperlinks = [newsLink];
-	for (const key in kandidaat.urls) {
-		hyperlinks.push({
-			'url': kandidaat.urls[key],
-			'description': key
-		});
+	let shareText;
+	let verkiezing;
+	if (kandidaat) {
+		
+		verkiezing = kandidaat.verkiezingen.tk2023;
+		shareText = `Ik denk dat ik op ${kandidaat.naam} van ${verkiezing.partij_naam} ga stemmen! Weet jij het al?`;
+
+		const newsLink = {
+			'url': `https://news.google.com/search?q=${kandidaat.naam} ${verkiezing.partij_naam}&hl=nl&gl=NL&ceid=NL:nl`,
+			'description': `${kandidaat.naam} op Google News`
+		};
+		let hyperlinks = [newsLink];
+		for (const key in kandidaat.urls) {
+			hyperlinks.push({
+				'url': kandidaat.urls[key],
+				'description': key
+			});
+		}
 	}
 
 	const shareText = `Ik denk dat ik op ${kandidaat.naam} van ${kandidaat.verkiezingen.tk2023.partij_naam} ga stemmen! Weet jij het al?`;
 </script>
 
 <svelte:head>
-	<title>{kandidaat.naam || 'Niet gevonden'} - Op wie kan ik stemmen?</title>
-	<meta name="description" content="{`Wat wij weten over ${kandidaat.naam}` || 'Deze kandidaat is niet gevonden'}">
+	<title>{kandidaat ? kandidaat.naam : 'Niet gevonden'} - Op wie kan ik stemmen?</title>
+	<meta name="description" content="{kandidaat ? `Wat wij weten over ${kandidaat.naam}` : 'Deze kandidaat is niet gevonden'}">
 </svelte:head>
 
 <main>
@@ -112,7 +118,8 @@
 			</aside>
 		</div>
 	{:else}
-		<p>Kan kandidaat niet vinden</p>
+		<h1>Niet gevonden</h1>
+		<p>We kunnen deze kandidaat helaas niet vinden.</p>
 	{/if}
 </main>
 
