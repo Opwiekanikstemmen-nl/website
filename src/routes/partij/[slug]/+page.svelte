@@ -26,9 +26,12 @@
 		<p>ℹ️ Sommige partijen laten hun lijst verschillen per kieskring. Daardoor kunnen meerdere kandidaten hetzelfde lijstnummer hebben.</p>
 		{/if}
 		<ol class="kandidaten">
-			{#each kandidaten[partij['naam']] as kandidaat}
+			{#each kandidaten[partij['naam']] as kandidaat, i}
 				<li data-lijstnummer="{kandidaat.verkiezingen.tk2023.lijstnummer}">
 					<a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a>
+					{#if kandidaat.verkiezingen.tk2023.lijstnummer !== i + 1}
+						<span class="lijstnummer">(lijstnummer {kandidaat.verkiezingen.tk2023.lijstnummer})</span>
+					{/if}
 				</li>
 			{/each}
 		</ol>
@@ -56,15 +59,16 @@
 	}
 	
 	li {
-		list-style: none;
 		margin-bottom: .5em;
 
-		&::before {
-			content: attr(data-lijstnummer) ".";
-			display: inline-block;
-			margin-left: -1.5em;
-			width: 2em;
+		&:has(span) {
+			list-style-type: disc;
+			margin-left: -.8em;
 		}
+	}
+
+	.lijstnummer {
+		opacity: .8;
 	}
 </style>
 

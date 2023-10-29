@@ -29,8 +29,13 @@
 			<article>
 				<h3>{party['naam']}</h3>
 				<ol>
-					{#each parties[party['naam']] as kandidaat}
-						<li><a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a></li>
+					{#each parties[party['naam']] as kandidaat, i}
+						<li>
+							<a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a>
+							{#if kandidaat.verkiezingen.tk2023.lijstnummer !== i + 1}
+								<span class="lijstnummer">(lijstnummer {kandidaat.verkiezingen.tk2023.lijstnummer})</span>
+							{/if}
+						</li>
 					{/each}
 				</ol>
 			</article>
@@ -109,6 +114,14 @@
 
 	li {
 		margin-bottom: .5em;
+
+		&:has(span) {
+			list-style-type: disc;
+			margin-left: -.8em;
+		}
 	}
 
+	.lijstnummer {
+		opacity: .8;
+	}
 </style>
