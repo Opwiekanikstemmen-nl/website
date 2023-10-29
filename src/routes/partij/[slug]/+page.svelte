@@ -22,9 +22,12 @@
 			<a href="{partij.urls.partijwebsite}" class="card">Partijwebsite</a>
 		</p>
 		<h2>Kandidatenlijst</h2>
+		<p>Onderstaande lijst is het totaal van alle kieskringen (20 gebieden van Nederland). Sommige partijen laten hun lijst verschillen per kieskring. Daardoor kunnen meerdere mensen hetzelfde lijstnummer hebben.</p>
 		<ol class="kandidaten">
 			{#each kandidaten[partij['naam']] as kandidaat}
-				<li><a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a></li>
+				<li data-lijstnummer="{kandidaat.verkiezingen.tk2023.lijstnummer}">
+					<a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a>
+				</li>
 			{/each}
 		</ol>
 	{:else}
@@ -34,7 +37,8 @@
 
 <style lang="scss">
 	p {
-		margin: 2em 0 0;
+		margin: 2em 0;
+		max-width: 55ch;
 	}
 
 	.kandidaten {
@@ -50,7 +54,15 @@
 	}
 	
 	li {
+		list-style: none;
 		margin-bottom: .5em;
+
+		&::before {
+			content: attr(data-lijstnummer) ".";
+			display: inline-block;
+			margin-left: -1.5em;
+			width: 2em;
+		}
 	}
 </style>
 
