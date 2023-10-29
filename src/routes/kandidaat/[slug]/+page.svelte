@@ -8,6 +8,7 @@
 
 	let shareText;
 	let verkiezing;
+	let hyperlinks;
 	if (kandidaat) {
 		
 		verkiezing = kandidaat.verkiezingen.tk2023;
@@ -17,7 +18,7 @@
 			'url': `https://news.google.com/search?q=${kandidaat.naam} ${verkiezing.partij_naam}&hl=nl&gl=NL&ceid=NL:nl`,
 			'description': `${kandidaat.naam} op Google News`
 		};
-		let hyperlinks = [newsLink];
+		hyperlinks = [newsLink];
 		for (const key in kandidaat.urls) {
 			hyperlinks.push({
 				'url': kandidaat.urls[key],
