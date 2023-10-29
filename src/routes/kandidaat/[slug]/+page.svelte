@@ -21,11 +21,13 @@
 		};
 		hyperlinks = [newsLink];
 		for (const key in kandidaat.urls) {
+			if (key.includes('wikidata')) continue;
 			hyperlinks.push({
 				'url': kandidaat.urls[key],
 				'description': key
 			});
 		}
+
 	}
 </script>
 
