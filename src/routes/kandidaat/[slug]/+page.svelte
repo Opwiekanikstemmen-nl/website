@@ -94,6 +94,16 @@
 					</ul>
 				{/if}
 			</section>
+
+			<aside class="links">
+				<h2>Dit wordt mijn kandidaat!</h2>
+				<p>Ben je eruit?</p>
+				<ul>
+					<li>
+						<a class="card" href="https://waarismijnstemlokaal.nl/">Vind een stemlokaal in de buurt</a>
+					</li>
+				</ul>
+			</aside>
 		</div>
 	{:else}
 		<p>Kan kandidaat niet vinden</p>
