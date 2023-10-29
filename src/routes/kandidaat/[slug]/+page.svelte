@@ -5,6 +5,7 @@
 
 	import { getAge } from '$lib/util/candidates';
 
+	const kandidaat = $page.data.kandidaten.find(kandidaat => kandidaat.id === $page.params.slug);
 
 	let shareText;
 	let verkiezing;
@@ -26,8 +27,6 @@
 			});
 		}
 	}
-
-	const shareText = `Ik denk dat ik op ${kandidaat.naam} van ${kandidaat.verkiezingen.tk2023.partij_naam} ga stemmen! Weet jij het al?`;
 </script>
 
 <svelte:head>
