@@ -148,8 +148,6 @@ li {
 
 .links {
 	grid-column: right;
-	grid-row-start: 1;
-	grid-row-end: span 2;
 
 	& > h2 {
 		@media (min-width: 50em) {
