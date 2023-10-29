@@ -19,6 +19,8 @@
 			'description': key
 		});
 	}
+
+	const shareText = `Ik denk dat ik op ${kandidaat.naam} van ${kandidaat.verkiezingen.tk2023.partij_naam} ga stemmen! Weet jij het al?`;
 </script>
 
 <svelte:head>
@@ -101,6 +103,10 @@
 				<ul>
 					<li>
 						<a class="card" href="https://waarismijnstemlokaal.nl/">Vind een stemlokaal in de buurt</a>
+					</li>
+					<li>
+						<a class="card" data-action="share/whatsapp/share"
+							href="whatsapp://send?text={shareText} {$page.url}">Deel het op WhatsApp</a>
 					</li>
 				</ul>
 			</aside>
