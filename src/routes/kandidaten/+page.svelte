@@ -74,6 +74,20 @@
 				</li>
 				<li>
 					<details>
+						<summary><h3>Geslacht</h3></summary>
+						<p>Kandidaten kunnen hun geslacht opgeven op de kandidatenlijst, maar dit hoeft niet. Daarom is het van een deel onbekend.</p>
+						<ul>
+							{#each [['man', 'm'], ['vrouw', 'v'], ['onbekend', 'o']] as sex}
+								<li class="inputWrapper">
+									<input bind:group={$filters['geslacht']} type="checkbox" id="{sex[1]}" value="{sex[1]}" name="{sex[1]}">
+									<label class="option" for="{sex[1]}">{sex[0]}</label>
+								</li>
+							{/each}
+						</ul>
+					</details>
+				</li>
+				<li>
+					<details>
 						<summary><h3>Stedelijkheid</h3></summary>
 						<p>Het CBS deelt gemeentes, en daarmee woonplaatsen, in op <a href="https://www.cbs.nl/nl-nl/nieuws/2023/42/minder-huishoudelijk-afval-per-inwoner-in-2022/stedelijkheid">stedelijkheid</a>.</p>
 						<ul>

@@ -15,10 +15,17 @@ function getNestedProperty(obj, keyPath) {
 
 // Function to check if a value is present in an array or is equal to a given value
 function matchesFilter(key, value, filter) {
-	if (value == null) return false;
+	if (value == null) {
+		if (key ==='geslacht' && filter.includes('o') && value === null) return true;
+		return false;
+	}
 
 	if (key === 'naam' && typeof filter === 'string') {
 		return value.toLowerCase().indexOf(filter.toLowerCase()) !== -1;
+	}
+
+	if (key === 'geslacht' && typeof filter === 'string') {
+		return value.includes(filter);
 	}
 
 	if (key === 'verkiezingen.tk2023.kieskringen' && typeof filter === 'string') {
