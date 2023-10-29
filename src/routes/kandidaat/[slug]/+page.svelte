@@ -167,6 +167,10 @@ li {
 .links a {
 	display: block;
 
+	&::first-letter {
+		text-transform: capitalize;
+	}
+
 	&::after {
 		float: right;
 	}
