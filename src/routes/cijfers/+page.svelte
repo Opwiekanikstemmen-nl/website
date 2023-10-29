@@ -58,7 +58,7 @@
 		<article class="card">
 			<p class="label">Mannen/vrouwen</p>
 			<div>
-				<h2><span class="number">{Math.round(count(kandidaten, 'geslacht', 'm')/count(kandidaten, 'geslacht', 'v'))}&times;</span> meer mannen dan vrouwen zijn verkiesbaar*</h2>
+				<h2><span class="number">{(count(kandidaten, 'geslacht', 'm')/count(kandidaten, 'geslacht', 'v')).toFixed(1)}&times;</span> meer mannen dan vrouwen zijn verkiesbaar*</h2>
 			<details>
 				<summary>Van alle kandidaten zijn er {count(kandidaten, 'geslacht', 'm')} man en {count(kandidaten, 'geslacht', 'v')} vrouw. Van {count(kandidaten, 'geslacht', null)} kandidaten weten we het niet.</summary>
 				<p>Dat we het van sommige kandidaten niet weten, komt omdat een aantal partijen geen geslacht doorgeeft bij het inleveren van hun kandidatenlijsten.</p>
