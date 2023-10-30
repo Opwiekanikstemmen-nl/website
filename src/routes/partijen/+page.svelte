@@ -4,12 +4,7 @@
 	import { groupByParty } from '$lib/util/candidates';
 
 	const parties = groupByParty(data.kandidaten);
-
-	console.log(parties);
-
-	// Object.entries(parties).forEach(party => {
-	// 	console.log(`${party[0]}: ${party[1].length}`);
-	// });
+	const partijen = data.partijen.sort((a, b) => a['lijstnummers']['2023'] > b['lijstnummers']['2023']);
 
 </script>
 
@@ -20,24 +15,60 @@
 
 <main>
 	<h1>Partijen</h1>
-	<p>De kandidatenlijsten zoals ook te zien op jouw stembiljet.</p>
-	<section id="list">
-		{#each Object.entries(parties) as party}
-			<div>
-				<h2>{party[0]}</h2>
+	<ol class="partijnamen card">
+		{#each partijen as party}
+			<li>
+				<a href="/partij/{party['simpele_naam']}">{party['simpele_naam']}</a>
+			</li>
+		{/each}
+	</ol>
+	<h2>De kandidatenlijsten</h2>
+	<p>Zoals ze ook te zien zijn op jouw stembiljet.</p>
+	<section id="ballot-list">
+		{#each partijen as party}
+			<article>
+				<h3>{party['naam']}</h3>
 				<ol>
-					{#each party[1] as kandidaat}
-						<li><a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a></li>
+					{#each parties[party['naam']] as kandidaat, i}
+						<li>
+							<a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a>
+							{#if kandidaat.verkiezingen.tk2023.lijstnummer !== i + 1}
+								<span class="lijstnummer">(lijstnummer {kandidaat.verkiezingen.tk2023.lijstnummer})</span>
+							{/if}
+						</li>
 					{/each}
 				</ol>
-			</div>
+			</article>
 		{/each}
 	</section>
 </main>
 
 <style lang="scss">
 
-	#list {
+	.partijnamen {
+		padding: 2em 2em 2em 4em;
+
+		@media (min-width: 46em) {
+			column-count: 2;
+		}
+		@media (min-width: 65em) {
+			column-count: 3;
+		}
+		@media (min-width: 110em) {
+			column-count: 4;
+		}
+		@media (min-width: 160em) {
+			column-count: 6;
+		}
+
+		& li {
+			break-inside: avoid-column;
+			margin-bottom: .75em;
+			padding-right: 2em;
+		}
+	}
+
+	#ballot-list {
 		max-width: 100vw;
 		overflow-x: auto;
 		display: flex;
@@ -47,7 +78,7 @@
 		margin: 2em calc(-1 * var(--base-padding)) calc(-1 * var(--base-padding)) ;
 	}
 
-	div {
+	article {
 		display: flex;
 		flex-flow: column nowrap;
 		background: rgb(var(--background));
@@ -65,7 +96,7 @@
 		}
 	}
 
-	h2 {
+	h3 {
 		border-bottom: .05em solid rgb(var(--foreground));
 		margin: 0;
 		padding-bottom: .33em;
@@ -83,6 +114,14 @@
 
 	li {
 		margin-bottom: .5em;
+
+		&:has(span) {
+			list-style-type: disc;
+			margin-left: -.8em;
+		}
 	}
 
+	.lijstnummer {
+		opacity: .8;
+	}
 </style>

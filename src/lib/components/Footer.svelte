@@ -36,6 +36,9 @@
 			<li>
 				<a href="/partijen">Partijen</a>
 			</li>
+			<li>
+				<a href="/cijfers">Cijfers</a>
+			</li>
 		</ul>
 		<h3>Algemeen</h3>
 		<ul>

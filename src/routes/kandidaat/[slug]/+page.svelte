@@ -2,28 +2,38 @@
 	// export let data;
 
 	import { page } from '$app/stores';
-
+	import { user } from '$lib/stores/filters';
 	import { getAge } from '$lib/util/candidates';
 
 	const kandidaat = $page.data.kandidaten.find(kandidaat => kandidaat.id === $page.params.slug);
-	const verkiezing = kandidaat.verkiezingen.tk2023;
 
-	const newsLink = {
-		'url': `https://news.google.com/search?q=${kandidaat.naam} ${kandidaat.verkiezingen.tk2023.partij_naam}&hl=nl&gl=NL&ceid=NL:nl`,
-		'description': `${kandidaat.naam} op Google News`
-	};
-	let hyperlinks = [newsLink];
-	for (const key in kandidaat.urls) {
-		hyperlinks.push({
-			'url': kandidaat.urls[key],
-			'description': key
-		});
+	let shareText;
+	let verkiezing;
+	let hyperlinks;
+	if (kandidaat) {
+		
+		verkiezing = kandidaat.verkiezingen.tk2023;
+		shareText = `Ik denk dat ik op ${kandidaat.naam} van ${verkiezing.partij_naam} ga stemmen! Weet jij het al?`;
+
+		const newsLink = {
+			'url': `https://news.google.com/search?q=${kandidaat.naam} ${verkiezing.partij_naam}&hl=nl&gl=NL&ceid=NL:nl`,
+			'description': `${kandidaat.naam} op Google News`
+		};
+		hyperlinks = [newsLink];
+		for (const key in kandidaat.urls) {
+			if (key.includes('wikidata')) continue;
+			hyperlinks.push({
+				'url': kandidaat.urls[key],
+				'description': key
+			});
+		}
+
 	}
 </script>
 
 <svelte:head>
-	<title>{kandidaat.naam || 'Niet gevonden'} - Op wie kan ik stemmen?</title>
-	<meta name="description" content="{`Wat wij weten over ${kandidaat.naam}` || 'Deze kandidaat is niet gevonden'}">
+	<title>{kandidaat ? kandidaat.naam : 'Niet gevonden'} - Op wie kan ik stemmen?</title>
+	<meta name="description" content="{kandidaat ? `Wat wij weten over ${kandidaat.naam}` : 'Deze kandidaat is niet gevonden'}">
 </svelte:head>
 
 <main>
@@ -51,12 +61,12 @@
 			<section class="basics card">
 				<ul>
 					<li>
-						Partij: <strong>{verkiezing.partij_naam}</strong>, op plaats {verkiezing.lijstnummer}
+						Partij: <a href="/partij/{$page.data.partijen.find(partij => partij.naam === verkiezing.partij_naam).simpele_naam}">{verkiezing.partij_naam}</a>, op plaats {verkiezing.lijstnummer}
 					</li>
 					<li>
 						Woonplaats: <strong>{verkiezing.woonplaats}</strong>
 					</li>
-					{#if kandidaat.geboortedatum}
+					{#if kandidaat.geboortedatum && getAge(kandidaat.geboortedatum)}
 					<li>
 						Leeftijd: <strong>{getAge(kandidaat.geboortedatum)}</strong>
 					</li>
@@ -94,9 +104,30 @@
 					</ul>
 				{/if}
 			</section>
+
+			<aside class="links">
+				<h2>Dit wordt mijn kandidaat!</h2>
+				<p>Ben je eruit?</p>
+				<ul>
+					{#if $user.stemlocatie}
+					<li>
+						<a class="card" href="https://waarismijnstemlokaal.nl/s/{$user.stemlocatie}">Vind een stemlokaal in {$user.stemlocatie}</a>
+					</li>
+					{:else}
+					<li>
+						<a class="card" href="https://waarismijnstemlokaal.nl/">Vind een stemlokaal in de buurt</a>
+					</li>
+					{/if}
+					<li>
+						<a class="card" data-action="share/whatsapp/share"
+							href="whatsapp://send?text={shareText} {$page.url}">Deel het op WhatsApp</a>
+					</li>
+				</ul>
+			</aside>
 		</div>
 	{:else}
-		<p>Kan kandidaat niet vinden</p>
+		<h1>Niet gevonden</h1>
+		<p>We kunnen deze kandidaat helaas niet vinden.</p>
 	{/if}
 </main>
 
@@ -125,8 +156,6 @@ li {
 
 .links {
 	grid-column: right;
-	grid-row-start: 1;
-	grid-row-end: span 2;
 
 	& > h2 {
 		@media (min-width: 50em) {
@@ -146,8 +175,18 @@ li {
 .links a {
 	display: block;
 
+	&::first-letter {
+		text-transform: capitalize;
+	}
+
 	&::after {
 		float: right;
 	}
+}
+
+aside {
+	border-top: 1px solid rgba(var(--foreground), .8);
+	margin-top: 2em;
+	padding-top: 2em;
 }
 </style>

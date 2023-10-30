@@ -30,6 +30,8 @@ export function slugify(string, prefix = '') {
 export function getAge(dateString) {
 	if (dateString === null) return null;
 
+	dateString = dateString.replace('+', '');
+	
 	const today = new Date();
 	const birthDate = new Date(dateString);
 	const months = today.getMonth() - birthDate.getMonth();
@@ -39,6 +41,8 @@ export function getAge(dateString) {
 		months < 0 ) {
 		age--;
 	}
+
+	if (isNaN(age)) return false;
 
 	return age;
 }
