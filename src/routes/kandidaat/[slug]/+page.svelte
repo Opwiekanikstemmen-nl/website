@@ -2,7 +2,7 @@
 	// export let data;
 
 	import { page } from '$app/stores';
-
+	import { user } from '$lib/stores/filters';
 	import { getAge } from '$lib/util/candidates';
 
 	const kandidaat = $page.data.kandidaten.find(kandidaat => kandidaat.id === $page.params.slug);
@@ -109,9 +109,15 @@
 				<h2>Dit wordt mijn kandidaat!</h2>
 				<p>Ben je eruit?</p>
 				<ul>
+					{#if $user.stemlocatie}
+					<li>
+						<a class="card" href="https://waarismijnstemlokaal.nl/s/{$user.stemlocatie}">Vind een stemlokaal in {$user.stemlocatie}</a>
+					</li>
+					{:else}
 					<li>
 						<a class="card" href="https://waarismijnstemlokaal.nl/">Vind een stemlokaal in de buurt</a>
 					</li>
+					{/if}
 					<li>
 						<a class="card" data-action="share/whatsapp/share"
 							href="whatsapp://send?text={shareText} {$page.url}">Deel het op WhatsApp</a>
