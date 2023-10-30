@@ -61,10 +61,16 @@
 			<section class="basics card">
 				<ul>
 					<li>
-						Partij: <a href="/partij/{$page.data.partijen.find(partij => partij.naam === verkiezing.partij_naam).simpele_naam}">{verkiezing.partij_naam}</a>, op plaats {verkiezing.lijstnummer}
+						Partij: <strong><a href="/partij/{$page.data.partijen.find(partij => partij.naam === verkiezing.partij_naam).simpele_naam}">{verkiezing.partij_naam}</a></strong>
+					</li>
+					<li>
+						Lijstnummer: <strong>{verkiezing.lijstnummer}</strong>
 					</li>
 					<li>
 						Woonplaats: <strong>{verkiezing.woonplaats}</strong>
+					</li>
+					<li>
+						Geslacht: <strong>{kandidaat.geslacht === 'o' ? 'Onbekend' : kandidaat.geslacht === 'v' ? 'Vrouw' : 'Man' }</strong>
 					</li>
 					{#if kandidaat.geboortedatum && getAge(kandidaat.geboortedatum)}
 					<li>
