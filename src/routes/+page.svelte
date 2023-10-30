@@ -27,7 +27,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="/partijen">
+				<a href="/cijfers">
 					<h2>Cijfers</h2>
 					<span>Statistieken over de kandidaten</span>
 				</a>
