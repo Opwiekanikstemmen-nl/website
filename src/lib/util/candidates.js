@@ -42,5 +42,7 @@ export function getAge(dateString) {
 		age--;
 	}
 
+	if (isNaN(age)) return false;
+
 	return age;
 }

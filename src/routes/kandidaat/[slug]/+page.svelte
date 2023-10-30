@@ -66,7 +66,7 @@
 					<li>
 						Woonplaats: <strong>{verkiezing.woonplaats}</strong>
 					</li>
-					{#if kandidaat.geboortedatum}
+					{#if kandidaat.geboortedatum && getAge(kandidaat.geboortedatum)}
 					<li>
 						Leeftijd: <strong>{getAge(kandidaat.geboortedatum)}</strong>
 					</li>
