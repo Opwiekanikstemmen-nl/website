@@ -1,6 +1,7 @@
 <script>
 	import { meta } from '$lib/stores/meta';
 	import { filters } from '$lib/stores/filters';
+	import { user } from '$lib/stores/filters';
 
 	import { groupByParty, slugify } from '$lib/util/candidates';
 	import { applyFilters, sortData } from '$lib/util/filters';
@@ -15,6 +16,15 @@
 	filters.subscribe(update => {
 		if (update) {
 			kandidaten = sortData(applyFilters(data.kandidaten, update), 'naam', 'desc');
+		}
+	})
+
+	user.subscribe(update => {
+		if (update) {
+			console.log(update);
+			if (data.kieskringen[update.stemlocatie]) {
+				$filters['verkiezingen.tk2023.kieskringen'] = data.kieskringen[update.stemlocatie];
+			}
 		}
 	})
 
@@ -48,6 +58,32 @@
 				Filters
 			</h2>
 			<ul id="filters" hidden>
+				<li>
+					<details open>
+						<summary>
+							<h3>
+								Stemlocatie & kieskring
+							</h3>
+						</summary>
+						
+						<p>Het stembiljet verschilt per stemlocatie. Kies de gemeente waar je stemt, of kies zelf je kieskring.</p>
+						<label for="stemlocatie">Gemeente waar je stemt</label>
+						<input bind:value={$user['stemlocatie']} type="text" id="stemlocatie" placeholder="gemeente" name="stemlocatie" list="stemlocatie_opties">
+						<datalist id="stemlocatie_opties">
+							{#each Object.entries(data.kieskringen) as kieskring}
+								<option value="{kieskring[0]}">{kieskring[0]}</option>
+							{/each}
+						</datalist>
+
+						<label for="kieskring">Kieskring</label>
+						<input bind:value={$filters['verkiezingen.tk2023.kieskringen']} type="text" id="kieskring" list="kieskring_opties">
+						<datalist id="kieskring_opties">
+							{#each $meta.kieskringen as kieskring}
+								<option value="{kieskring}">{kieskring}</option>
+							{/each}
+						</datalist>
+					</details>
+				</li>
 				<li>
 					<details>
 						<summary>
@@ -98,19 +134,6 @@
 								</li>
 							{/each}
 						</ul>
-					</details>
-				</li>
-				<li>
-					<details>
-						<summary><h3>Kieskring</h3></summary>
-						<p>Het stembiljet verschilt per stemlocatie. Kies de gemeente waar je stemt.</p>
-						<label for="kieskring">Kieskring</label>
-						<input bind:value={$filters['verkiezingen.tk2023.kieskringen']} type="search" placeholder="plaatsnaam" id="kieskring" list="kieskring_opties">
-						<datalist id="kieskring_opties">
-							{#each $meta.kieskringen as kieskring}
-								<option value="{kieskring}">{kieskring}</option>
-							{/each}
-						</datalist>
 					</details>
 				</li>
 			</ul>
@@ -313,6 +336,11 @@
 			&:checked + label:before {
 				background: rgba(var(--foreground), 1);
 			}
+		}
+
+		&:nth-of-type(2) {
+			background-color: rgba(var(--color));
+			border-width: 1px;
 		}
 	}
 </style>
