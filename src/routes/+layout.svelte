@@ -62,7 +62,7 @@
 
 <svelte:head>
 	<script>
-		if (!window.location.href.includes('localhost')) {
+		if (!window.location.href.includes('localhost') && !window.location.href.includes('/kandidaat/')) {
 			var _paq = window._paq = window._paq || [];
 			_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
 			_paq.push(["setDomains", ["*.opwiekanikstemmen.nl","*.tweedekamer2021.opwiekanikstemmen.nl","*.tweedekamer2023.opwiekanikstemmen.nl"]]);
