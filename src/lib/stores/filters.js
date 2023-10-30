@@ -7,3 +7,7 @@ export const filters = writable({
 	'verkiezingen.tk2023.gemeente.stedelijkheid': [],
 	'verkiezingen.tk2023.kieskringen': [],
 });
+
+export const user = writable({
+	'stemlocatie': '',
+})
