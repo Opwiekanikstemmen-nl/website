@@ -5,6 +5,8 @@
 	import { user } from '$lib/stores/filters';
 	import { getAge } from '$lib/util/candidates';
 
+	import Sources from '../../bronnen/Sources.svelte';
+
 	const kandidaat = $page.data.kandidaten.find(kandidaat => kandidaat.id === $page.params.slug);
 
 	let shareText;
@@ -131,6 +133,8 @@
 				</ul>
 			</aside>
 		</div>
+
+		<Sources />
 	{:else}
 		<h1>Niet gevonden</h1>
 		<p>We kunnen deze kandidaat helaas niet vinden.</p>
