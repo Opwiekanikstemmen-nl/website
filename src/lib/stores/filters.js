@@ -6,6 +6,7 @@ export const filters = writable({
 	'verkiezingen.tk2023.partij_naam': [],
 	'verkiezingen.tk2023.gemeente.stedelijkheid': [],
 	'verkiezingen.tk2023.kieskringen': [],
+	'verkiezingen.tk2023.woonplaats': [],
 });
 
 export const user = writable({

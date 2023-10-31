@@ -25,7 +25,7 @@ export function groupByParty(candidates) {
 
 export function slugify(string, prefix = '') {
 	return prefix + string.toString().toLowerCase().trim().replace("'", "").replace(/[\s\W-]+/g, '-')
-  }
+}
 
 export function getAge(dateString) {
 	if (dateString === null) return null;
@@ -45,4 +45,14 @@ export function getAge(dateString) {
 	if (isNaN(age)) return false;
 
 	return age;
+}
+
+export function getWoonplaatsen(candidates) {
+	if(!candidates || candidates.length < 1) return null;
+	let woonplaatsen = [];
+	for (const candidate of Object.entries(candidates)) {
+		let woonplaats = candidate[1].verkiezingen.tk2023.woonplaats;
+		if (!woonplaatsen.includes(woonplaats)) woonplaatsen.push(woonplaats);
+	}
+	return woonplaatsen;
 }
