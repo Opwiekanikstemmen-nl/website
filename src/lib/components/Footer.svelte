@@ -39,6 +39,9 @@
 			<li>
 				<a href="/cijfers">Cijfers</a>
 			</li>
+			<li>
+				<a href="/bronnen">Bronnen</a>
+			</li>
 		</ul>
 		<h3>Algemeen</h3>
 		<ul>
@@ -64,7 +67,7 @@
 
 	<section>
 		<h2>Data</h2>
-		<p>We publiceren de <a href="https://github.com/Opwiekanikstemmen-nl/data">data op GitHub</a>.</p>
+		<p>De informatie is een samenstelling van verschillende <a href="/bronnen">bronnen</a>. De volledige <a href="https://github.com/Opwiekanikstemmen-nl/data">dataset staat op GitHub</a>.</p>
 	</section>
 </footer>
 

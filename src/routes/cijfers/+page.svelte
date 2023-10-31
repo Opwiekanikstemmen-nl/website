@@ -8,6 +8,7 @@
 	import { count, countParties, countUnkowns } from '$lib/util/statistics';
 
 	import Map from './Map.svelte';
+	import Sources from '../bronnen/Sources.svelte';
 
 	$: kandidaten = sortData(data.kandidaten, 'naam', 'desc');
 
@@ -148,6 +149,7 @@
 		</article> -->
 	</section>
 
+	<Sources />
 
 </main>
 
