@@ -21,7 +21,6 @@
 
 	user.subscribe(update => {
 		if (update) {
-			console.log(update);
 			if (data.kieskringen[update.stemlocatie]) {
 				$filters['verkiezingen.tk2023.kieskringen'] = data.kieskringen[update.stemlocatie];
 			}
