@@ -6,6 +6,8 @@
 	import { groupByParty, slugify } from '$lib/util/candidates';
 	import { applyFilters, sortData } from '$lib/util/filters';
 
+	import Map from '../cijfers/Map.svelte';
+
 	export let data;
 
 	let filterMenu;
@@ -127,12 +129,16 @@
 						<p>Het CBS deelt gemeentes, en daarmee woonplaatsen, in op <a href="https://www.cbs.nl/nl-nl/nieuws/2023/42/minder-huishoudelijk-afval-per-inwoner-in-2022/stedelijkheid">stedelijkheid</a>.</p>
 						<ul>
 							{#each $meta.stedelijkheidsNiveaus as level}
-								<li class="inputWrapper">
-									<input bind:group={$filters['verkiezingen.tk2023.gemeente.stedelijkheid']} type="checkbox" id="{slugify(level)}" value="{slugify(level)}" name="{slugify(level)}">
-									<label class="option" for="{slugify(level)}">{level}</label>
-								</li>
+							<li class="inputWrapper">
+								<input bind:group={$filters['verkiezingen.tk2023.gemeente.stedelijkheid']} type="checkbox" id="{slugify(level)}" value="{slugify(level)}" name="{slugify(level)}">
+								<label class="option" for="{slugify(level)}">{level}</label>
+							</li>
 							{/each}
 						</ul>
+						<figure>
+							<Map />
+							<figcaption>De stedelijkheid visueel aangegeven: een fellere kleur betekent stedelijker. CBS heeft een <a href="https://opendata.cbs.nl/#/CBS/nl/dataset/84929NED/table">volledige dataset</a>. Dit kaartje is gebaseerd op <a href="https://commons.wikimedia.org/w/index.php?curid=6632126">werk van JrPol</a> (CC BY-SA 3.0).</figcaption>
+						</figure>		
 					</details>
 				</li>
 			</ul>
