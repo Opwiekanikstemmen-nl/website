@@ -162,7 +162,7 @@
 		left: 1.5em;
 		right: 1.5em;
 		bottom: 0;
-		transform: translateY(calc(100vh - 5em));
+		transform: translateY(calc(100dvh - 5em));
 		transition: all .25s cubic-bezier(.19,1,.22,1);
 
 		& button {
@@ -195,7 +195,7 @@
 	}
 
 	#filters {
-		max-height: calc(100vh - 1.5em - 3.65em);
+		max-height: calc(100dvh - 1.5em - 3.65em);
 		overflow-y: scroll;
 	}
 
