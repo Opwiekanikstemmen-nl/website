@@ -7,6 +7,8 @@
 	import { sortData } from '$lib/util/filters';
 	import { count, countParties, countUnkowns } from '$lib/util/statistics';
 
+	import Map from './Map.svelte';
+
 	$: kandidaten = sortData(data.kandidaten, 'naam', 'desc');
 
 	const parties = groupByParty(data.kandidaten);
@@ -94,6 +96,10 @@
 			<details>
 				<summary>Daarmee zijn die {stedelijkheid[0][0].toLowerCase()}e oververtegen&shy;woordigd.</summary>
 				<p>Het CBS deelt gemeentes in op <a href="https://www.cbs.nl/nl-nl/nieuws/2023/42/minder-huishoudelijk-afval-per-inwoner-in-2022/stedelijkheid">stedelijkheid</a>. Op basis van de woonplaats van een kandidaat kunnen we dus zeggen of die in stedelijk of landelijk gebied woont.</p>
+				<figure>
+					<Map />
+					<figcaption>De stedelijkheid visueel aangegeven: een fellere kleur betekent stedelijker. CBS heeft een <a href="https://opendata.cbs.nl/#/CBS/nl/dataset/84929NED/table">volledige dataset</a>. Dit kaartje is gebaseerd op <a href="https://commons.wikimedia.org/w/index.php?curid=6632126">werk van JrPol</a> (CC BY-SA 3.0).</figcaption>
+				</figure>
 				<p>Natuurlijk wonen er ook meer mensen in de (zeer) sterk stedelijke gebieden dan in de niet stedelijke. Ook als we dat in ons achterhoofd houden zijn de stedelingen oververtegenwoordigd op de kandidatenlijsten.</p>
 				<table>
 					<caption>
