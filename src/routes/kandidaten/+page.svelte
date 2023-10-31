@@ -158,12 +158,17 @@
 			</ul>
 		</aside>
 
-		<ul class="kandidaten">
+		<ul class="kandidaten" id="kandidaten">
 			{#each kandidaten as kandidaat}
 				<li>
 					<a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a>
 				</li>
 			{/each}
+
+			<div class="card counter">
+				We vonden {kandidaten.length} {kandidaten.length === 1 ? 'kandidaat' : 'kandidaten'} op basis van je filter.
+				<a href="#kandidaten">Scroll omhoog</a>
+			</div>
 		</ul>
 
 	</section>
@@ -183,6 +188,7 @@
 		bottom: 0;
 		transform: translateY(calc(100dvh - 5em));
 		transition: all .25s cubic-bezier(.19,1,.22,1);
+		z-index: 2;
 
 		& button {
 			box-shadow: none;
@@ -228,7 +234,7 @@
 			display: grid;
 			grid-template-columns: 20em 1fr;
 			margin-top: 2em;
-			align-items: start;
+			align-items: stretch;
 		}
 
 		button {
@@ -283,9 +289,10 @@
 
 	.kandidaten {
 		display: grid;
+		gap: 1em;
 		grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
 		margin: 1em 0;
-		gap: 1em;
+		grid-template-rows: repeat(auto-fill, 1.5em);
 	}
 
 	.inputWrapper {
@@ -361,6 +368,15 @@
 			background-color: rgba(var(--color));
 			border-width: 1px;
 		}
+	}
+
+	.counter {
+		align-self: baseline;
+		grid-column: 1/-1;
+		min-height: 3.5em;
+		position: sticky;
+		top: 2em;
+		z-index: 1;
 	}
 </style>
  
