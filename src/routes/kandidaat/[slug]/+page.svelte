@@ -70,7 +70,7 @@
 						Woonplaats: <strong>{verkiezing.woonplaats}</strong>
 					</li>
 					<li>
-						Geslacht: <strong>{kandidaat.geslacht === 'o' ? 'Onbekend' : kandidaat.geslacht === 'v' ? 'Vrouw' : 'Man' }</strong>
+						Geslacht: <strong>{kandidaat.geslacht === null ? 'Onbekend' : kandidaat.geslacht === 'v' ? 'Vrouw' : 'Man' }</strong>
 					</li>
 					{#if kandidaat.geboortedatum && getAge(kandidaat.geboortedatum)}
 					<li>
