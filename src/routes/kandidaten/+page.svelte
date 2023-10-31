@@ -3,7 +3,7 @@
 	import { filters } from '$lib/stores/filters';
 	import { user } from '$lib/stores/filters';
 
-	import { groupByParty, slugify } from '$lib/util/candidates';
+	import { groupByParty, slugify, getWoonplaatsen } from '$lib/util/candidates';
 	import { applyFilters, sortData } from '$lib/util/filters';
 
 	import Map from '../cijfers/Map.svelte';
@@ -13,6 +13,7 @@
 	let filterMenu;
 
 	let parties = groupByParty(data.kandidaten);
+	let woonplaatsen = getWoonplaatsen(data.kandidaten);
 	$: kandidaten = sortData(data.kandidaten, 'naam', 'desc');
 
 	filters.subscribe(update => {
@@ -118,6 +119,19 @@
 								<li class="inputWrapper">
 									<input bind:group={$filters['geslacht']} type="checkbox" id="{sex[1]}" value="{sex[1]}" name="{sex[1]}">
 									<label class="option" for="{sex[1]}">{sex[0]}</label>
+								</li>
+							{/each}
+						</ul>
+					</details>
+				</li>
+				<li>
+					<details>
+						<summary><h3>Woonplaats</h3></summary>
+						<ul>
+							{#each woonplaatsen.sort((a, b) => a > b) as woonplaats}
+								<li class="inputWrapper">
+									<input bind:group={$filters['verkiezingen.tk2023.woonplaats']} type="checkbox" id="{slugify(woonplaats)}" value="{slugify(woonplaats)}" name="{slugify(woonplaats)}">
+									<label class="option" for="{slugify(woonplaats)}">{woonplaats}</label>
 								</li>
 							{/each}
 						</ul>
