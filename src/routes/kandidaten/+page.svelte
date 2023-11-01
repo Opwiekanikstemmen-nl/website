@@ -256,20 +256,20 @@
 
 	details {
 		border-bottom: 1px solid rgba(var(--foreground), .5);
-		padding: .5em 0 1em;
+		padding: .5em 0 .5em;
+
+		& > :last-child {
+			margin-bottom: .5em;
+		}
 	}
 
 	summary {
 		background: rgba(var(--background), 1);
 		cursor: pointer;
-		padding-top: .5em;
+		padding: .5em 0;
 		position: sticky;
 		top: 0;
 		z-index: 2;
-
-		& + * {
-			margin-top: .5em;
-		}
 	}
 
 	details details summary {
