@@ -29,6 +29,20 @@
 		}
 	})
 
+	const pickProvincie = (event) => {
+		for (const woonplaats of event.target.parentElement.parentElement.querySelectorAll('input')) {
+			woonplaats.checked = false;
+			woonplaats.click();
+		}
+	}
+
+	const removeProvincie = (event) => {
+		for (const woonplaats of event.target.parentElement.parentElement.querySelectorAll('input')) {
+			woonplaats.checked = true;
+			woonplaats.click();
+		}
+	}
+
 	function changeMenu(event) {
 		filterMenu.classList.toggle('is-open');
 		event.target.nextElementSibling.toggleAttribute('hidden');
@@ -49,7 +63,7 @@
 	<section>
 
 		<aside bind:this={filterMenu}>
-			<button on:click={changeMenu} aria-expanded="false" aria-controls="filters">
+			<button class="filter-toggle" on:click={changeMenu} aria-expanded="false" aria-controls="filters">
 				<h2>
 					<span aria-hidden="true">↑</span>
 					Filters
@@ -132,6 +146,8 @@
 									<details>
 										<summary>
 											{provincie}
+											<button class="summary-button" on:click={pickProvincie}>Alle <span class="visually-hidden">plaatsen in {provincie}</span></button>
+											<button class="summary-button" on:click={removeProvincie}>Geen <span class="visually-hidden">plaatsen in {provincie}</span></button>
 										</summary>
 										<ul class="woonplaatsen">
 											{#each woonplaatsen as woonplaats}
@@ -200,7 +216,7 @@
 		transition: all .25s cubic-bezier(.19,1,.22,1);
 		z-index: 2;
 
-		& button {
+		& .filter-toggle {
 			box-shadow: none;
 			line-height: 1;
 			padding: 1em;
@@ -222,7 +238,7 @@
 		&.is-open {
 			transform: translateY(0);
 
-			& button span {
+			& .filter-toggle span {
 				display: inline-block;
 				transform: rotate(180deg);
 			}
@@ -270,7 +286,7 @@
 			align-items: stretch;
 		}
 
-		button {
+		.filter-toggle {
 			display: none;
 		}
 
@@ -409,6 +425,15 @@
 		position: sticky;
 		top: 2em;
 		z-index: 1;
+	}
+	
+	.summary-button {
+		font-size: .7em;
+		font-weight: 700;
+		letter-spacing: .1em;
+		margin-left: .3em;
+		padding: .5em .8em;
+		text-transform: uppercase;
 	}
 </style>
  
