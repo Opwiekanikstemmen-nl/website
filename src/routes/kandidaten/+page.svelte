@@ -3,7 +3,7 @@
 	import { filters } from '$lib/stores/filters';
 	import { user } from '$lib/stores/filters';
 
-	import { groupByParty, slugify, getWoonplaatsen } from '$lib/util/candidates';
+	import { groupByParty, slugify } from '$lib/util/candidates';
 	import { applyFilters, sortData } from '$lib/util/filters';
 
 	import Map from '../cijfers/Map.svelte';
@@ -13,7 +13,6 @@
 	let filterMenu;
 
 	let parties = groupByParty(data.kandidaten);
-	let woonplaatsen = getWoonplaatsen(data.kandidaten);
 	$: kandidaten = sortData(data.kandidaten, 'naam', 'desc');
 
 	filters.subscribe(update => {
@@ -128,10 +127,21 @@
 					<details>
 						<summary><h3>Woonplaats</h3></summary>
 						<ul>
-							{#each woonplaatsen.sort((a, b) => a > b) as woonplaats}
-								<li class="inputWrapper">
-									<input bind:group={$filters['verkiezingen.tk2023.woonplaats']} type="checkbox" id="{slugify(woonplaats)}" value="{slugify(woonplaats)}" name="{slugify(woonplaats)}">
-									<label class="option" for="{slugify(woonplaats)}">{woonplaats}</label>
+							{#each Object.entries(data.provincies) as [provincie, woonplaatsen]}
+								<li class="provincie">
+									<details>
+										<summary>
+											{provincie}
+										</summary>
+										<ul class="woonplaatsen">
+											{#each woonplaatsen as woonplaats}
+											<li class="inputWrapper">
+												<input bind:group={$filters['verkiezingen.tk2023.woonplaats']} type="checkbox" id="{slugify(woonplaats)}" value="{slugify(woonplaats)}" name="{slugify(woonplaats)}">
+												<label class="option" for="{slugify(woonplaats)}">{woonplaats}</label>
+											</li>
+											{/each}
+										</ul>
+									</details>
 								</li>
 							{/each}
 						</ul>
