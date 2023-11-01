@@ -150,7 +150,7 @@
 											<button class="summary-button" on:click={removeProvincie}>Geen <span class="visually-hidden">plaatsen in {provincie}</span></button>
 										</summary>
 										<ul class="woonplaatsen">
-											{#each woonplaatsen as woonplaats}
+											{#each woonplaatsen.sort((a, b) => a > b) as woonplaats}
 											<li class="inputWrapper">
 												<input bind:group={$filters['verkiezingen.tk2023.woonplaats']} type="checkbox" id="{slugify(woonplaats)}" value="{slugify(woonplaats)}" name="{slugify(woonplaats)}">
 												<label class="option" for="{slugify(woonplaats)}">{woonplaats}</label>
