@@ -46,13 +46,3 @@ export function getAge(dateString) {
 
 	return age;
 }
-
-export function getWoonplaatsen(candidates) {
-	if(!candidates || candidates.length < 1) return null;
-	let woonplaatsen = [];
-	for (const candidate of Object.entries(candidates)) {
-		let woonplaats = candidate[1].verkiezingen.tk2023.woonplaats;
-		if (!woonplaatsen.includes(woonplaats)) woonplaatsen.push(woonplaats);
-	}
-	return woonplaatsen;
-}
