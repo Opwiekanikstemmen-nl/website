@@ -8,7 +8,7 @@
 
 	<section>
 		<h2>Data</h2>
-		<p>De data op onze website komt van de volgende bronnen:</p>
+		<p>De data op onze website komt uit de volgende bronnen:</p>
 		<ul>
 			<li>
 				De <a href="https://www.kiesraad.nl/adviezen-en-publicaties/proces-verbalen/2023/10/23/definitief-vastgestelde-kandidatenlijsten-tk-2023">kandidatenlijsten</a> met naam, woonplaats en in een deel van de gevallen geslacht komen van de <a href="https://www.kiesraad.nl/">Kiesraad</a>.
@@ -17,10 +17,10 @@
 				Informatie over woonplaatsen en gemeenten komen van het <a href="https://www.kadaster.nl/">Kadaster</a> en <a href="https://cbs.nl/">CBS</a>. We gebruiken de <a href="https://data.labs.kadaster.nl/_api/datasets/cbs/wbk">Wijk- en Buurtkaart 2020</a>, <a href="https://bag.basisregistraties.overheid.nl">Basisregistratie Adressen en Gebouwen (BAG)</a> en <a href="https://opendata.cbs.nl/#/CBS/nl/dataset/84929NED/table">Gebieden in Nederland 2021</a>.
 			</li>
 			<li>
-				De historische verkiezings-deelname komt van <a href="https://verkiezingsarchief.nl/">Verkiezingsarchief</a>, waar we ook de Wikidata-links vandaan hebben.
+				De historische verkiezingsdeelname komt van <a href="https://verkiezingsarchief.nl/">Verkiezingsarchief</a>, waar we ook de Wikidata-links vandaan hebben.
 			</li>
 			<li>
-				Leeftijden, sommige geslachten en persoonlijke websites halen we van <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a>. Ieder datapunt heeft daar weer een eigen (set van) bronnen.
+				Leeftijden, het geslacht van sommige kandidaten en persoonlijke websites halen we van <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a>. Ieder datapunt heeft daar weer een eigen (set van) bronnen.
 			</li>
 		</ul>
 	</section>
