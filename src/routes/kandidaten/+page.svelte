@@ -216,7 +216,7 @@
 			display: flex;
 			flex-flow: column nowrap;
 			margin: 0;
-			padding: 1em;
+			padding: 0 1em 1em;
 		}
 
 		&.is-open {
@@ -236,6 +236,29 @@
 
 	.large {
 		display: none;
+	}
+
+	details {
+		border-bottom: 1px solid rgba(var(--foreground), .5);
+		padding: .5em 0 1em;
+	}
+
+	summary {
+		background: rgba(var(--background), 1);
+		cursor: pointer;
+		padding-top: .5em;
+		position: sticky;
+		top: 0;
+		z-index: 2;
+
+		& + * {
+			margin-top: .5em;
+		}
+	}
+
+	details details summary {
+		top: 2em;
+		z-index: 1;
 	}
 		
 	@media (min-width: 45em) {
@@ -275,19 +298,9 @@
 		li:last-child details {
 			margin-bottom: 0;
 		}
-	}
 
-	details {
-		border-bottom: 1px solid rgba(var(--foreground), .5);
-		margin: 0 0 .5em;
-		padding: .5em 0 1em;
-	}
-
-	summary {
-		cursor: pointer;
-
-		& + * {
-			margin-top: .5em;
+		summary {
+			background: rgba(var(--color), 1);
 		}
 	}
 
@@ -345,7 +358,16 @@
 			width: .9em;
 		}
 	}
+	
+	.provincie details {
+		border-bottom: none;
+		margin: 0 0 0 .5em;
+		padding: .25em 0;
 
+		& summary {
+			padding: .5em 0;
+		}
+	}
 
 	input {
 		background: rgb(var(--background));
