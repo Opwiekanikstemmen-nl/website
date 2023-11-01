@@ -1,6 +1,6 @@
 <section class="sources">
-	<h2>Bronnen</h2>
-	<p>Onze informatie komt van verschillende <a href="/bronnen">bronnen</a>, zoals de Kiesraad, het CBS, Kadaster, Verkiezingsarchief en Wikidata.</p>
+	<h2><a href="/bronnen">Bronnen -></a></h2>
+	<p>Onze informatie komt uit verschillende bronnen, zoals de Kiesraad, het CBS, Kadaster, Verkiezingsarchief en Wikidata.</p>
 </section>
 
 <style lang="scss">

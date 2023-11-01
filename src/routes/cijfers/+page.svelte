@@ -71,7 +71,7 @@
 			<details>
 				<summary>En dat terwijl er maar 5.1% van de Nederlandse bevolking woont.</summary>
 				<p>Na Amsterdam komen <strong>{woonplaatsen[1][0]}</strong> ({Math.round(woonplaatsen[1][1]/$meta.kandidaten*100)}% van de kandidaten op 3.2% van de Nederlandse inwoners) en <strong>{woonplaatsen[2][0]}</strong> ({Math.round(woonplaatsen[2][1]/$meta.kandidaten*100)}% op 3.7% van de Nederlandse inwoners) als woonplaatsen met de meeste kandidaten.</p>
-				<p>Je kunt in het <a href="/kandidaten">kandidaten-overzicht</a> filteren op woonplaats en het dus voor jouw woonplaats bekijken, maar de tien meest vertegenwoordigde woonplaatsen zijn:</p>
+				<p>Je kunt in het <a href="/kandidaten">kandidaten-overzicht</a> filteren op woonplaats en het dus voor jouw woonplaats bekijken, maar de tien woonplaatsen met de meeste kandidaten zijn:</p>
 				<ol>
 					{#each Array(10).fill().map((element, index) => index) as location}
 						<li>{woonplaatsen[location][1]} in <strong>{woonplaatsen[location][0]}</strong></li>
