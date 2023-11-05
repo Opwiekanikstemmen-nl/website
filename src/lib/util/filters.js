@@ -40,6 +40,10 @@ function matchesFilter(key, value, filter) {
 		return value.includes(filter);
 	}
 
+	if (key === 'rainbowvote' || key === 'kleurdekamer') {
+		return value == true;
+	}
+
 
 	if (Array.isArray(filter) && filter.length) {
 		return filter.includes(slugify(value));
