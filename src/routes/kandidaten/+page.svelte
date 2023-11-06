@@ -3,7 +3,7 @@
 	import { filters } from '$lib/stores/filters';
 	import { user } from '$lib/stores/filters';
 
-	import { groupByParty, slugify, getWoonplaatsen } from '$lib/util/candidates';
+	import { groupByParty, slugify } from '$lib/util/candidates';
 	import { applyFilters, sortData } from '$lib/util/filters';
 
 	import Map from '../cijfers/Map.svelte';
@@ -13,7 +13,6 @@
 	let filterMenu;
 
 	let parties = groupByParty(data.kandidaten);
-	let woonplaatsen = getWoonplaatsen(data.kandidaten);
 	$: kandidaten = sortData(data.kandidaten, 'naam', 'desc');
 
 	filters.subscribe(update => {
@@ -29,6 +28,20 @@
 			}
 		}
 	})
+
+	const pickProvincie = (event) => {
+		for (const woonplaats of event.target.parentElement.parentElement.querySelectorAll('input')) {
+			woonplaats.checked = false;
+			woonplaats.click();
+		}
+	}
+
+	const removeProvincie = (event) => {
+		for (const woonplaats of event.target.parentElement.parentElement.querySelectorAll('input')) {
+			woonplaats.checked = true;
+			woonplaats.click();
+		}
+	}
 
 	function changeMenu(event) {
 		filterMenu.classList.toggle('is-open');
@@ -50,7 +63,7 @@
 	<section>
 
 		<aside bind:this={filterMenu}>
-			<button on:click={changeMenu} aria-expanded="false" aria-controls="filters">
+			<button class="filter-toggle" on:click={changeMenu} aria-expanded="false" aria-controls="filters">
 				<h2>
 					<span aria-hidden="true">↑</span>
 					Filters
@@ -128,10 +141,23 @@
 					<details>
 						<summary><h3>Woonplaats</h3></summary>
 						<ul>
-							{#each woonplaatsen.sort((a, b) => a > b) as woonplaats}
-								<li class="inputWrapper">
-									<input bind:group={$filters['verkiezingen.tk2023.woonplaats']} type="checkbox" id="{slugify(woonplaats)}" value="{slugify(woonplaats)}" name="{slugify(woonplaats)}">
-									<label class="option" for="{slugify(woonplaats)}">{woonplaats}</label>
+							{#each Object.entries(data.provincies) as [provincie, woonplaatsen]}
+								<li class="provincie">
+									<details>
+										<summary>
+											{provincie}
+											<button class="summary-button" on:click={pickProvincie}>Alle <span class="visually-hidden">plaatsen in {provincie}</span></button>
+											<button class="summary-button" on:click={removeProvincie}>Geen <span class="visually-hidden">plaatsen in {provincie}</span></button>
+										</summary>
+										<ul class="woonplaatsen">
+											{#each woonplaatsen.sort((a, b) => a > b) as woonplaats}
+											<li class="inputWrapper">
+												<input bind:group={$filters['verkiezingen.tk2023.woonplaats']} type="checkbox" id="{slugify(woonplaats)}" value="{slugify(woonplaats)}" name="{slugify(woonplaats)}">
+												<label class="option" for="{slugify(woonplaats)}">{woonplaats}</label>
+											</li>
+											{/each}
+										</ul>
+									</details>
 								</li>
 							{/each}
 						</ul>
@@ -153,6 +179,34 @@
 							<Map />
 							<figcaption>De stedelijkheid visueel aangegeven: een fellere kleur betekent stedelijker. CBS heeft een <a href="https://opendata.cbs.nl/#/CBS/nl/dataset/84929NED/table">volledige dataset</a>. Dit kaartje is gebaseerd op <a href="https://commons.wikimedia.org/w/index.php?curid=6632126">werk van JrPol</a> (CC BY-SA 3.0).</figcaption>
 						</figure>		
+					</details>
+				</li>
+				<li>
+					<h3>Partners</h3>
+					<p>Dankzij een aantal <a href="/bronnen">partners</a> hebben we meer informatie en deze extra filters.</p>
+				</li>
+				<li>
+					<details>
+						<summary><h4>Kleur de Kamer</h4></summary>
+						<p>Kandidaten van kleur met een profiel bij onze partner <a href="https://kleurdekamer.nl/">kleurdekamer.nl</a></p>
+						<ul>
+							<li class="inputWrapper">
+								<input bind:group={$filters['kleurdekamer']} type="checkbox" id="kleurdekamer" value="kleurdekamer" name="kleurdekamer">
+								<label class="option" for="kleurdekamer">Kleur de Kamer</label>
+							</li>
+						</ul>
+					</details>
+				</li>
+				<li>
+					<details>
+						<summary><h4>Rainbowvote</h4></summary>
+						<p>De regenboogkandidaten die op <a href="https://rainbowvote.nu/tweede-kamer-2023/kandidaten/">Rainbowvote.nu</a> van het <a href="https://coc.nl/">COC</a> een profiel hebben.</p>
+						<ul>
+							<li class="inputWrapper">
+								<input bind:group={$filters['rainbowvote']} type="checkbox" id="rainbowvote" value="rainbowvote" name="rainbowvote">
+								<label class="option" for="rainbowvote">Rainbowvote</label>
+							</li>
+						</ul>
 					</details>
 				</li>
 			</ul>
@@ -190,7 +244,7 @@
 		transition: all .25s cubic-bezier(.19,1,.22,1);
 		z-index: 2;
 
-		& button {
+		& .filter-toggle {
 			box-shadow: none;
 			line-height: 1;
 			padding: 1em;
@@ -206,13 +260,13 @@
 			display: flex;
 			flex-flow: column nowrap;
 			margin: 0;
-			padding: 1em;
+			padding: 0 1em 1em;
 		}
 
 		&.is-open {
 			transform: translateY(0);
 
-			& button span {
+			& .filter-toggle span {
 				display: inline-block;
 				transform: rotate(180deg);
 			}
@@ -227,6 +281,29 @@
 	.large {
 		display: none;
 	}
+
+	details {
+		border-bottom: 1px solid rgba(var(--foreground), .5);
+		padding: .5em 0 .5em;
+
+		& > :last-child {
+			margin-bottom: .5em;
+		}
+	}
+
+	summary {
+		background: rgba(var(--background), 1);
+		cursor: pointer;
+		padding: .5em 0;
+		position: sticky;
+		top: 0;
+		z-index: 2;
+	}
+
+	details details summary {
+		top: 2em;
+		z-index: 1;
+	}
 		
 	@media (min-width: 45em) {
 		section {
@@ -237,7 +314,7 @@
 			align-items: stretch;
 		}
 
-		button {
+		.filter-toggle {
 			display: none;
 		}
 
@@ -265,23 +342,14 @@
 		li:last-child details {
 			margin-bottom: 0;
 		}
-	}
 
-	details {
-		border-bottom: 1px solid rgba(var(--foreground), .5);
-		margin: 0 0 .5em;
-		padding: .5em 0 1em;
-	}
-
-	summary {
-		cursor: pointer;
-
-		& + * {
-			margin-top: .5em;
+		summary {
+			background: rgba(var(--color), 1);
 		}
 	}
 
-	h3 {
+	summary h3,
+	summary h4 {
 		display: inline-block;
 		margin: 0;
 		padding-left: .5em;
@@ -335,7 +403,16 @@
 			width: .9em;
 		}
 	}
+	
+	.provincie details {
+		border-bottom: none;
+		margin: 0 0 0 .5em;
+		padding: .25em 0;
 
+		& summary {
+			padding: .5em 0;
+		}
+	}
 
 	input {
 		background: rgb(var(--background));
@@ -377,6 +454,15 @@
 		position: sticky;
 		top: 2em;
 		z-index: 1;
+	}
+	
+	.summary-button {
+		font-size: .7em;
+		font-weight: 700;
+		letter-spacing: .1em;
+		margin-left: .3em;
+		padding: .5em .8em;
+		text-transform: uppercase;
 	}
 </style>
  

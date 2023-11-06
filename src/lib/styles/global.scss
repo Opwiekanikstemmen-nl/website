@@ -90,3 +90,13 @@ button {
 	margin-bottom: 1em;
 	padding: 1em 1.5em;
 }
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
