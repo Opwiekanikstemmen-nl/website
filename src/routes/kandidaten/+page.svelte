@@ -209,6 +209,18 @@
 						</ul>
 					</details>
 				</li>
+				<li>
+					<details>
+						<summary><h4>Vind de bèta op de lijst</h4></summary>
+						<p>De kandidaten waarvan <a href="https://vinddebetaopdelijst.nl/">Vind de bèta op de lijst</a> weet dat ze een bèta-studie hebben gedaan.</p>
+						<ul>
+							<li class="inputWrapper">
+								<input bind:group={$filters['vinddebeta']} type="checkbox" id="vinddebeta" value="vinddebeta" name="vinddebeta">
+								<label class="option" for="vinddebeta">Heeft een bèta-studie gedaan</label>
+							</li>
+						</ul>
+					</details>
+				</li>
 			</ul>
 		</aside>
 

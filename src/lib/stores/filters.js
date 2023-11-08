@@ -8,7 +8,8 @@ export const filters = writable({
 	'verkiezingen.tk2023.kieskringen': [],
 	'verkiezingen.tk2023.woonplaats': [],
 	'rainbowvote': [],
-	'kleurdekamer': []
+	'kleurdekamer': [],
+	'vinddebeta': []
 });
 
 export const user = writable({

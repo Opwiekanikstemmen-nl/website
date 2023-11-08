@@ -40,7 +40,7 @@ function matchesFilter(key, value, filter) {
 		return value.includes(filter);
 	}
 
-	if (key === 'rainbowvote' || key === 'kleurdekamer') {
+	if (key === 'rainbowvote' || key === 'kleurdekamer' || key === 'vinddebeta') {
 		return value == true;
 	}
 
