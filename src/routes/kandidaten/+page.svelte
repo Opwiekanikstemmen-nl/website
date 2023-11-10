@@ -231,10 +231,10 @@
 				</li>
 			{/each}
 
-			<div class="card counter">
+			<li class="card counter">
 				We vonden {kandidaten.length} {kandidaten.length === 1 ? 'kandidaat' : 'kandidaten'} op basis van je filter.
 				<a href="#kandidaten">Scroll omhoog</a>
-			</div>
+			</li>
 		</ul>
 
 	</section>
