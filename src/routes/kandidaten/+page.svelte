@@ -146,8 +146,6 @@
 									<details>
 										<summary>
 											{provincie}
-											<button class="summary-button" on:click={pickProvincie}>Alle <span class="visually-hidden">plaatsen in {provincie}</span></button>
-											<button class="summary-button" on:click={removeProvincie}>Geen <span class="visually-hidden">plaatsen in {provincie}</span></button>
 										</summary>
 										<ul class="woonplaatsen">
 											{#each woonplaatsen.sort((a, b) => a > b) as woonplaats}
@@ -158,6 +156,10 @@
 											{/each}
 										</ul>
 									</details>
+									<div class="toggles">
+										<button class="summary-button" on:click={pickProvincie}>Alle <span class="visually-hidden">plaatsen in {provincie}</span></button>
+										<button class="summary-button" on:click={removeProvincie}>Geen <span class="visually-hidden">plaatsen in {provincie}</span></button>
+									</div>
 								</li>
 							{/each}
 						</ul>
@@ -416,13 +418,17 @@
 		}
 	}
 	
-	.provincie details {
-		border-bottom: none;
-		margin: 0 0 0 .5em;
-		padding: .25em 0;
+	.provincie {
+		position: relative;
 
-		& summary {
-			padding: .5em 0;
+		& details {
+			border-bottom: none;
+			margin: 0 0 0 .5em;
+			padding: .25em 0;
+
+			& summary {
+				padding: .5em 0;
+			}
 		}
 	}
 
@@ -466,6 +472,16 @@
 		position: sticky;
 		top: 2em;
 		z-index: 1;
+	}
+
+	.toggles {
+		display: flex;
+		flex-flow: row;
+		padding: .75em 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 2;
 	}
 	
 	.summary-button {
