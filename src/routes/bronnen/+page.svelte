@@ -34,14 +34,14 @@
 			<li>
 				<a href="https://rainbowvote.nu/">Rainbowvote.nu</a> van het <a href="https://coc.nl/">COC</a>
 			</li>
+			<li>
+				<a href="https://vinddebetaopdelijst.nl/">Vind de bèta op de lijst</a>
+			</li>
 		</ul>
 		<p>Binnenkort hopen we de lijsten van de volgende inititatieven ook te verwerken:</p>
 		<ul>
 			<li>
 				<a href="https://stemopeenvrouw.nl/">Stem op een Vrouw</a>
-			</li>
-			<li>
-				<a href="https://vinddebetaopdelijst.nl/">Vind de bèta op de lijst</a>
 			</li>
 		</ul>
 	</section>
