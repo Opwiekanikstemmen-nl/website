@@ -13,8 +13,8 @@
 	$: kandidaten = sortData(data.kandidaten, 'naam', 'desc');
 
 	const parties = groupByParty(data.kandidaten);
-	const woonplaatsen = countUnkowns(data.kandidaten, ['verkiezingen', 'tk2023', 'woonplaats']);
-	const stedelijkheid = countUnkowns(data.kandidaten, ['verkiezingen', 'tk2023', 'gemeente', 'stedelijkheid']);
+	const woonplaatsen = countUnkowns(data.kandidaten, ['verkiezingen', 'tk2025', 'woonplaats']);
+	const stedelijkheid = countUnkowns(data.kandidaten, ['verkiezingen', 'tk2025', 'gemeente', 'stedelijkheid']);
 	const sharesStedelijkheid = {'Zeer sterk stedelijk': 0.257057929668623, 'Sterk stedelijk': 0.3033547987272405, 'Niet stedelijk': 0.07340226254998808, 'Matig stedelijk': 0.14899154040118648, 'Weinig stedelijk': 0.21719346865296188, 'Onbekend': 0};
 	const partySizes = countParties(parties);
 
@@ -86,8 +86,8 @@
 				<summary>Van Forum voor Democratie, Nieuw Sociaal Contract en BVNL wonen elk twee kandidaten in het buitenland.</summary>
 				<p>Het gaat om deze kandidaten:</p>
 				<ul>
-					{#each kandidaten.filter((kandidaat) => kandidaat['verkiezingen']['tk2023']['woonplaats'].includes('(') && !kandidaat['verkiezingen']['tk2023']['woonplaats'].includes('(O)')) as kandidaat}
-						<li><a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat['naam']}</a> woont in <strong>{kandidaat['verkiezingen']['tk2023']['woonplaats']}</strong></li>
+					{#each kandidaten.filter((kandidaat) => kandidaat['verkiezingen']['tk2025']['woonplaats'].includes('(') && !kandidaat['verkiezingen']['tk2025']['woonplaats'].includes('(O)')) as kandidaat}
+						<li><a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat['naam']}</a> woont in <strong>{kandidaat['verkiezingen']['tk2025']['woonplaats']}</strong></li>
 					{/each}
 				</ul>
 			</details>

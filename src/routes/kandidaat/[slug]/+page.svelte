@@ -14,7 +14,7 @@
 	let hyperlinks;
 	if (kandidaat) {
 		
-		verkiezing = kandidaat.verkiezingen.tk2023;
+		verkiezing = kandidaat.verkiezingen.tk2025;
 		shareText = `Ik denk dat ik op ${kandidaat.naam} van ${verkiezing.partij_naam} ga stemmen! Weet jij het al?`;
 
 		const newsLink = {

@@ -18,14 +18,11 @@
 			<li>
 				<a href="https://www.linkedin.com/company/opwiekanikstemmen/">LinkedIn</a>
 			</li>
-			<li>
-				<a href="https://www.x.com/dekandidaten/">X (voorheen Twitter)</a>
-			</li>
 		</ul>
 	</section>
 	<section>
 		<h2>Sitemap</h2>
-		<h3>2023</h3>
+		<h3>2025</h3>
 		<ul>
 			<li>
 				<a href="/">Home</a>

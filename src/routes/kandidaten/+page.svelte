@@ -24,7 +24,7 @@
 	user.subscribe(update => {
 		if (update) {
 			if (data.kieskringen[update.stemlocatie]) {
-				$filters['verkiezingen.tk2023.kieskringen'] = data.kieskringen[update.stemlocatie];
+				$filters['verkiezingen.tk2025.kieskringen'] = data.kieskringen[update.stemlocatie];
 			}
 		}
 	})
@@ -91,7 +91,7 @@
 						</datalist>
 
 						<label for="kieskring">Kieskring</label>
-						<input bind:value={$filters['verkiezingen.tk2023.kieskringen']} type="text" id="kieskring" list="kieskring_opties">
+						<input bind:value={$filters['verkiezingen.tk2025.kieskringen']} type="text" id="kieskring" list="kieskring_opties">
 						<datalist id="kieskring_opties">
 							{#each $meta.kieskringen as kieskring}
 								<option value="{kieskring}">{kieskring}</option>
@@ -116,7 +116,7 @@
 						<ul>
 							{#each Object.keys(parties).sort() as party}
 								<li class="inputWrapper">
-									<input bind:group={$filters['verkiezingen.tk2023.partij_naam']} type="checkbox" id="{slugify(party)}" value="{slugify(party)}" name="{slugify(party)}" />
+									<input bind:group={$filters['verkiezingen.tk2025.partij_naam']} type="checkbox" id="{slugify(party)}" value="{slugify(party)}" name="{slugify(party)}" />
 									<label class="option" for="{slugify(party)}">{party}</label>
 								</li>
 							{/each}
@@ -150,7 +150,7 @@
 										<ul class="woonplaatsen">
 											{#each woonplaatsen.sort((a, b) => a > b) as woonplaats}
 											<li class="inputWrapper">
-												<input bind:group={$filters['verkiezingen.tk2023.woonplaats']} type="checkbox" id="{slugify(woonplaats)}" value="{slugify(woonplaats)}" name="{slugify(woonplaats)}">
+												<input bind:group={$filters['verkiezingen.tk2025.woonplaats']} type="checkbox" id="{slugify(woonplaats)}" value="{slugify(woonplaats)}" name="{slugify(woonplaats)}">
 												<label class="option" for="{slugify(woonplaats)}">{woonplaats}</label>
 											</li>
 											{/each}
@@ -172,7 +172,7 @@
 						<ul>
 							{#each $meta.stedelijkheidsNiveaus as level}
 							<li class="inputWrapper">
-								<input bind:group={$filters['verkiezingen.tk2023.gemeente.stedelijkheid']} type="checkbox" id="{slugify(level)}" value="{slugify(level)}" name="{slugify(level)}">
+								<input bind:group={$filters['verkiezingen.tk2025.gemeente.stedelijkheid']} type="checkbox" id="{slugify(level)}" value="{slugify(level)}" name="{slugify(level)}">
 								<label class="option" for="{slugify(level)}">{level}</label>
 							</li>
 							{/each}

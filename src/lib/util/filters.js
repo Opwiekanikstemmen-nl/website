@@ -28,15 +28,15 @@ function matchesFilter(key, value, filter) {
 		return value.includes(filter);
 	}
 
-	if (key === 'verkiezingen.tk2023.kieskringen' && typeof filter === 'string') {
+	if (key === 'verkiezingen.tk2025.kieskringen' && typeof filter === 'string') {
 		return value.includes(filter);
 	}
 
-	if (key === 'verkiezingen.tk2023.woonplaats' && typeof filter === 'string') {
+	if (key === 'verkiezingen.tk2025.woonplaats' && typeof filter === 'string') {
 		return value.includes(filter);
 	}
 
-	if (key === 'verkiezingen.tk2023.gemeente.stedelijkheid' && typeof filter === 'string') {
+	if (key === 'verkiezingen.tk2025.gemeente.stedelijkheid' && typeof filter === 'string') {
 		return value.includes(filter);
 	}
 
