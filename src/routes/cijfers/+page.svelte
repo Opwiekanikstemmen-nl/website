@@ -17,6 +17,11 @@
 	const stedelijkheid = countUnkowns(data.kandidaten, ['verkiezingen', 'tk2025', 'gemeente', 'stedelijkheid']);
 	const sharesStedelijkheid = {'Zeer sterk stedelijk': 0.257057929668623, 'Sterk stedelijk': 0.3033547987272405, 'Niet stedelijk': 0.07340226254998808, 'Matig stedelijk': 0.14899154040118648, 'Weinig stedelijk': 0.21719346865296188, 'Onbekend': 0};
 	const partySizes = countParties(parties);
+	const kandidaten_abroad = data.kandidaten.filter(
+		(kandidaat) => ['DE','BE','FR','CL','CW','PT'].some(
+			suffix => kandidaat['verkiezingen']['tk2025']['woonplaats'].includes(suffix)
+		)
+	);
 
 </script>
 
@@ -81,12 +86,12 @@
 		</article>
 		<article class="card">
 			<p class="label">Buitenland</p>
-			<h2><span class="number">9</span> kandidaten wonen niet in Nederland</h2>
+			<h2><span class="number">{kandidaten_abroad.length}</span> kandidaten wonen niet in Nederland</h2>
 			<details>
-				<summary>Van Forum voor Democratie, Nieuw Sociaal Contract en BVNL wonen elk twee kandidaten in het buitenland.</summary>
+				<summary>Van D66, NSC en Vrede voor Dieren wonen er elk drie kandidaten in het buitenland, van PVV, JA21, SP en FNP elk één.</summary>
 				<p>Het gaat om deze kandidaten:</p>
 				<ul>
-					{#each kandidaten.filter((kandidaat) => kandidaat['verkiezingen']['tk2025']['woonplaats'].includes('(') && !kandidaat['verkiezingen']['tk2025']['woonplaats'].includes('(O)')) as kandidaat}
+					{#each kandidaten_abroad as kandidaat}
 						<li><a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat['naam']}</a> woont in <strong>{kandidaat['verkiezingen']['tk2025']['woonplaats']}</strong></li>
 					{/each}
 				</ul>
