@@ -16,7 +16,7 @@
 	{#if partij}
 		<h1>{partij.naam}</h1>
 		<p>
-			Lijstnummer: {partij.lijstnummers['2023']}
+			Lijstnummer: {partij.lijstnummers['2025']}
 		</p>
 		<p>
 			<a href="{partij.urls.partijwebsite}" class="card">Partijwebsite</a>
