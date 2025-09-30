@@ -1,10 +1,326 @@
 [
 	{
-		"naam": "Vooruitstrevend Liberaal",
-		"simpele_naam": "Liberaal",
-		"deelname_jaren": [1844],
+		"naam": "BBB",
+		"simpele_naam": "BBB",
+		"deelname_jaren": [2021, 2023, 2025],
 		"lijstnummers": {
+			"2023": 15,
+			"2025": 6
+		},
+		"urls": {
+			"partijwebsite": "https://boerburgerbeweging.nl/"
+		}
+	},
+	{
+		"naam": "BIJ1",
+		"simpele_naam": "BIJ1",
+		"oude_namen": ["Artikel 1"],
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 16,
+			"2025": 18
+		},
+		"urls": {
+			"partijwebsite": "https://bij1.org/"
+		}
+	},
+	{
+		"naam": "Belang Van Nederland (BVNL)",
+		"oude_namen": ["BVNL / Groep Van Haga"],
+		"simpele_naam": "BVNL",
+		"deelname_jaren": [2023, 2025],
+		"lijstnummers": {
+			"2023": 18,
+			"2025": 17
+		},
+		"urls": {
+			"partijwebsite": "https://bvnl.nl/"
+		}
+	},
+	{
+		"naam": "CDA",
+		"simpele_naam": "CDA",
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 5,
+			"2025": 7
+		},
+		"urls": {
+			"partijwebsite": "https://www.cda.nl/"
+		}
+	},
+	{
+		"naam": "ChristenUnie",
+		"simpele_naam": "ChristenUnie",
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 9,
+			"2025": 13
+		},
+		"urls": {
+			"partijwebsite": "https://www.christenunie.nl/"
+		}
+	},
+	{
+		"naam": "DENK",
+		"simpele_naam": "DENK",
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 13,
+			"2025": 9
+		},
+		"urls": {
+			"partijwebsite": "https://www.bewegingdenk.nl/"
+		}
+	},
+	{
+		"naam": "D66",
+		"simpele_naam": "D66",
+		"oude_namen": ["Democraten 66 (D66)"],
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 2,
+			"2025": 5
+		},
+		"urls": {
+			"partijwebsite": "https://d66.nl/"
+		}
+	},
+	{
+		"naam": "Forum voor Democratie",
+		"simpele_naam": "Forum voor Democratie",
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 7,
+			"2025": 11
+		},
+		"urls": {
+			"partijwebsite": "https://fvd.nl"
+		}
+	},
+	{
+		"naam": "GROENLINKS / Partij van de Arbeid (PvdA)",
+		"simpele_naam": "GroenLinks - PvdA",
+		"oude_namen": ["GROENLINKS", "Partij van de Arbeid (P.v.d.A.)", "Partij van de Arbeid PvdA"],
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 3,
+			"2025": 2
+		},
+		"urls": {
+			"partijwebsite": "https://groenlinkspvda.nl/",
+			"GroenLinks": "https://groenlinks.nl/",
+			"PvdA": "https://pvda.nl"
+		}
+	},
+	{
+		"naam": "JA21",
+		"simpele_naam": "JA21",
+		"deelname_jaren": [2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 11,
+			"2025": 15
+		},
+		"urls": {
+			"partijwebsite": "https://ja21.nl/"
+		}
+	},
+	{
+		"naam": "LP (Libertaire Partij)",
+		"simpele_naam": "LP",
+		"oude_namen": "Libertarische Partij (LP)",
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 21,
+			"2025": 19
+		},
+		"urls": {
+			"partijwebsite": "https://stemlp.nl/"
+		}
+	},
+	{
+		"naam": "NL PLAN",
+		"simpele_naam": "NL PLAN",
+		"oude_namen": ["Nederland met een PLAN"],
+		"deelname_jaren": [2023, 2025],
+		"lijstnummers": {
+			"2023": 24,
+			"2025": 25
+		},
+		"urls": {
+			"partijwebsite": "https://nlplan.nl/"
+		}
+	},
+	{
+		"naam": "Nieuw Sociaal Contract (NSC)",
+		"simpele_naam": "NSC",
+		"deelname_jaren": [2023, 2025],
+		"lijstnummers": {
+			"2023": 19,
+			"2025": 4
+		},
+		"urls": {
+			"partijwebsite": "https://partijnieuwsociaalcontract.nl/"
+		}
+	},
+	{
+		"naam": "Partij voor de Dieren",
+		"simpele_naam": "Partij voor de Dieren",
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 8,
+			"2025": 10
+		},
+		"urls": {
+			"partijwebsite": "https://www.partijvoordedieren.nl/"
+		}
+	},
+	{
+		"naam": "Piratenpartij",
+		"simpele_naam": "Piratenpartij",
+		"oude_namen": ["Piratenpartij - De Groenen"],
+		"deelname_jaren": [2017, 2021, 2023],
+		"lijstnummers": {
+			"2023": 17,
+			"2025": 21
+		},
+		"urls": {
+			"partijwebsite": "https://piratenpartij.nl/"
+		}
+	},
+	{
+		"naam": "PVV (Partij voor de Vrijheid)",
+		"simpele_naam": "PVV",
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 4,
 			"2025": 1
+		},
+		"urls": {
+			"partijwebsite": "https://www.pvv.nl/"
+		}
+	},
+	{
+		"naam": "SP (Socialistische Partij)",
+		"simpele_naam": "SP",
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 6,
+			"2025": 8
+		},
+		"urls": {
+			"partijwebsite": "https://www.sp.nl/"
+		}
+	},
+	{
+		"naam": "Staatkundig Gereformeerde Partij (SGP)",
+		"simpele_naam": "SGP",
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 12,
+			"2025": 12
+		},
+		"urls": {
+			"partijwebsite": "https://sgp.nl/home"
+		}
+	},
+	{
+		"naam": "Volt",
+		"simpele_naam": "Volt",
+		"deelname_jaren": [2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 10,
+			"2025": 14
+		},
+		"urls": {
+			"partijwebsite": "https://voltnederland.org/"
+		}
+	},
+	{
+		"naam": "VVD",
+		"simpele_naam": "VVD",
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 1,
+			"2025": 3
+		},
+		"urls": {
+			"partijwebsite": "https://www.vvd.nl/"
+		}
+	},
+	{
+		"naam": "50PLUS",
+		"simpele_naam": "50PLUS",
+		"deelname_jaren": [2017, 2021, 2023, 2025],
+		"lijstnummers": {
+			"2023": 14,
+			"2025": 20
+		},
+		"urls": {
+			"partijwebsite": "https://50pluspartij.nl/"
+		}
+	},
+	{
+		"naam": "Vrede voor Dieren",
+		"simpele_naam": "Vrede voor Dieren",
+		"deelname_jaren": [2025],
+		"lijstnummers": {
+			"2025": 16
+		},
+		"urls": {
+			"partijwebsite": "https://vredevoordieren.nl/"
+		}
+	},
+	{
+		"naam": "FNP",
+		"simpele_naam": "FNP",
+		"deelname_jaren": [2025],
+		"lijstnummers": {
+			"2025": 22
+		},
+		"urls": {
+			"partijwebsite": "https://www.fnp.frl/nl/"
+		}
+	},
+	{
+		"naam": "Vrij Verbond",
+		"simpele_naam": "Vrij Verbond",
+		"deelname_jaren": [2025],
+		"lijstnummers": {
+			"2025": 23
+		},
+		"urls": {
+			"partijwebsite": "https://vrijverbond.nl/"
+		}
+	},
+	{
+		"naam": "DE LINIE",
+		"simpele_naam": "DE LINIE",
+		"deelname_jaren": [2025],
+		"lijstnummers": {
+			"2025": 24
+		},
+		"urls": {
+			"partijwebsite": "https://deliniepartij.nl/"
+		}
+	},
+	{
+		"naam": "ELLECT",
+		"simpele_naam": "ELLECT",
+		"deelname_jaren": [2025],
+		"lijstnummers": {
+			"2025": 26
+		},
+		"urls": {
+			"partijwebsite": "https://www.ellect.eu/nl"
+		}
+	},
+	{
+		"naam": "Partij voor de Rechtsstaat",
+		"simpele_naam": "Partij voor de Rechtsstaat",
+		"deelname_jaren": [2025],
+		"lijstnummers": {
+			"2025": 27
 		}
 	}
 ]
