@@ -4,7 +4,7 @@
 	import { groupByParty } from '$lib/util/candidates';
 
 	const parties = groupByParty(data.kandidaten);
-	const partijen = data.partijen.sort((a, b) => a['lijstnummers']['2023'] > b['lijstnummers']['2023']);
+	const partijen = data.partijen.sort((a, b) => a['lijstnummers']['2025'] > b['lijstnummers']['2025']);
 
 </script>
 
