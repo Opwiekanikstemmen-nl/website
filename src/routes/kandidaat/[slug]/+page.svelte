@@ -101,15 +101,17 @@
 
 			<section class="kieskringen">
 				<h2>Kieskringen</h2>
-				{#if verkiezing.kieskringen.length == 20}
-					<p>Verkiesbaar in alle kieskringen.</p>
-				{:else}
-					<p>Verkiesbaar in {verkiezing.kieskringen.length} van de 20 kieskringen:</p>
-					<ul>
-						{#each verkiezing.kieskringen as kieskring}
-							<li>{kieskring}</li>
-						{/each}
-					</ul>
+				{#if verkiezing.kieskringen}
+					{#if verkiezing.kieskringen.length == 20}
+						<p>Verkiesbaar in alle kieskringen.</p>
+					{:else}
+						<p>Verkiesbaar in {verkiezing.kieskringen.length} van de 20 kieskringen:</p>
+						<ul>
+							{#each verkiezing.kieskringen as kieskring}
+								<li>{kieskring}</li>
+							{/each}
+						</ul>
+					{/if}
 				{/if}
 			</section>
 
