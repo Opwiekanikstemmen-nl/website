@@ -183,46 +183,46 @@
 						</figure>		
 					</details>
 				</li>
-				<li>
-					<h3>Partners</h3>
-					<p>Dankzij een aantal <a href="/bronnen">partners</a> hebben we meer informatie en deze extra filters.</p>
-				</li>
-				<li>
-					<details>
-						<summary><h4>Kleur de Kamer</h4></summary>
-						<p>Kandidaten van kleur met een profiel bij onze partner <a href="https://kleurdekamer.nl/">kleurdekamer.nl</a></p>
-						<ul>
-							<li class="inputWrapper">
-								<input bind:group={$filters['kleurdekamer']} type="checkbox" id="kleurdekamer" value="kleurdekamer" name="kleurdekamer">
-								<label class="option" for="kleurdekamer">Kleur de Kamer</label>
-							</li>
-						</ul>
-					</details>
-				</li>
-				<li>
-					<details>
-						<summary><h4>Rainbowvote</h4></summary>
-						<p>De regenboogkandidaten die op <a href="https://rainbowvote.nu/tweede-kamer-2023/kandidaten/">Rainbowvote.nu</a> van het <a href="https://coc.nl/">COC</a> een profiel hebben.</p>
-						<ul>
-							<li class="inputWrapper">
-								<input bind:group={$filters['rainbowvote']} type="checkbox" id="rainbowvote" value="rainbowvote" name="rainbowvote">
-								<label class="option" for="rainbowvote">Rainbowvote</label>
-							</li>
-						</ul>
-					</details>
-				</li>
-				<li>
-					<details>
-						<summary><h4>Vind de bèta op de lijst</h4></summary>
-						<p>De kandidaten waarvan <a href="https://vinddebetaopdelijst.nl/">Vind de bèta op de lijst</a> weet dat ze een bèta-studie hebben gedaan.</p>
-						<ul>
-							<li class="inputWrapper">
-								<input bind:group={$filters['vinddebeta']} type="checkbox" id="vinddebeta" value="vinddebeta" name="vinddebeta">
-								<label class="option" for="vinddebeta">Heeft een bèta-studie gedaan</label>
-							</li>
-						</ul>
-					</details>
-				</li>
+<!--				<li>-->
+<!--					<h3>Partners</h3>-->
+<!--					<p>Dankzij een aantal <a href="/bronnen">partners</a> hebben we meer informatie en deze extra filters.</p>-->
+<!--				</li>-->
+<!--				<li>-->
+<!--					<details>-->
+<!--						<summary><h4>Kleur de Kamer</h4></summary>-->
+<!--						<p>Kandidaten van kleur met een profiel bij onze partner <a href="https://kleurdekamer.nl/">kleurdekamer.nl</a></p>-->
+<!--						<ul>-->
+<!--							<li class="inputWrapper">-->
+<!--								<input bind:group={$filters['kleurdekamer']} type="checkbox" id="kleurdekamer" value="kleurdekamer" name="kleurdekamer">-->
+<!--								<label class="option" for="kleurdekamer">Kleur de Kamer</label>-->
+<!--							</li>-->
+<!--						</ul>-->
+<!--					</details>-->
+<!--				</li>-->
+<!--				<li>-->
+<!--					<details>-->
+<!--						<summary><h4>Rainbowvote</h4></summary>-->
+<!--						<p>De regenboogkandidaten die op <a href="https://rainbowvote.nu/tweede-kamer-2023/kandidaten/">Rainbowvote.nu</a> van het <a href="https://coc.nl/">COC</a> een profiel hebben.</p>-->
+<!--						<ul>-->
+<!--							<li class="inputWrapper">-->
+<!--								<input bind:group={$filters['rainbowvote']} type="checkbox" id="rainbowvote" value="rainbowvote" name="rainbowvote">-->
+<!--								<label class="option" for="rainbowvote">Rainbowvote</label>-->
+<!--							</li>-->
+<!--						</ul>-->
+<!--					</details>-->
+<!--				</li>-->
+<!--				<li>-->
+<!--					<details>-->
+<!--						<summary><h4>Vind de bèta op de lijst</h4></summary>-->
+<!--						<p>De kandidaten waarvan <a href="https://vinddebetaopdelijst.nl/">Vind de bèta op de lijst</a> weet dat ze een bèta-studie hebben gedaan.</p>-->
+<!--						<ul>-->
+<!--							<li class="inputWrapper">-->
+<!--								<input bind:group={$filters['vinddebeta']} type="checkbox" id="vinddebeta" value="vinddebeta" name="vinddebeta">-->
+<!--								<label class="option" for="vinddebeta">Heeft een bèta-studie gedaan</label>-->
+<!--							</li>-->
+<!--						</ul>-->
+<!--					</details>-->
+<!--				</li>-->
 			</ul>
 		</aside>
 
