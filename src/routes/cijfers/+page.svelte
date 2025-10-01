@@ -97,40 +97,40 @@
 				</ul>
 			</details>
 		</article>
-<!--		<article class="card">-->
-<!--			<p class="label">Landelijk of stedelijk</p>-->
-<!--			<h2><span class="number">{Math.round(stedelijkheid[0][1]/$meta.kandidaten*100)}%</span> woont in {stedelijkheid[0][0].toLowerCase()} gebied</h2>-->
-<!--			<details>-->
-<!--				<summary>Daarmee zijn die {stedelijkheid[0][0].toLowerCase()}e oververtegen&shy;woordigd.</summary>-->
-<!--				<p>Het CBS deelt gemeentes in op <a href="https://www.cbs.nl/nl-nl/nieuws/2023/42/minder-huishoudelijk-afval-per-inwoner-in-2022/stedelijkheid">stedelijkheid</a>. Op basis van de woonplaats van een kandidaat kunnen we dus zeggen of die in stedelijk of landelijk gebied woont.</p>-->
-<!--				<figure>-->
-<!--					<Map />-->
-<!--					<figcaption>De stedelijkheid visueel aangegeven: een fellere kleur betekent stedelijker. CBS heeft een <a href="https://opendata.cbs.nl/#/CBS/nl/dataset/84929NED/table">volledige dataset</a>. Dit kaartje is gebaseerd op <a href="https://commons.wikimedia.org/w/index.php?curid=6632126">werk van JrPol</a> (CC BY-SA 3.0).</figcaption>-->
-<!--				</figure>-->
-<!--				<p>Natuurlijk wonen er ook meer mensen in de (zeer) sterk stedelijke gebieden dan in de niet stedelijke. Ook als we dat in ons achterhoofd houden zijn de stedelingen oververtegenwoordigd op de kandidatenlijsten.</p>-->
-<!--				<table>-->
-<!--					<caption>-->
-<!--						Het percentage kandidaten en inwoners per stedelijkheids-niveau-->
-<!--					</caption>-->
-<!--					<thead>-->
-<!--						<tr>-->
-<!--							<th>Niveau</th>-->
-<!--							<th>Kand.</th>-->
-<!--							<th>Inw.</th>-->
-<!--						</tr>-->
-<!--					</thead>-->
-<!--					<tbody>-->
-<!--						{#each ["Zeer sterk stedelijk", "Sterk stedelijk", "Matig stedelijk", "Weinig stedelijk", "Niet stedelijk", "Onbekend"] as level}-->
-<!--							<tr>-->
-<!--								<td>{stedelijkheid.filter((item) => item[0] === level)[0][0]}</td>-->
-<!--								<td>{Math.round(stedelijkheid.filter((item) => item[0] === level)[0][1]/$meta.kandidaten*100)}%</td>-->
-<!--								<td>{Math.round(sharesStedelijkheid[level] * 100)}%</td>-->
-<!--							</tr>-->
-<!--						{/each}-->
-<!--					</tbody>-->
-<!--				</table>-->
-<!--			</details>-->
-<!--		</article>-->
+		<article class="card">
+			<p class="label">Landelijk of stedelijk</p>
+			<h2><span class="number">{Math.round(stedelijkheid[0][1]/$meta.kandidaten*100)}%</span> woont in {stedelijkheid[0][0].toLowerCase()} gebied</h2>
+			<details>
+				<summary>Daarmee zijn die {stedelijkheid[0][0].toLowerCase()}e oververtegen&shy;woordigd.</summary>
+				<p>Het CBS deelt gemeentes in op <a href="https://www.cbs.nl/nl-nl/nieuws/2023/42/minder-huishoudelijk-afval-per-inwoner-in-2022/stedelijkheid">stedelijkheid</a>. Op basis van de woonplaats van een kandidaat kunnen we dus zeggen of die in stedelijk of landelijk gebied woont.</p>
+				<figure>
+					<Map />
+					<figcaption>De stedelijkheid visueel aangegeven: een fellere kleur betekent stedelijker. CBS heeft een <a href="https://opendata.cbs.nl/#/CBS/nl/dataset/84929NED/table">volledige dataset</a>. Dit kaartje is gebaseerd op <a href="https://commons.wikimedia.org/w/index.php?curid=6632126">werk van JrPol</a> (CC BY-SA 3.0).</figcaption>
+				</figure>
+				<p>Natuurlijk wonen er ook meer mensen in de (zeer) sterk stedelijke gebieden dan in de niet stedelijke. Ook als we dat in ons achterhoofd houden zijn de stedelingen oververtegenwoordigd op de kandidatenlijsten.</p>
+				<table>
+					<caption>
+						Het percentage kandidaten en inwoners per stedelijkheids-niveau
+					</caption>
+					<thead>
+						<tr>
+							<th>Niveau</th>
+							<th>Kand.</th>
+							<th>Inw.</th>
+						</tr>
+					</thead>
+					<tbody>
+						{#each ["Zeer sterk stedelijk", "Sterk stedelijk", "Matig stedelijk", "Weinig stedelijk", "Niet stedelijk", "Onbekend"] as level}
+							<tr>
+								<td>{stedelijkheid.filter((item) => item[0] === level)[0][0]}</td>
+								<td>{Math.round(stedelijkheid.filter((item) => item[0] === level)[0][1]/$meta.kandidaten*100)}%</td>
+								<td>{Math.round(sharesStedelijkheid[level] * 100)}%</td>
+							</tr>
+						{/each}
+					</tbody>
+				</table>
+			</details>
+		</article>
 		<!-- <article class="card">
 			<p class="label"></p>
 			<h2></h2>
