@@ -46,7 +46,7 @@
 	})
 
 	function updateMatomo() {
-		if (typeof window !== 'undefined' && window._paq) {
+		if (typeof window !== 'undefined' && window._paq && !window.location.href.includes('/kandidaat/')) {
 			window._paq.push(['setCustomUrl', window.location.href]);
 			window._paq.push(['setDocumentTitle', document.title]);
 			window._paq.push(['trackPageView']);
@@ -73,7 +73,7 @@
 		(function() {
 			var u="https://matomo.fmjansen.com/";
 			_paq.push(['setTrackerUrl', u+'matomo.php']);
-			_paq.push(['setSiteId', '7']);
+			_paq.push(['setSiteId', '8']);
 			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 			g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 		})();
