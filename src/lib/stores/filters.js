@@ -9,7 +9,8 @@ export const filters = writable({
 	'verkiezingen.tk2025.woonplaats': [],
 	'rainbowvote': [],
 	'kleurdekamer': [],
-	'vinddebeta': []
+	'vinddebeta': [],
+	'nerdvote': []
 });
 
 export const user = writable({

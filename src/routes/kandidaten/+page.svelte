@@ -183,10 +183,22 @@
 						</figure>		
 					</details>
 				</li>
-<!--				<li>-->
-<!--					<h3>Partners</h3>-->
-<!--					<p>Dankzij een aantal <a href="/bronnen">partners</a> hebben we meer informatie en deze extra filters.</p>-->
-<!--				</li>-->
+				<li>
+					<h3>Partners</h3>
+					<p>Dankzij een aantal <a href="/bronnen">partners</a> hebben we meer informatie en deze extra filters.</p>
+				</li>
+				<li>
+					<details>
+						<summary><h4>NerdVote</h4></summary>
+						<p>Kandidaten die passen bij de <a href="https://nerdvote.nl/criteria/">criteria</a> van onze partner <a href="https://nerdvote.nl/">NerdVote</a> </p>
+						<ul>
+							<li class="inputWrapper">
+								<input bind:group={$filters['nerdvote']} type="checkbox" id="nerdvote" value="nerdvote" name="nerdvote">
+								<label class="option" for="nerdvote">NerdVote</label>
+							</li>
+						</ul>
+					</details>
+				</li>
 <!--				<li>-->
 <!--					<details>-->
 <!--						<summary><h4>Kleur de Kamer</h4></summary>-->
