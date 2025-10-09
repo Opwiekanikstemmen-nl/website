@@ -42,11 +42,15 @@
 					<p>NerdVote wil kandidaat-kamerleden steunen die bij willen dragen aan privacyvriendelijke en veilige IT zonder Big-Tech.</p>
 				</details>
 			</li>
+			<li>
+				<a href="https://rainbowvote.nu/">Rainbowvote.nu</a> van het <a href="https://coc.nl/">COC</a>
+				<details>
+					<summary>Over</summary>
+					<p>COC nodigde politieke partijen uit om profielen in te sturen van hun regenboogkandidaten. Alle partijen met ten minste een zetel in de Tweede Kamer of een zetel in de zetelpeiling zijn uitgenodigd mee te doen. PVV, NSC, DENK, FVD, SGP, ChristenUnie en JA21 hebben geen antwoorden ingestuurd.</p>
+				</details>
+			</li>
 <!--			<li>-->
 <!--				<a href="https://kleurdekamer.nl/">Kleur de Kamer</a>-->
-<!--			</li>-->
-<!--			<li>-->
-<!--				<a href="https://rainbowvote.nu/">Rainbowvote.nu</a> van het <a href="https://coc.nl/">COC</a>-->
 <!--			</li>-->
 <!--			<li>-->
 <!--				<a href="https://vinddebetaopdelijst.nl/">Vind de bèta op de lijst</a>-->
