@@ -128,7 +128,7 @@
 						<summary><h3>Geslacht</h3></summary>
 						<p>Kandidaten kunnen hun geslacht opgeven op de kandidatenlijst, maar dit hoeft niet. Daarom is het van een deel onbekend.</p>
 						<ul>
-							{#each [['man', 'm'], ['vrouw', 'v'], ['onbekend', 'o']] as sex}
+							{#each [['man', 'm'], ['vrouw', 'v'], ['x', 'x']] as sex}
 								<li class="inputWrapper">
 									<input bind:group={$filters['geslacht']} type="checkbox" id="{sex[1]}" value="{sex[1]}" name="{sex[1]}">
 									<label class="option" for="{sex[1]}">{sex[0]}</label>
