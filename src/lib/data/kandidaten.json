@@ -5468,8 +5468,10 @@
       "Twitter": "https://x.com/lisawesterveld",
       "Instagram": "https://www.instagram.com/lisa_westerveld/",
       "Facebook": "https://www.facebook.com/LisaWesterveldGroenLinks/",
-      "BlueSky": "https://bsky.app/profile/lisawesterveld.bsky.social"
-    }
+      "BlueSky": "https://bsky.app/profile/lisawesterveld.bsky.social",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/groenlinks-pvda/lisa-westerveld/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Marjolein_M._Moorman",
@@ -6430,8 +6432,10 @@
       "LinkedIn": "https://nl.linkedin.com/in/song%C3%BCl-mutluer-221119b",
       "Twitter": "https://x.com/songulmutluer?lang=en",
       "Instagram": "https://www.instagram.com/songulmutluer/?hl=en",
-      "BlueSky": "https://bsky.app/profile/jadevdlinden.bsky.social"
-    }
+      "BlueSky": "https://bsky.app/profile/jadevdlinden.bsky.social",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/groenlinks-pvda/songul-mutluer/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Wimar_W.D._Bolhuis",
@@ -6577,6 +6581,10 @@
         "woonplaats": "Weert",
         "partij_naam": "GROENLINKS"
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/groenlinks-pvda/geert-gabriels/"
     }
   },
   {
@@ -7147,8 +7155,10 @@
     "urls": {
       "partijwebsite": "https://groenlinkspvda.nl/onze-mensen/kandidaten-tk25/lisa-vliegenthart/",
       "LinkedIn": "https://nl.linkedin.com/in/lisa-vliegenthart-03b6659a",
-      "Instagram": "https://www.instagram.com/lisavliegenthart/"
-    }
+      "Instagram": "https://www.instagram.com/lisavliegenthart/",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/groenlinks-pvda/lisa-vliegenthart/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Marco_M.J.W._Esser",
@@ -7636,6 +7646,10 @@
         "woonplaats": "Amsterdam",
         "partij_naam": "GROENLINKS / Partij van de Arbeid (PvdA)"
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/groenlinks-pvda/lyle-muns/"
     }
   },
   {
@@ -7788,8 +7802,10 @@
       "LinkedIn": "https://nl.linkedin.com/in/glimina-chakor-41004a5a",
       "Twitter": "https://x.com/gliminachakor?lang=en",
       "Instagram": "https://www.instagram.com/glimina_/?hl=en",
-      "BlueSky": "https://bsky.app/profile/gliminachakor.bsky.social"
-    }
+      "BlueSky": "https://bsky.app/profile/gliminachakor.bsky.social",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/groenlinks-pvda/glimina-chakor/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Marcel_M._Vonk",
@@ -8251,6 +8267,10 @@
           "adressendichtheid": "1092"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/groenlinks-pvda/daan-olivier/"
     }
   },
   {
@@ -8494,8 +8514,10 @@
     },
     "urls": {
       "partijwebsite": "https://groenlinkspvda.nl/onze-mensen/kandidaten-tk25/ruchama-bwefar/",
-      "LinkedIn": "https://nl.linkedin.com/in/ruchamaimana"
-    }
+      "LinkedIn": "https://nl.linkedin.com/in/ruchamaimana",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/groenlinks-pvda/ruchama-bwefar/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Lotte_L.B._Jeursen",
@@ -8813,6 +8835,10 @@
           "adressendichtheid": "2239"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/groenlinks-pvda/giovanni-visser/"
     }
   },
   {
@@ -9001,6 +9027,10 @@
           "adressendichtheid": "6096"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/groenlinks-pvda/ties-ammerlaan/"
     }
   },
   {
@@ -9052,8 +9082,10 @@
       "partijwebsite": "https://groenlinkspvda.nl/onze-mensen/kandidaten-tk25/willemijn-punte-zwart/",
       "LinkedIn": "https://nl.linkedin.com/in/willemijnzwart",
       "Instagram": "https://www.instagram.com/willemijnpuntezwart/",
-      "BlueSky": "https://bsky.app/profile/willemijn053.bsky.social"
-    }
+      "BlueSky": "https://bsky.app/profile/willemijn053.bsky.social",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/groenlinks-pvda/willemijn-punte-zwart/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Hanneke_H._Groenteman",
@@ -11475,6 +11507,10 @@
           "adressendichtheid": "311"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/vvd/renate-den-hollander/"
     }
   },
   {
@@ -12681,6 +12717,10 @@
           "adressendichtheid": "4994"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/vvd/denise-eikelenboom/"
     }
   },
   {
@@ -12946,6 +12986,10 @@
         "woonplaats": "Amsterdam",
         "partij_naam": "VVD"
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/vvd/remco-yizhak-cooremans/"
     }
   },
   {
@@ -13157,6 +13201,10 @@
           "adressendichtheid": "4994"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/vvd/jeroen-van-dijken/"
     }
   },
   {
@@ -14485,6 +14533,10 @@
           "adressendichtheid": "1992"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/vvd/eddie-altenburg-collin/"
     }
   },
   {
@@ -16874,6 +16926,10 @@
         "woonplaats": "Ubbergen",
         "partij_naam": "D66"
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/d66/rob-jetten/"
     }
   },
   {
@@ -17415,8 +17471,10 @@
       "Twitter": "https://x.com/wiepau?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
       "Instagram": "https://www.instagram.com/wiekepaulusma/",
       "Facebook": "https://www.facebook.com/wpaulusma/?locale=nl_NL",
-      "BlueSky": "https://bsky.app/profile/ilanarooderkerk.bsky.social"
-    }
+      "BlueSky": "https://bsky.app/profile/ilanarooderkerk.bsky.social",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/d66/wieke-paulusma/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Fatimazhra_F._Belhirch",
@@ -17621,6 +17679,10 @@
         "woonplaats": "Eindhoven",
         "partij_naam": "D66"
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/d66/mpanzu-bamenga/"
     }
   },
   {
@@ -17765,8 +17827,10 @@
       "partijwebsite": "https://d66.nl/nijmegen/mensen/marijke-synheave/",
       "LinkedIn": "https://www.linkedin.com/in/marijkesynhaeve/?originalSubdomain=nl",
       "Twitter": "https://x.com/MarijkeSynhaeve?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
-      "Instagram": "https://www.instagram.com/marijke.synhaeve/"
-    }
+      "Instagram": "https://www.instagram.com/marijke.synhaeve/",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/d66/marijke-synhaeve/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Ilana_I._Rooderkerk",
@@ -17892,6 +17956,10 @@
           "adressendichtheid": "4994"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/d66/robert-van-asten/"
     }
   },
   {
@@ -23052,6 +23120,10 @@
         "woonplaats": "Hengelo (O)",
         "partij_naam": "CDA"
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/cda/hanneke-steen/"
     }
   },
   {
@@ -26046,8 +26118,10 @@
       "LinkedIn": "https://nl.linkedin.com/in/sarah-dobbe-0a84a821",
       "Twitter": "https://x.com/sarahdobbe",
       "Instagram": "https://www.instagram.com/dobbesarah/?hl=en",
-      "Facebook": "https://www.facebook.com/SarahDobbeSP (Socialistische Partij)/"
-    }
+      "Facebook": "https://www.facebook.com/SarahDobbeSP (Socialistische Partij)/",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/sp/sarah-dobbe/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Bastiaan_B.W.V._Meijer",
@@ -26120,6 +26194,10 @@
         "woonplaats": "'s-Gravenhage",
         "partij_naam": "SP (Socialistische Partij)"
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/sp/bastiaan-meijer/"
     }
   },
   {
@@ -26166,6 +26244,10 @@
           "adressendichtheid": "4012"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/sp/maurits-hondmann/"
     }
   },
   {
@@ -26724,8 +26806,10 @@
       }
     },
     "urls": {
-      "LinkedIn": "https://nl.linkedin.com/in/amber-witsenburg-615754108"
-    }
+      "LinkedIn": "https://nl.linkedin.com/in/amber-witsenburg-615754108",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/sp/amber-witsenburg-die-hen-diens/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Erica_E.N._Wever",
@@ -31819,8 +31903,10 @@
       "Twitter": "https://x.com/estherouwehand?lang=en",
       "Instagram": "https://www.instagram.com/estherouwehandpvdd/?hl=en",
       "Facebook": "https://www.facebook.com/EstherOuwehand.PvdD/",
-      "BlueSky": "https://bsky.app/profile/estherouwehand.bsky.social"
-    }
+      "BlueSky": "https://bsky.app/profile/estherouwehand.bsky.social",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/esther-ouwehand/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Ines_I._Kostić",
@@ -31926,8 +32012,10 @@
       "LinkedIn": "https://nl.linkedin.com/in/ines-kosti%C4%87",
       "Twitter": "https://x.com/ineskostic?lang=en",
       "Instagram": "https://www.instagram.com/ineskostic/?hl=en",
-      "BlueSky": "https://bsky.app/profile/ineskostic.bsky.social"
-    }
+      "BlueSky": "https://bsky.app/profile/ineskostic.bsky.social",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/ines-kostic/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Christine_C._Teunissen",
@@ -32108,6 +32196,10 @@
         "woonplaats": "Wageningen",
         "partij_naam": "Partij voor de Dieren"
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/falco-van-hassel/"
     }
   },
   {
@@ -32337,8 +32429,10 @@
     "urls": {
       "partijwebsite": "https://www.partijvoordedieren.nl/kandidatenlijst-tk23#7.-martine-van-schaik",
       "LinkedIn": "https://nl.linkedin.com/in/martine-van-schaik-6457645",
-      "Instagram": "https://www.instagram.com/martinevschaik/"
-    }
+      "Instagram": "https://www.instagram.com/martinevschaik/",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/martine-van-schaik/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Willemijn_W.E.R._Stoffels",
@@ -32663,8 +32757,10 @@
     "urls": {
       "partijwebsite": "https://www.partijvoordedieren.nl/personen/ronan-van-langen",
       "LinkedIn": "https://nl.linkedin.com/in/ronan-van-langen-870666168",
-      "Instagram": "https://www.instagram.com/ronanvanlangen/?hl=en"
-    }
+      "Instagram": "https://www.instagram.com/ronanvanlangen/?hl=en",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/ronan-van-langen/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Pieter_P.J.L._Groenewege",
@@ -32788,8 +32884,10 @@
       "partijwebsite": "https://www.merelmuller.nl/",
       "LinkedIn": "https://nl.linkedin.com/in/merel-muller-840a18236",
       "Twitter": "https://x.com/merel__muller",
-      "Instagram": "https://www.instagram.com/merel_muller/"
-    }
+      "Instagram": "https://www.instagram.com/merel_muller/",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/merel-muller/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Robert_R.N._Barker",
@@ -32940,8 +33038,10 @@
       "partijwebsite": "https://www.partijvoordedieren.nl/personen/olivia-butterman",
       "LinkedIn": "https://nl.linkedin.com/in/olivia-butterman-904674b",
       "Instagram": "https://www.instagram.com/oliviabutterman/?hl=en",
-      "BlueSky": "https://bsky.app/profile/oliviapvdd.bsky.social"
-    }
+      "BlueSky": "https://bsky.app/profile/oliviapvdd.bsky.social",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/olivia-butterman/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Yuri_Y.X._Zandwijken",
@@ -33138,8 +33238,10 @@
       "partijwebsite": "https://www.partijvoordedieren.nl/personen/cynthia-pallandt",
       "LinkedIn": "https://www.linkedin.com/in/cynthia-pallandt/?locale=en_US",
       "Instagram": "https://www.instagram.com/cynthiapallandt/",
-      "BlueSky": "https://bsky.app/profile/cynthiapallandt.bsky.social"
-    }
+      "BlueSky": "https://bsky.app/profile/cynthiapallandt.bsky.social",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/cynthia-pallandt/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Stella_S._Pieterson",
@@ -33190,8 +33292,10 @@
       "partijwebsite": "https://www.partijvoordedieren.nl/personen/stella-pieterson",
       "LinkedIn": "https://nl.linkedin.com/in/destellaipsa",
       "Twitter": "https://x.com/stellapieterson",
-      "Instagram": "https://www.instagram.com/probably_awake/?hl=en"
-    }
+      "Instagram": "https://www.instagram.com/probably_awake/?hl=en",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/stella-marijn-pieterson/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Ana_A._Karadarević",
@@ -33242,8 +33346,10 @@
       "partijwebsite": "https://www.partijvoordedieren.nl/personen/ana-karadarevi%C4%87",
       "LinkedIn": "https://nl.linkedin.com/in/ana-karadarevi%C4%87-5035193",
       "Instagram": "https://www.instagram.com/anakaradarevic/?hl=en",
-      "BlueSky": "https://bsky.app/profile/anakaradarevic.bsky.social"
-    }
+      "BlueSky": "https://bsky.app/profile/anakaradarevic.bsky.social",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/ana-karadarevic/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Nayra_N.M._Lubek",
@@ -33292,8 +33398,10 @@
     },
     "urls": {
       "partijwebsite": "https://www.partijvoordedieren.nl/personen/nayra-van-lubek",
-      "LinkedIn": "https://www.linkedin.com/in/nayra-van-lubek/?originalSubdomain=nl"
-    }
+      "LinkedIn": "https://www.linkedin.com/in/nayra-van-lubek/?originalSubdomain=nl",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/nayra-van-lubek/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Jacqueline_J.M._Broek",
@@ -33526,8 +33634,10 @@
       }
     },
     "urls": {
-      "partijwebsite": "https://www.partijvoordedieren.nl/personen/win-scheijde"
-    }
+      "partijwebsite": "https://www.partijvoordedieren.nl/personen/win-scheijde",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/win-scheijde/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Eline_E.A.H._Lauret",
@@ -33710,8 +33820,10 @@
       "partijwebsite": "https://www.partijvoordedieren.nl/personen/no%C3%AF-van-mondfrans",
       "LinkedIn": "https://nl.linkedin.com/in/no%C3%AF-van-mondfrans-7ab751270",
       "Instagram": "https://www.instagram.com/annoiiyed/?hl=en",
-      "BlueSky": "https://bsky.app/profile/annoiiyed.bsky.social"
-    }
+      "BlueSky": "https://bsky.app/profile/annoiiyed.bsky.social",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/noi-van-mondfrans/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Navid_S.N._Madani",
@@ -33956,6 +34068,10 @@
           "adressendichtheid": "1770"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/arjan-groters/"
     }
   },
   {
@@ -34050,8 +34166,10 @@
       }
     },
     "urls": {
-      "partijwebsite": "https://www.partijvoordedieren.nl/personen/vania-nasroen"
-    }
+      "partijwebsite": "https://www.partijvoordedieren.nl/personen/vania-nasroen",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/vania-nasroen/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Jasper_J.M._Loo",
@@ -34143,6 +34261,10 @@
           "adressendichtheid": "4012"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/partij-voor-de-dieren/tim-van-der-toorn/"
     }
   },
   {
@@ -43772,6 +43894,10 @@
         "woonplaats": "'s-Hertogenbosch",
         "partij_naam": "Volt"
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/volt/bjorn-beijnon/"
     }
   },
   {
@@ -44723,8 +44849,10 @@
       "partijwebsite": "https://voltnederland.org/mensen/24-novella-rasenberg",
       "LinkedIn": "https://www.linkedin.com/in/nova-rasenberg-8a6005213/",
       "Instagram": "https://www.instagram.com/novalinskii/",
-      "BlueSky": "https://bsky.app/profile/nova-political.bsky.social"
-    }
+      "BlueSky": "https://bsky.app/profile/nova-political.bsky.social",
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/volt/nova-rasenberg/"
+    },
+    "rainbowvote": true
   },
   {
     "iri": "https://opwiekanikstemmen.nl/id/person/Tim_T.L.A._Areago",
@@ -44770,6 +44898,10 @@
           "adressendichtheid": "4994"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/volt/temitope-areago/"
     }
   },
   {
@@ -44964,6 +45096,10 @@
           "adressendichtheid": "1479"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/volt/tom-van-doesburg/"
     }
   },
   {
@@ -45062,6 +45198,10 @@
           "adressendichtheid": "2540"
         }
       }
+    },
+    "rainbowvote": true,
+    "urls": {
+      "rainbowvote.nu": "https://rainbowvote.nu/tweede-kamerverkiezingen-2025/partijen-2025/volt/sjoerd-wennekes/"
     }
   },
   {
