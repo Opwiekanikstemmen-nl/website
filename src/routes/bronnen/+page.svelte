@@ -29,6 +29,13 @@
 		<h2>Partners</h2>
 		<ul>
 			<li>
+				<a href="https://stemopeenvrouw.com/">Stem op een Vrouw</a>
+				<details>
+					<summary>Over</summary>
+					<p>Dé organisatie die zich in Nederland inzet voor de positie van vrouwen in de politiek. Van hen krijgen we ook een aanvullende set geslachten en (social media-)links.</p>
+				</details>
+			</li>
+			<li>
 				<a href="https://nerdvote.nl/">NerdVote</a>
 				<details>
 					<summary>Over</summary>
@@ -43,9 +50,6 @@
 <!--			</li>-->
 <!--			<li>-->
 <!--				<a href="https://vinddebetaopdelijst.nl/">Vind de bèta op de lijst</a>-->
-<!--			</li>-->
-<!--			<li>-->
-<!--				<a href="https://stemopeenvrouw.nl/">Stem op een Vrouw</a>-->
 <!--			</li>-->
 <!--			<li>-->
 <!--				<a href="https://stemopeenjongere.nl/">Stem op een Jongere</a>-->
