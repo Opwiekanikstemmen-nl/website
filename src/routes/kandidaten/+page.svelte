@@ -199,6 +199,18 @@
 						</ul>
 					</details>
 				</li>
+				<li>
+					<details>
+						<summary><h4>Rainbowvote</h4></summary>
+						<p>De regenboogkandidaten die op <a href="https://rainbowvote.nu/tweede-kamerverkiezingen-2025/kandidaten-2025/">Rainbowvote.nu</a> van het <a href="https://coc.nl/">COC</a> een profiel hebben.</p>
+						<ul>
+							<li class="inputWrapper">
+								<input bind:group={$filters['rainbowvote']} type="checkbox" id="rainbowvote" value="rainbowvote" name="rainbowvote">
+								<label class="option" for="rainbowvote">Rainbowvote</label>
+							</li>
+						</ul>
+					</details>
+				</li>
 <!--				<li>-->
 <!--					<details>-->
 <!--						<summary><h4>Kleur de Kamer</h4></summary>-->
@@ -207,18 +219,6 @@
 <!--							<li class="inputWrapper">-->
 <!--								<input bind:group={$filters['kleurdekamer']} type="checkbox" id="kleurdekamer" value="kleurdekamer" name="kleurdekamer">-->
 <!--								<label class="option" for="kleurdekamer">Kleur de Kamer</label>-->
-<!--							</li>-->
-<!--						</ul>-->
-<!--					</details>-->
-<!--				</li>-->
-<!--				<li>-->
-<!--					<details>-->
-<!--						<summary><h4>Rainbowvote</h4></summary>-->
-<!--						<p>De regenboogkandidaten die op <a href="https://rainbowvote.nu/tweede-kamer-2023/kandidaten/">Rainbowvote.nu</a> van het <a href="https://coc.nl/">COC</a> een profiel hebben.</p>-->
-<!--						<ul>-->
-<!--							<li class="inputWrapper">-->
-<!--								<input bind:group={$filters['rainbowvote']} type="checkbox" id="rainbowvote" value="rainbowvote" name="rainbowvote">-->
-<!--								<label class="option" for="rainbowvote">Rainbowvote</label>-->
 <!--							</li>-->
 <!--						</ul>-->
 <!--					</details>-->
