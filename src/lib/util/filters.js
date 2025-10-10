@@ -15,6 +15,21 @@ function getNestedProperty(obj, keyPath) {
 
 // Function to check if a value is present in an array or is equal to a given value
 function matchesFilter(key, value, filter) {
+	if (key === 'leeftijd') {
+		let min = parseInt(filter['min']);
+		let max = parseInt(filter['max']);
+		if ((min || max) && filter['onbekend'] == 'true' && value == null) return true;
+		if (min && max && max >= min) {
+			return value >= min && value <= max;
+		} else if (min) {
+			return value >= min;
+		} else if (max) {
+			return value <= max;
+		} else {
+			return true;
+		}
+	}
+
 	if (value == null) {
 		if (key ==='geslacht' && filter.includes('o') && value === null) return true;
 		return false;

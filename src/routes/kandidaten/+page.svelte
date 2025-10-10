@@ -139,6 +139,23 @@
 				</li>
 				<li>
 					<details>
+						<summary><h3>Leeftijd</h3></summary>
+						<p>De leeftijd weten we dankzij stem jong of de partijwebsites.</p>
+						<label for="minleeftijd">Minimale leeftijd</label>
+						<input bind:value={$filters['leeftijd']['min']} type="text" id='minleeftijd'
+									 name="minleeftijd">
+						<label for="maxleeftijd">Maximale leeftijd</label>
+						<input bind:value={$filters['leeftijd']['max']} type="text" id='maxleeftijd'
+									 name="maxleeftijd" aria-describedby="maxleeftijd-warning">
+						{#if parseInt($filters['leeftijd']['min']) > parseInt($filters['leeftijd']['max']) }
+							<p class="error">Je maximale leeftijd wordt genegeerd omdat die kleiner is dan je minimale leeftijd.</p>
+						{/if}
+						<input bind:group={$filters['leeftijd']['onbekend']} value="true" type="checkbox" id="leeftijd-onbekend" name="leeftijd-onbekend">
+						<label class="option" for="leeftijd-onbekend">Ook onbekende leeftijden</label>
+					</details>
+				</li>
+				<li>
+					<details>
 						<summary><h3>Woonplaats</h3></summary>
 						<ul>
 							{#each Object.entries(data.provincies) as [provincie, woonplaatsen]}
@@ -471,9 +488,14 @@
 			}
 		}
 
-		&:nth-of-type(2) {
+		&#kieskring {
 			background-color: rgba(var(--color));
 			border-width: 1px;
+		}
+
+		&:has(+ .error) {
+			border-color: rgba(var(--error), 1);
+			margin-block-end: .5em;
 		}
 	}
 
