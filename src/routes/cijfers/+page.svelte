@@ -15,6 +15,7 @@
 	const parties = groupByParty(data.kandidaten);
 	const woonplaatsen = countUnkowns(data.kandidaten, ['verkiezingen', 'tk2025', 'woonplaats']);
 	const stedelijkheid = countUnkowns(data.kandidaten, ['verkiezingen', 'tk2025', 'gemeente', 'stedelijkheid']);
+	const voornamen = countUnkowns(data.kandidaten, ['voornaam']);
 	const sharesStedelijkheid = {'Zeer sterk stedelijk': 0.257057929668623, 'Sterk stedelijk': 0.3033547987272405, 'Niet stedelijk': 0.07340226254998808, 'Matig stedelijk': 0.14899154040118648, 'Weinig stedelijk': 0.21719346865296188, 'Onbekend': 0};
 	const partySizes = countParties(parties);
 	const kandidaten_abroad = data.kandidaten.filter(
@@ -127,6 +128,32 @@
 								<td>{Math.round(sharesStedelijkheid[level] * 100)}%</td>
 							</tr>
 						{/each}
+					</tbody>
+				</table>
+			</details>
+		</article>
+		<article class="card">
+			<p class="label">Voornamen</p>
+			<h2><span class="number">{voornamen[0][1]}</span> kandidaten heten {voornamen[0][0]}</h2>
+			<details>
+				<summary>Dat is {(voornamen[0][1]/$meta.kandidaten*100).toFixed(1)}% van de kandidaten.</summary>
+				<table>
+					<caption>
+						De meest voorkomende voornamen
+					</caption>
+					<thead>
+					<tr>
+						<th>Naam</th>
+						<th>Aantal</th>
+					</tr>
+					</thead>
+					<tbody>
+					{#each Array(10).fill().map((element, index) => index) as index}
+						<tr>
+							<td>{voornamen[index][0]}</td>
+							<td>{voornamen[index][1]}</td>
+						</tr>
+					{/each}
 					</tbody>
 				</table>
 			</details>
