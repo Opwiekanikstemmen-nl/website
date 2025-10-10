@@ -1,11 +1,45 @@
 export function count(list, property, value) {
 	let amount = 0;
 	for (const item of list) {
-		if (item[property] === value) {
+		if (item[property] == value) {
 			amount++;
 		}
 	}
 	return amount;
+}
+
+export function countInRanges(list, property, cutOffs) {
+	let counts = [];
+	let min = false;
+
+	for (const max of cutOffs) {
+
+		if (min) {
+			let amount = 0;
+			for (const item of list) {
+				if (item[property] >= min && item[property] < max) {
+					amount++;
+				}
+			}
+			counts.push([min + "-" + max, amount]);
+		}
+
+		min = max;
+	}
+
+	return counts;
+}
+
+export function averages(list, property) {
+	let total = 0;
+	let count = 0;
+	for (const item of list) {
+		if (item[property]) {
+			total += parseInt(item[property]);
+			count++;
+		}
+	}
+	return (total/count).toFixed(1);
 }
 
 export function countParties(parties) {
