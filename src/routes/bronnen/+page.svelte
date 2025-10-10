@@ -49,18 +49,18 @@
 					<p>COC nodigde politieke partijen uit om profielen in te sturen van hun regenboogkandidaten. Alle partijen met ten minste een zetel in de Tweede Kamer of een zetel in de zetelpeiling zijn uitgenodigd mee te doen. PVV, NSC, DENK, FVD, SGP, ChristenUnie en JA21 hebben geen antwoorden ingestuurd.</p>
 				</details>
 			</li>
+			<li>
+				<a href="https://stemjong.nl/">Stem Jong</a>
+				<details>
+					<summary>Over</summary>
+					<p>Stichting Stem op een Jongere (Stem Jong) werkt sinds 2021 aan meer jongeren participatie en representatie in alle lagen van de politiek. Wij geloven in een wereld waarin jongeren kunnen meedoen in de politiek en onze toekomst kunnen vorm geven. Daarom geven wij jonge kandidaten een platform en verzamelen wij data zodat we kunnen laten zien welke jongeren verkiesbaar zijn. Met onze campagne stimuleren we niet allen jongeren om te gaan stemmen, maar ook om slim te gaan stemmen op een jongere lager op de lijst. Samen stemmen op een jongere.</p>
+				</details>
+			</li>
 <!--			<li>-->
 <!--				<a href="https://kleurdekamer.nl/">Kleur de Kamer</a>-->
 <!--			</li>-->
 <!--			<li>-->
 <!--				<a href="https://vinddebetaopdelijst.nl/">Vind de bèta op de lijst</a>-->
-<!--			</li>-->
-<!--			<li>-->
-<!--				<a href="https://stemopeenjongere.nl/">Stem op een Jongere</a>-->
-<!--				<details>-->
-<!--					<summary>Over</summary>-->
-<!--					<p>Stichting Stem op een Jongere werkt sinds 2021 aan meer jongeren participatie en representatie in alle lagen van de politiek. Wij geloven in een wereld waarin jongeren kunnen meedoen in de politiek en onze toekomst kunnen vorm geven. Daarom geven wij jonge kandidaten een platform en verzamelen wij data zodat we kunnen laten zien welke jongeren verkiesbaar zijn. Met onze campagne stimuleren we niet allen jongeren om te gaan stemmen, maar ook om slim te gaan stemmen op een jongere lager op de lijst. Samen stemmen op een jongere.</p>-->
-<!--				</details>-->
 <!--			</li>-->
 		</ul>
 	</section>
