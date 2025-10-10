@@ -78,7 +78,7 @@
 			<h2><span class="number">{ages}</span> is de gemiddelde leeftijd</h2>
 			<details>
 				<summary>Van de {$meta.kandidaten - count(kandidaten, 'leeftijd', null)} kandidaten van wie we het weten.</summary>
-				<p><a href="/bronnen#:~:textStem%20Jong">Stem Jong</a> heeft de leeftijden van veel kandidaten weten te vinden, maar niet van allemaal.</p>
+				<p><a href="/bronnen#:~:text=Stem%20Jong">Stem Jong</a> heeft de leeftijden van veel kandidaten weten te vinden, maar niet van allemaal.</p>
 				<table>
 					<caption>
 						Het aantal kandidaten per leeftijdsgroep
