@@ -47,6 +47,23 @@
 		return Array.isArray(v) && v.length > 0;
 	}
 
+	// Canonical list of allowed stemlocaties (keys of data.kieskringen)
+	const STEMLOCATIES = Object.keys(data.kieskringen);
+	const isValidStemlocatie = (v) => !!v && STEMLOCATIES.includes(v);
+
+	// Local input buffer; only commit to $user when valid
+	let stemlocatieInput = '';
+
+	function commitStemlocatie() {
+		if (isValidStemlocatie(stemlocatieInput)) {
+			user.set({ ...$user, stemlocatie: stemlocatieInput });
+		} else {
+			// Reject/clear invalid entries and derived kieskring filter
+			user.set({ ...$user, stemlocatie: '' });
+			$filters['verkiezingen.tk2025.kieskringen'] = [];
+		}
+	}
+
 	function buildQuery(filtersObj = {}, userObj = {}) {
 		const params = [];
 		if (filtersObj.naam && String(filtersObj.naam).trim() !== '') {
@@ -70,7 +87,7 @@
 			if (max !== undefined && max !== '' && max !== null) params.push(`max=${max}`);
 			if (isNonEmptyArray(onbekend)) params.push(`leeftijd_onbekend=true`);
 		}
-		if (userObj && userObj.stemlocatie) {
+		if (userObj && isValidStemlocatie(userObj.stemlocatie)) {
 			params.push(`stemlocatie=${String(userObj.stemlocatie).trim()}`);
 		}
 		const qsPreview = params.join('&');
@@ -119,7 +136,7 @@
 	user.subscribe((update) => {
 		console.log('[user.subscribe] update:', update);
 		if (update) {
-			if (data.kieskringen[update.stemlocatie]) {
+			if (isValidStemlocatie(update.stemlocatie)) {
 				console.log(
 					'[user.subscribe] deriving kieskring from stemlocatie:',
 					update.stemlocatie,
@@ -127,6 +144,8 @@
 					data.kieskringen[update.stemlocatie]
 				);
 				$filters['verkiezingen.tk2025.kieskringen'] = data.kieskringen[update.stemlocatie];
+			} else {
+				$filters['verkiezingen.tk2025.kieskringen'] = [];
 			}
 		}
 	});
@@ -182,7 +201,17 @@
 			filters.set(newFilters);
 
 			if (params.has('stemlocatie')) {
-				user.set({ ...$user, stemlocatie: params.get('stemlocatie') });
+				const v = params.get('stemlocatie') || '';
+				if (isValidStemlocatie(v)) {
+					user.set({ ...$user, stemlocatie: v });
+					stemlocatieInput = v;
+				} else {
+					console.warn('[onMount] ignoring invalid stemlocatie from URL:', v);
+					user.set({ ...$user, stemlocatie: '' });
+					stemlocatieInput = '';
+				}
+			} else {
+				stemlocatieInput = $user?.stemlocatie || '';
 			}
 		}
 		// Compute initial-only open states based on hydrated filters
@@ -249,7 +278,10 @@
 						</p>
 						<label for="stemlocatie">Gemeente waar je stemt</label>
 						<input
-							bind:value={$user['stemlocatie']}
+							value={stemlocatieInput}
+							on:input={(e) => (stemlocatieInput = e.currentTarget.value)}
+							on:change={commitStemlocatie}
+							on:blur={commitStemlocatie}
 							type="text"
 							id="stemlocatie"
 							placeholder="gemeente"
