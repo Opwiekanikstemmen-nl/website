@@ -5,7 +5,7 @@
 
 	import { groupByParty } from '$lib/util/candidates';
 	import { sortData } from '$lib/util/filters';
-	import { count, countParties, countUnkowns } from '$lib/util/statistics';
+	import { count, countInRanges, averages, countParties, countUnkowns } from '$lib/util/statistics';
 
 	import Map from './Map.svelte';
 	import Sources from '../bronnen/Sources.svelte';
@@ -18,6 +18,8 @@
 	const voornamen = countUnkowns(data.kandidaten, ['voornaam']);
 	const sharesStedelijkheid = {'Zeer sterk stedelijk': 0.257057929668623, 'Sterk stedelijk': 0.3033547987272405, 'Niet stedelijk': 0.07340226254998808, 'Matig stedelijk': 0.14899154040118648, 'Weinig stedelijk': 0.21719346865296188, 'Onbekend': 0};
 	const partySizes = countParties(parties);
+	const ages = averages(data.kandidaten, ['leeftijd']);
+	const ageDistribution = countInRanges(data.kandidaten, ['leeftijd'], [18,25,35,45,55,65,75,120]);
 	const kandidaten_abroad = data.kandidaten.filter(
 		(kandidaat) => ['DE','BE','FR','CL','CW','PT'].some(
 			suffix => kandidaat['verkiezingen']['tk2025']['woonplaats'].includes(suffix)
@@ -69,6 +71,33 @@
 				<summary>Van alle kandidaten zijn er {count(kandidaten, 'geslacht', 'm')} man en {count(kandidaten, 'geslacht', 'v')} vrouw. Van {count(kandidaten, 'geslacht', 'x')} kandidaten hebben we een 'x' genoteerd.</summary>
 				<p>Dat we het van sommige kandidaten niet weten, komt omdat een aantal partijen geen geslacht doorgeeft bij het inleveren van hun kandidatenlijsten.</p>
 				<p>Verder wordt er bij de kandidatenlijsten niet iemands gender opgeschreven. Daardoor weten we dus ook niet of er non-binaire kandidaten op de lijsten staan.</p>
+			</details>
+		</article>
+		<article class="card">
+			<p class="label">Leeftijd</p>
+			<h2><span class="number">{ages}</span> is de gemiddelde leeftijd</h2>
+			<details>
+				<summary>Van de {$meta.kandidaten - count(kandidaten, 'leeftijd', null)} kandidaten van wie we het weten.</summary>
+				<p><a href="/bronnen#:~:textStem%20Jong">Stem Jong</a> heeft de leeftijden van veel kandidaten weten te vinden, maar niet van allemaal.</p>
+				<table>
+					<caption>
+						Het aantal kandidaten per leeftijdsgroep
+					</caption>
+					<thead>
+					<tr>
+						<th>Leeftijdsgroep</th>
+						<th>Aantal kandidaten</th>
+					</tr>
+					</thead>
+					<tbody>
+					{#each ageDistribution as ageGroup}
+						<tr>
+							<td>{ageGroup[0]}</td>
+							<td>{ageGroup[1]}</td>
+						</tr>
+					{/each}
+					</tbody>
+				</table>
 			</details>
 		</article>
 		<article class="card">
