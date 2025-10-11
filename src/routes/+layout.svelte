@@ -15,38 +15,49 @@
 		kandidaten: data.kandidaten.length,
 		partijen: data.partijen.length,
 		kieskringen: [
-		  "Groningen",
-		  "Leeuwarden",
-		  "Assen",
-		  "Zwolle",
-		  "Lelystad",
-		  "Nijmegen",
-		  "Arnhem",
-		  "Utrecht",
-		  "Amsterdam",
-		  "Haarlem",
-		  "Den Helder",
-		  "'s-Gravenhage",
-		  "Rotterdam",
-		  "Dordrecht",
-		  "Leiden",
-		  "Middelburg",
-		  "Tilburg",
-		  "'s-Hertogenbosch",
-		  "Maastricht",
-		  "Bonaire"
+			'Groningen',
+			'Leeuwarden',
+			'Assen',
+			'Zwolle',
+			'Lelystad',
+			'Nijmegen',
+			'Arnhem',
+			'Utrecht',
+			'Amsterdam',
+			'Haarlem',
+			'Den Helder',
+			"'s-Gravenhage",
+			'Rotterdam',
+			'Dordrecht',
+			'Leiden',
+			'Middelburg',
+			'Tilburg',
+			"'s-Hertogenbosch",
+			'Maastricht',
+			'Bonaire'
 		],
 		stedelijkheidsNiveaus: [
-			"Zeer sterk stedelijk",
-			"Sterk stedelijk",
-			"Niet stedelijk",
-			"Matig stedelijk",
-			"Weinig stedelijk",
+			'Zeer sterk stedelijk',
+			'Sterk stedelijk',
+			'Niet stedelijk',
+			'Matig stedelijk',
+			'Weinig stedelijk'
 		]
-	})
+	});
+
+	if (typeof window !== 'undefined' && window.console) {
+		window.console['log'](
+			'%cCrafted with love and care by the OWKIS team, contact us at info@owkis.nl for anything ❤️',
+			'background: rgba(254, 225, 194, 1); color: black; padding: 4px 6px; border-radius: 4px; font-size: 12px; text-align: center;'
+		);
+	}
 
 	function updateMatomo() {
-		if (typeof window !== 'undefined' && window._paq && !window.location.href.includes('/kandidaat/')) {
+		if (
+			typeof window !== 'undefined' &&
+			window._paq &&
+			!window.location.href.includes('/kandidaat/')
+		) {
 			window._paq.push(['setCustomUrl', window.location.href]);
 			window._paq.push(['setDocumentTitle', document.title]);
 			window._paq.push(['trackPageView']);
@@ -62,23 +73,41 @@
 
 <svelte:head>
 	<script>
-		if (!window.location.href.includes('localhost') && !window.location.href.includes('/kandidaat/')) {
-			var _paq = window._paq = window._paq || [];
-			_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-			_paq.push(["setDomains", ["*.opwiekanikstemmen.nl","*.tweedekamer2021.opwiekanikstemmen.nl","*.tweedekamer2023.opwiekanikstemmen.nl"]]);
+		if (
+			!window.location.href.includes('localhost') &&
+			!window.location.href.includes('/kandidaat/')
+		) {
+			var _paq = (window._paq = window._paq || []);
+			_paq.push(['setDocumentTitle', document.domain + '/' + document.title]);
+			_paq.push([
+				'setDomains',
+				[
+					'*.opwiekanikstemmen.nl',
+					'*.tweedekamer2021.opwiekanikstemmen.nl',
+					'*.tweedekamer2023.opwiekanikstemmen.nl'
+				]
+			]);
 			_paq.push(['disableCookies']);
 			_paq.push(['trackPageView']);
 			_paq.push(['enableLinkTracking']);
 		}
-		(function() {
-			var u="https://matomo.fmjansen.com/";
-			_paq.push(['setTrackerUrl', u+'matomo.php']);
+		(function () {
+			var u = 'https://matomo.fmjansen.com/';
+			_paq.push(['setTrackerUrl', u + 'matomo.php']);
 			_paq.push(['setSiteId', '8']);
-			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-			g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+			var d = document,
+				g = d.createElement('script'),
+				s = d.getElementsByTagName('script')[0];
+			g.async = true;
+			g.src = u + 'matomo.js';
+			s.parentNode.insertBefore(g, s);
 		})();
 	</script>
-	<noscript><p><img src="https://matomo.fmjansen.com/matomo.php?idsite=6&rec=1" style="border:0;" alt="" /></p></noscript>
+	<noscript
+		><p>
+			<img src="https://matomo.fmjansen.com/matomo.php?idsite=6&rec=1" style="border:0;" alt="" />
+		</p></noscript
+	>
 </svelte:head>
 
 <Header />
@@ -88,5 +117,4 @@
 <Footer />
 
 <style lang="scss">
-
 </style>
