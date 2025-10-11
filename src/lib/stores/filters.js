@@ -16,4 +16,4 @@ export const filters = writable({
 
 export const user = writable({
 	'stemlocatie': '',
-})
+});
