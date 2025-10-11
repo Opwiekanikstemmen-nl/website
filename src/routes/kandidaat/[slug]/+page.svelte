@@ -14,7 +14,7 @@
 	let hyperlinks;
 	if (kandidaat) {
 		
-		verkiezing = kandidaat.verkiezingen.tk2023;
+		verkiezing = kandidaat.verkiezingen.tk2025;
 		shareText = `Ik denk dat ik op ${kandidaat.naam} van ${verkiezing.partij_naam} ga stemmen! Weet jij het al?`;
 
 		const newsLink = {
@@ -101,15 +101,17 @@
 
 			<section class="kieskringen">
 				<h2>Kieskringen</h2>
-				{#if verkiezing.kieskringen.length == 20}
-					<p>Verkiesbaar in alle kieskringen.</p>
-				{:else}
-					<p>Verkiesbaar in {verkiezing.kieskringen.length} van de 20 kieskringen:</p>
-					<ul>
-						{#each verkiezing.kieskringen as kieskring}
-							<li>{kieskring}</li>
-						{/each}
-					</ul>
+				{#if verkiezing.kieskringen}
+					{#if verkiezing.kieskringen.length == 20}
+						<p>Verkiesbaar in alle kieskringen.</p>
+					{:else}
+						<p>Verkiesbaar in {verkiezing.kieskringen.length} van de 20 kieskringen:</p>
+						<ul>
+							{#each verkiezing.kieskringen as kieskring}
+								<li>{kieskring}</li>
+							{/each}
+						</ul>
+					{/if}
 				{/if}
 			</section>
 

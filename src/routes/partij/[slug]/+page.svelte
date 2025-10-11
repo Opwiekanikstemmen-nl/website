@@ -16,7 +16,7 @@
 	{#if partij}
 		<h1>{partij.naam}</h1>
 		<p>
-			Lijstnummer: {partij.lijstnummers['2023']}
+			Lijstnummer: {partij.lijstnummers['2025']}
 		</p>
 		<p>
 			<a href="{partij.urls.partijwebsite}" class="card">Partijwebsite</a>
@@ -27,10 +27,10 @@
 		{/if}
 		<ol class="kandidaten">
 			{#each kandidaten[partij['naam']] as kandidaat, i}
-				<li data-lijstnummer="{kandidaat.verkiezingen.tk2023.lijstnummer}">
+				<li data-lijstnummer="{kandidaat.verkiezingen.tk2025.lijstnummer}">
 					<a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a>
-					{#if kandidaat.verkiezingen.tk2023.lijstnummer !== i + 1}
-						<span class="lijstnummer">(lijstnummer {kandidaat.verkiezingen.tk2023.lijstnummer})</span>
+					{#if kandidaat.verkiezingen.tk2025.lijstnummer !== i + 1}
+						<span class="lijstnummer">(lijstnummer {kandidaat.verkiezingen.tk2025.lijstnummer})</span>
 					{/if}
 				</li>
 			{/each}

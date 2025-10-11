@@ -5,7 +5,7 @@
 
 	import { groupByParty } from '$lib/util/candidates';
 	import { sortData } from '$lib/util/filters';
-	import { count, countParties, countUnkowns } from '$lib/util/statistics';
+	import { count, countInRanges, averages, countParties, countUnkowns } from '$lib/util/statistics';
 
 	import Map from './Map.svelte';
 	import Sources from '../bronnen/Sources.svelte';
@@ -13,10 +13,18 @@
 	$: kandidaten = sortData(data.kandidaten, 'naam', 'desc');
 
 	const parties = groupByParty(data.kandidaten);
-	const woonplaatsen = countUnkowns(data.kandidaten, ['verkiezingen', 'tk2023', 'woonplaats']);
-	const stedelijkheid = countUnkowns(data.kandidaten, ['verkiezingen', 'tk2023', 'gemeente', 'stedelijkheid']);
+	const woonplaatsen = countUnkowns(data.kandidaten, ['verkiezingen', 'tk2025', 'woonplaats']);
+	const stedelijkheid = countUnkowns(data.kandidaten, ['verkiezingen', 'tk2025', 'gemeente', 'stedelijkheid']);
+	const voornamen = countUnkowns(data.kandidaten, ['voornaam']);
 	const sharesStedelijkheid = {'Zeer sterk stedelijk': 0.257057929668623, 'Sterk stedelijk': 0.3033547987272405, 'Niet stedelijk': 0.07340226254998808, 'Matig stedelijk': 0.14899154040118648, 'Weinig stedelijk': 0.21719346865296188, 'Onbekend': 0};
 	const partySizes = countParties(parties);
+	const ages = averages(data.kandidaten, ['leeftijd']);
+	const ageDistribution = countInRanges(data.kandidaten, ['leeftijd'], [18,25,35,45,55,65,75,120]);
+	const kandidaten_abroad = data.kandidaten.filter(
+		(kandidaat) => ['DE','BE','FR','CL','CW','PT'].some(
+			suffix => kandidaat['verkiezingen']['tk2025']['woonplaats'].includes(suffix)
+		)
+	);
 
 </script>
 
@@ -60,9 +68,36 @@
 			<p class="label">Mannen/vrouwen</p>
 			<h2><span class="number">{(count(kandidaten, 'geslacht', 'm')/count(kandidaten, 'geslacht', 'v')).toFixed(1)}&times;</span> meer mannen dan vrouwen zijn verkiesbaar*</h2>
 			<details>
-				<summary>Van alle kandidaten zijn er {count(kandidaten, 'geslacht', 'm')} man en {count(kandidaten, 'geslacht', 'v')} vrouw. Van {count(kandidaten, 'geslacht', null)} kandidaten weten we het niet.</summary>
+				<summary>Van alle kandidaten zijn er {count(kandidaten, 'geslacht', 'm')} man en {count(kandidaten, 'geslacht', 'v')} vrouw. Van {count(kandidaten, 'geslacht', 'x')} kandidaten hebben we een 'x' genoteerd.</summary>
 				<p>Dat we het van sommige kandidaten niet weten, komt omdat een aantal partijen geen geslacht doorgeeft bij het inleveren van hun kandidatenlijsten.</p>
 				<p>Verder wordt er bij de kandidatenlijsten niet iemands gender opgeschreven. Daardoor weten we dus ook niet of er non-binaire kandidaten op de lijsten staan.</p>
+			</details>
+		</article>
+		<article class="card">
+			<p class="label">Leeftijd</p>
+			<h2><span class="number">{ages}</span> is de gemiddelde leeftijd</h2>
+			<details>
+				<summary>Van de {$meta.kandidaten - count(kandidaten, 'leeftijd', null)} kandidaten van wie we het weten.</summary>
+				<p><a href="/bronnen#:~:text=Stem%20Jong">Stem Jong</a> heeft de leeftijden van veel kandidaten weten te vinden, maar niet van allemaal.</p>
+				<table>
+					<caption>
+						Het aantal kandidaten per leeftijdsgroep
+					</caption>
+					<thead>
+					<tr>
+						<th>Leeftijdsgroep</th>
+						<th>Aantal kandidaten</th>
+					</tr>
+					</thead>
+					<tbody>
+					{#each ageDistribution as ageGroup}
+						<tr>
+							<td>{ageGroup[0]}</td>
+							<td>{ageGroup[1]}</td>
+						</tr>
+					{/each}
+					</tbody>
+				</table>
 			</details>
 		</article>
 		<article class="card">
@@ -81,13 +116,13 @@
 		</article>
 		<article class="card">
 			<p class="label">Buitenland</p>
-			<h2><span class="number">9</span> kandidaten wonen niet in Nederland</h2>
+			<h2><span class="number">{kandidaten_abroad.length}</span> kandidaten wonen niet in Nederland</h2>
 			<details>
-				<summary>Van Forum voor Democratie, Nieuw Sociaal Contract en BVNL wonen elk twee kandidaten in het buitenland.</summary>
+				<summary>Van D66, NSC en Vrede voor Dieren wonen er elk drie kandidaten in het buitenland, van PVV, JA21, SP en FNP elk één.</summary>
 				<p>Het gaat om deze kandidaten:</p>
 				<ul>
-					{#each kandidaten.filter((kandidaat) => kandidaat['verkiezingen']['tk2023']['woonplaats'].includes('(') && !kandidaat['verkiezingen']['tk2023']['woonplaats'].includes('(O)')) as kandidaat}
-						<li><a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat['naam']}</a> woont in <strong>{kandidaat['verkiezingen']['tk2023']['woonplaats']}</strong></li>
+					{#each kandidaten_abroad as kandidaat}
+						<li><a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat['naam']}</a> woont in <strong>{kandidaat['verkiezingen']['tk2025']['woonplaats']}</strong></li>
 					{/each}
 				</ul>
 			</details>
@@ -122,6 +157,32 @@
 								<td>{Math.round(sharesStedelijkheid[level] * 100)}%</td>
 							</tr>
 						{/each}
+					</tbody>
+				</table>
+			</details>
+		</article>
+		<article class="card">
+			<p class="label">Voornamen</p>
+			<h2><span class="number">{voornamen[0][1]}</span> kandidaten heten {voornamen[0][0]}</h2>
+			<details>
+				<summary>Dat is {(voornamen[0][1]/$meta.kandidaten*100).toFixed(1)}% van de kandidaten.</summary>
+				<table>
+					<caption>
+						De meest voorkomende voornamen
+					</caption>
+					<thead>
+					<tr>
+						<th>Naam</th>
+						<th>Aantal</th>
+					</tr>
+					</thead>
+					<tbody>
+					{#each Array(10).fill().map((element, index) => index) as index}
+						<tr>
+							<td>{voornamen[index][0]}</td>
+							<td>{voornamen[index][1]}</td>
+						</tr>
+					{/each}
 					</tbody>
 				</table>
 			</details>
