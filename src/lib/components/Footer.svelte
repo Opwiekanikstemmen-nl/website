@@ -10,6 +10,12 @@
 				<a href="mailto:info@owkis.nl">info@owkis.nl</a>
 			</li>
 			<li>
+				<a href="https://mastodon.nl/@opwiekanikstemmen/" rel="me">Mastodon</a>
+			</li>
+			<li>
+				<a href="https://bsky.app/profile/opwiekanikstemmen.bsky.social">Bluesky</a>
+			</li>
+			<li>
 				<a href="https://www.instagram.com/opwiekanikstemmen/">Instagram</a>
 			</li>
 			<li>
