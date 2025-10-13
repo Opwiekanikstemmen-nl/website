@@ -166,6 +166,11 @@
 		}
 	};
 
+	const applyStemJong = () => {
+		$filters.leeftijd.min = null;
+		$filters.leeftijd.max = 30;
+	}
+
 	function changeMenu(event) {
 		filterMenu.classList.toggle('is-open');
 		event.target.nextElementSibling.toggleAttribute('hidden');
@@ -395,6 +400,7 @@
 							name="leeftijd-onbekend"
 						/>
 						<label class="option" for="leeftijd-onbekend">Ook onbekende leeftijden</label>
+						<button on:click={applyStemJong}>Pas Stem Jong filter toe</button>
 					</details>
 				</li>
 				<li>
