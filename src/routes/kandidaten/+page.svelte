@@ -369,7 +369,7 @@
 					</details>
 				</li>
 				<li>
-					<details open={initOpenLeeftijd}>
+					<details open={initOpenLeeftijd} id="leeftijd">
 						<summary><h3>Leeftijd</h3></summary>
 						<p>De leeftijd weten we dankzij stem jong of de partijwebsites.</p>
 						<label for="minleeftijd">Minimale leeftijd</label>
@@ -545,6 +545,14 @@
 								<label class="option" for="vinddebeta">Heeft een bèta-studie gedaan</label>
 							</li>
 						</ul>
+					</details>
+				</li>
+				<li>
+					<details>
+						<summary><h4>Stem Jong</h4></summary>
+						<p>De kandidaten waarvan <a href="http://stemjong.nl">Stem Jong</a> heeft gevonden dat ze jonger zijn dan 30.</p>
+						<button on:click={applyStemJong}>Pas Stem Jong filter toe</button>
+						<p>Hiermee pas je een filter toe op <a href="#leeftijd">leeftijd</a>.</p>
 					</details>
 				</li>
 				<!--				<li>-->
