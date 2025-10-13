@@ -69,7 +69,7 @@
 						Lijstnummer: <strong>{verkiezing.lijstnummer}</strong>
 					</li>
 					<li>
-						Woonplaats: <strong>{verkiezing.woonplaats}</strong>
+						Woonplaats: <strong>{verkiezing.woonplaats}</strong> ({verkiezing.gemeente.stedelijkheid})
 					</li>
 					<li>
 						Geslacht: <strong>{kandidaat.geslacht === null ? 'Onbekend' : kandidaat.geslacht === 'v' ? 'Vrouw' : kandidaat.geslacht === 'x' ? 'X' : 'Man' }</strong>
@@ -82,6 +82,26 @@
 					<li>
 						Leeftijd: <strong>{kandidaat.leeftijd}</strong>
 					</li>
+					{/if}
+					{#if kandidaat.study}
+						<li>
+							Studie: <strong>{kandidaat.study}</strong> aan {kandidaat.university}
+						</li>
+					{/if}
+					{#if kandidaat.nerdvote}
+						<li>
+							Dit is een <strong>NerdVote</strong>-kandidaat
+						</li>
+					{/if}
+					{#if kandidaat.rainbowvote}
+						<li>
+							Dit is een <strong>Rainbowvote</strong>-kandidaat
+						</li>
+					{/if}
+					{#if kandidaat.vinddebeta}
+						<li>
+							Dit is een <strong>Vind de Bèta</strong>-kandidaat
+						</li>
 					{/if}
 				</ul>
 			</section>
