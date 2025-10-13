@@ -56,11 +56,15 @@
 					<p>Stichting Stem op een Jongere (Stem Jong) werkt sinds 2021 aan meer jongeren participatie en representatie in alle lagen van de politiek. Wij geloven in een wereld waarin jongeren kunnen meedoen in de politiek en onze toekomst kunnen vorm geven. Daarom geven wij jonge kandidaten een platform en verzamelen wij data zodat we kunnen laten zien welke jongeren verkiesbaar zijn. Met onze campagne stimuleren we niet allen jongeren om te gaan stemmen, maar ook om slim te gaan stemmen op een jongere lager op de lijst. Samen stemmen op een jongere.</p>
 				</details>
 			</li>
+			<li>
+				<a href="https://vinddebetaopdelijst.nl/">Vind de bèta op de lijst</a>
+				<details>
+					<summary>Over</summary>
+					Vind de bèta op de lijst selecteert kandidaten die een bèta studie hebben gedaan. Daarbij kijken ze alleen naar partijen die kans maken op minstens één zetel in de peilingen.
+				</details>
+			</li>
 <!--			<li>-->
 <!--				<a href="https://kleurdekamer.nl/">Kleur de Kamer</a>-->
-<!--			</li>-->
-<!--			<li>-->
-<!--				<a href="https://vinddebetaopdelijst.nl/">Vind de bèta op de lijst</a>-->
 <!--			</li>-->
 		</ul>
 	</section>
