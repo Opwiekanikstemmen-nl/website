@@ -30,6 +30,7 @@
 	let initOpenStedelijkheid = false;
 	let initOpenNerdvote = false;
 	let initOpenRainbowvote = false;
+	let initOpenVinddebeta = false;
 
 	// Build querystring from filters/user (comma-separated, no encoding)
 	const keyAlias = {
@@ -40,7 +41,8 @@
 		'verkiezingen.tk2025.kieskringen': 'kieskring',
 		'verkiezingen.tk2025.woonplaats': 'woonplaats',
 		rainbowvote: 'rainbowvote',
-		nerdvote: 'nerdvote'
+		nerdvote: 'nerdvote',
+		vinddebeta: 'vinddebeta'
 	};
 
 	function isNonEmptyArray(v) {
@@ -235,6 +237,8 @@
 		initOpenNerdvote = Array.isArray($filters['nerdvote']) && $filters['nerdvote'].length > 0;
 		initOpenRainbowvote =
 			Array.isArray($filters['rainbowvote']) && $filters['rainbowvote'].length > 0;
+		initOpenVinddebeta =
+			Array.isArray($filters['vinddebeta']) && $filters['vinddebeta'].length > 0;
 		mounted = true;
 	});
 </script>
@@ -519,6 +523,24 @@
 						</ul>
 					</details>
 				</li>
+				<li>
+					<details open={initOpenVinddebeta}>
+						<summary><h4>Vind de bèta op de lijst</h4></summary>
+						<p>De kandidaten waarvan <a href="https://vinddebetaopdelijst.nl/">Vind de bèta op de lijst</a> weet dat ze een bèta-studie hebben gedaan.</p>
+						<ul>
+							<li class="inputWrapper">
+								<input
+									bind:group={$filters['vinddebeta']}
+									type="checkbox"
+									id="vinddebeta"
+									value="vinddebeta"
+									name="vinddebeta"
+								/>
+								<label class="option" for="vinddebeta">Heeft een bèta-studie gedaan</label>
+							</li>
+						</ul>
+					</details>
+				</li>
 				<!--				<li>-->
 				<!--					<details>-->
 				<!--						<summary><h4>Kleur de Kamer</h4></summary>-->
@@ -527,18 +549,6 @@
 				<!--							<li class="inputWrapper">-->
 				<!--								<input bind:group={$filters['kleurdekamer']} type="checkbox" id="kleurdekamer" value="kleurdekamer" name="kleurdekamer">-->
 				<!--								<label class="option" for="kleurdekamer">Kleur de Kamer</label>-->
-				<!--							</li>-->
-				<!--						</ul>-->
-				<!--					</details>-->
-				<!--				</li>-->
-				<!--				<li>-->
-				<!--					<details>-->
-				<!--						<summary><h4>Vind de bèta op de lijst</h4></summary>-->
-				<!--						<p>De kandidaten waarvan <a href="https://vinddebetaopdelijst.nl/">Vind de bèta op de lijst</a> weet dat ze een bèta-studie hebben gedaan.</p>-->
-				<!--						<ul>-->
-				<!--							<li class="inputWrapper">-->
-				<!--								<input bind:group={$filters['vinddebeta']} type="checkbox" id="vinddebeta" value="vinddebeta" name="vinddebeta">-->
-				<!--								<label class="option" for="vinddebeta">Heeft een bèta-studie gedaan</label>-->
 				<!--							</li>-->
 				<!--						</ul>-->
 				<!--					</details>-->
