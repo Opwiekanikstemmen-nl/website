@@ -9,6 +9,8 @@
 
 	const kandidaat = $page.data.kandidaten.find(kandidaat => kandidaat.id === $page.params.slug);
 
+	const dateOptions = { year: "numeric", month: "long", day: "numeric" }
+
 	let shareText;
 	let verkiezing;
 	let hyperlinks;
@@ -68,6 +70,16 @@
 					<li>
 						Lijstnummer: <strong>{verkiezing.lijstnummer}</strong>
 					</li>
+					{#if kandidaat.tweedekamer}
+					<li>
+						Zat al eerder in de <strong>Tweede Kamer</strong>
+					</li>
+					{/if}
+					{#if kandidaat.eerstekamer}
+					<li>
+						Zat al eerder in de <strong>Eerste Kamer</strong>
+					</li>
+					{/if}
 					<li>
 						Woonplaats: <strong>{verkiezing.woonplaats}</strong> ({verkiezing.gemeente.stedelijkheid})
 					</li>
@@ -149,6 +161,46 @@
 					</li>
 				</ul>
 			</aside>
+
+			{#if kandidaat.tweedekamer}
+				{#if kandidaat.tweedekamer.fractions.length > 0}
+					<section class="studies">
+						<h2>Eerder in de Tweede Kamer</h2>
+						<ul>
+							{#each kandidaat.tweedekamer.fractions as fraction}
+								<li>
+									<strong>{fraction.partij}</strong>
+									{#if fraction.end}
+										van {new Date(fraction.start).toLocaleDateString('nl-NL', dateOptions)} tot {new Date(fraction.end).toLocaleDateString('nl-NL', dateOptions)}
+									{:else}
+										sinds {new Date(fraction.start).toLocaleDateString('nl-NL', dateOptions)}
+									{/if}
+								</li>
+							{/each}
+						</ul>
+					</section>
+				{/if}
+			{/if}
+
+			{#if kandidaat.eerstekamer}
+				{#if kandidaat.eerstekamer.fractions.length > 0}
+					<section class="studies">
+						<h2>Eerder in de Eerste Kamer</h2>
+						<ul>
+							{#each kandidaat.eerstekamer.fractions as fraction}
+								<li>
+									<strong>{fraction.partij}</strong>
+									{#if fraction.end}
+										van {new Date(fraction.start).toLocaleDateString('nl-NL', dateOptions)} tot {new Date(fraction.end).toLocaleDateString('nl-NL', dateOptions)}
+									{:else}
+										sinds {new Date(fraction.start).toLocaleDateString('nl-NL', dateOptions)}
+									{/if}
+								</li>
+							{/each}
+						</ul>
+					</section>
+				{/if}
+			{/if}
 
 			{#if kandidaat.studies}
 				<section class="studies">
