@@ -59,6 +59,10 @@ function matchesFilter(key, value, filter) {
 		return value == true;
 	}
 
+	if (key === 'tweedekamer.member' || key === 'eerstekamer.member') {
+		return value == true;
+	}
+
 
 	if (Array.isArray(filter) && filter.length) {
 		return filter.includes(slugify(value));

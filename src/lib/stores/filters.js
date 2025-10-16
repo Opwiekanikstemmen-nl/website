@@ -11,7 +11,9 @@ export const filters = writable({
 	'rainbowvote': [],
 	'kleurdekamer': [],
 	'vinddebeta': [],
-	'nerdvote': []
+	'nerdvote': [],
+	'tweedekamer.member': [],
+	'eerstekamer.member': []
 });
 
 export const user = writable({

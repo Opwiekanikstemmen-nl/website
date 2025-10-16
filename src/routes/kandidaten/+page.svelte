@@ -31,6 +31,7 @@
 	let initOpenNerdvote = false;
 	let initOpenRainbowvote = false;
 	let initOpenVinddebeta = false;
+	let initOpenKamers = false;
 
 	// Build querystring from filters/user (comma-separated, no encoding)
 	const keyAlias = {
@@ -42,7 +43,9 @@
 		'verkiezingen.tk2025.woonplaats': 'woonplaats',
 		rainbowvote: 'rainbowvote',
 		nerdvote: 'nerdvote',
-		vinddebeta: 'vinddebeta'
+		vinddebeta: 'vinddebeta',
+		'tweedekamer.member': 'tweedekamer',
+		'eerstekamer.member': 'eerstekamer'
 	};
 
 	function isNonEmptyArray(v) {
@@ -244,6 +247,8 @@
 			Array.isArray($filters['rainbowvote']) && $filters['rainbowvote'].length > 0;
 		initOpenVinddebeta =
 			Array.isArray($filters['vinddebeta']) && $filters['vinddebeta'].length > 0;
+		initOpenKamers = Array.isArray($filters['tweedekamer.member']) && $filters['tweedekamer.member'].length > 0 ||
+			Array.isArray($filters['eerstekamer.member']) && $filters['eerstekamer.member'].length > 0;
 		mounted = true;
 	});
 </script>
@@ -401,6 +406,33 @@
 						/>
 						<label class="option" for="leeftijd-onbekend">Ook onbekende leeftijden</label>
 						<button on:click={applyStemJong}>Pas Stem Jong filter toe</button>
+					</details>
+				</li>
+				<li>
+					<details open={initOpenKamers}>
+						<summary><h3>Eerder in de politiek</h3></summary>
+						<ul>
+							<li class="inputWrapper">
+								<input
+									bind:group={$filters['tweedekamer.member']}
+									type="checkbox"
+									id="tweedekamer"
+									value="tweedekamer"
+									name="tweedekamer"
+								/>
+								<label class="option" for="tweedekamer">Eerder in de Tweede Kamer</label>
+							</li>
+							<li class="inputWrapper">
+								<input
+									bind:group={$filters['eerstekamer.member']}
+									type="checkbox"
+									id="eerstekamer"
+									value="eerstekamer"
+									name="eerstekamer"
+								/>
+								<label class="option" for="eerstekamer">Eerder in de Eerste Kamer</label>
+							</li>
+						</ul>
 					</details>
 				</li>
 				<li>
