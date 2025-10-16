@@ -8,6 +8,16 @@ export function count(list, property, value) {
 	return amount;
 }
 
+export function countHasProperty(list, property) {
+	let amount = 0;
+	for (const item of list) {
+		if (item[property]) {
+			amount++;
+		}
+	}
+	return amount;
+}
+
 export function countInRanges(list, property, cutOffs) {
 	let counts = [];
 	let min = false;

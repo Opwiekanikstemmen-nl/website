@@ -5,7 +5,7 @@
 
 	import { groupByParty } from '$lib/util/candidates';
 	import { sortData } from '$lib/util/filters';
-	import { count, countInRanges, averages, countParties, countUnkowns } from '$lib/util/statistics';
+	import { count, countInRanges, averages, countParties, countUnkowns, countHasProperty } from '$lib/util/statistics';
 
 	import Map from './Map.svelte';
 	import Sources from '../bronnen/Sources.svelte';
@@ -185,6 +185,15 @@
 					{/each}
 					</tbody>
 				</table>
+			</details>
+		</article>
+		<article class="card">
+			<p class="label">Politieke ervaring</p>
+			<h2><span class="number">{countHasProperty(kandidaten, 'tweedekamer')}</span> kandidaten zaten al eerder in de Tweede Kamer</h2>
+			<details>
+				<summary>{countHasProperty(kandidaten, 'eerstekamer')} zaten eerder al in de Eerste Kamer.</summary>
+				<p>Sommige kandidaten zitten al een tijdje niet meer in een Kamer, of hebben er voor een andere partij in gezeten.</p>
+				<p>Politieke ervaring in bijvoorbeeld een gemeente of provincie weten we (nog) niet.</p>
 			</details>
 		</article>
 		<!-- <article class="card">
