@@ -83,11 +83,6 @@
 						Leeftijd: <strong>{kandidaat.leeftijd}</strong>
 					</li>
 					{/if}
-					{#if kandidaat.study}
-						<li>
-							Studie: <strong>{kandidaat.study}</strong> aan {kandidaat.university}
-						</li>
-					{/if}
 					{#if kandidaat.nerdvote}
 						<li>
 							Dit is een <strong>NerdVote</strong>-kandidaat
@@ -154,6 +149,22 @@
 					</li>
 				</ul>
 			</aside>
+
+			{#if kandidaat.studies}
+				<section class="studies">
+					<h2>Onderwijs</h2>
+					<ul>
+						{#each kandidaat.studies as study}
+							<li>
+								<strong>{study.study}</strong>
+								{#if study.institution}
+									aan {study.institution}
+								{/if}
+							</li>
+						{/each}
+					</ul>
+				</section>
+			{/if}
 		</div>
 
 		<Sources />
