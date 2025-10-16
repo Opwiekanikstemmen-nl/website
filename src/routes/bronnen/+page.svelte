@@ -17,10 +17,7 @@
 				Informatie over woonplaatsen en gemeenten komen van het <a href="https://www.kadaster.nl/">Kadaster</a> en <a href="https://cbs.nl/">CBS</a>. We gebruiken de <a href="https://data.labs.kadaster.nl/_api/datasets/cbs/wbk">Wijk- en Buurtkaart 2020</a>, <a href="https://bag.basisregistraties.overheid.nl">Basisregistratie Adressen en Gebouwen (BAG)</a> en <a href="https://opendata.cbs.nl/#/CBS/nl/dataset/84929NED/table">Gebieden in Nederland 2021</a>.
 			</li>
 			<li>
-				De historische verkiezingsdeelname komt van <a href="https://verkiezingsarchief.nl/">Verkiezingsarchief</a>, waar we ook de Wikidata-links vandaan hebben.
-			</li>
-			<li>
-				Leeftijden, het geslacht van sommige kandidaten en persoonlijke websites halen we van <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a> en de partners hieronder. Ieder datapunt op Wikidata heeft daar weer een eigen (set van) bronnen.
+				Dankzij de API van de <a href="https://opendata.tweedekamer.nl/documentatie/informatiemodel">Tweede Kamer</a> weten we of kandidaten eerder in een Kamer hebben gezeten, hebben we extra links en opleidingen.
 			</li>
 		</ul>
 	</section>
