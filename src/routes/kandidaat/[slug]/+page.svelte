@@ -118,6 +118,11 @@
 							Dit is een <strong>Vind de Bèta</strong>-kandidaat
 						</li>
 					{/if}
+					{#if kandidaat.kleurdekamer}
+						<li>
+							Dit is een <strong>Kleur de Kamer</strong>-kandidaat
+						</li>
+					{/if}
 				</ul>
 			</section>
 
