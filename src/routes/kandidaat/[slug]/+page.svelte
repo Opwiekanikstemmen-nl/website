@@ -189,7 +189,7 @@
 						<ul>
 							{#each kandidaat.tweedekamer.fractions as fraction}
 								<li>
-									<strong>{fraction.partij}</strong>
+									Namens <strong>{fraction.partij}</strong>
 									{#if fraction.end}
 										van {new Date(fraction.start).toLocaleDateString('nl-NL', dateOptions)} tot {new Date(fraction.end).toLocaleDateString('nl-NL', dateOptions)}
 									{:else}
