@@ -31,6 +31,7 @@
 	let initOpenNerdvote = false;
 	let initOpenRainbowvote = false;
 	let initOpenVinddebeta = false;
+	let initOpenKleurdekamer = false;
 	let initOpenKamers = false;
 
 	// Build querystring from filters/user (comma-separated, no encoding)
@@ -245,6 +246,8 @@
 		initOpenNerdvote = Array.isArray($filters['nerdvote']) && $filters['nerdvote'].length > 0;
 		initOpenRainbowvote =
 			Array.isArray($filters['rainbowvote']) && $filters['rainbowvote'].length > 0;
+		initOpenKleurdekamer =
+			Array.isArray($filters['kleurdekamer']) && $filters['kleurdekamer'].length > 0;
 		initOpenVinddebeta =
 			Array.isArray($filters['vinddebeta']) && $filters['vinddebeta'].length > 0;
 		initOpenKamers = Array.isArray($filters['tweedekamer.member']) && $filters['tweedekamer.member'].length > 0 ||
@@ -579,6 +582,18 @@
 						</ul>
 					</details>
 				</li>
+				<li open={initOpenKleurdekamer}>
+					<details>
+						<summary><h4>Kleur de Kamer</h4></summary>
+						<p>Kandidaten van kleur met een profiel bij onze partner <a href="https://kleurdekamer.nl/">kleurdekamer.nl</a></p>
+						<ul>
+							<li class="inputWrapper">
+								<input bind:group={$filters['kleurdekamer']} type="checkbox" id="kleurdekamer" value="kleurdekamer" name="kleurdekamer">
+								<label class="option" for="kleurdekamer">Kleur de Kamer</label>
+							</li>
+						</ul>
+					</details>
+				</li>
 				<li>
 					<details>
 						<summary><h4>Stem Jong</h4></summary>
@@ -587,18 +602,6 @@
 						<p>Hiermee pas je een filter toe op <a href="#leeftijd">leeftijd</a>.</p>
 					</details>
 				</li>
-				<!--				<li>-->
-				<!--					<details>-->
-				<!--						<summary><h4>Kleur de Kamer</h4></summary>-->
-				<!--						<p>Kandidaten van kleur met een profiel bij onze partner <a href="https://kleurdekamer.nl/">kleurdekamer.nl</a></p>-->
-				<!--						<ul>-->
-				<!--							<li class="inputWrapper">-->
-				<!--								<input bind:group={$filters['kleurdekamer']} type="checkbox" id="kleurdekamer" value="kleurdekamer" name="kleurdekamer">-->
-				<!--								<label class="option" for="kleurdekamer">Kleur de Kamer</label>-->
-				<!--							</li>-->
-				<!--						</ul>-->
-				<!--					</details>-->
-				<!--				</li>-->
 			</ul>
 		</aside>
 

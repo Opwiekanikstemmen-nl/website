@@ -60,9 +60,13 @@
 					Vind de bèta op de lijst selecteert kandidaten die een bèta studie hebben gedaan. Daarbij kijken ze alleen naar partijen die kans maken op minstens één zetel in de peilingen.
 				</details>
 			</li>
-<!--			<li>-->
-<!--				<a href="https://kleurdekamer.nl/">Kleur de Kamer</a>-->
-<!--			</li>-->
+			<li>
+				<a href="https://kleurdekamer.nl/">Kleur de Kamer</a>
+				<details>
+					<summary>Over</summary>
+					En weer staan er maar weinig kandidaten van kleur op verkiesbare plekken, Kleur de Kamer probeert daar verandering in te brengen door een aantal kandidaten van kleur uit te lichten.
+				</details>
+			</li>
 		</ul>
 	</section>
 	
