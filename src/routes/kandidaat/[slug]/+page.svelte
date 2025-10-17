@@ -14,6 +14,7 @@
 	let shareText;
 	let verkiezing;
 	let hyperlinks;
+	let sociallinks;
 	if (kandidaat) {
 		
 		verkiezing = kandidaat.verkiezingen.tk2025;
@@ -24,13 +25,20 @@
 			'description': `${kandidaat.naam} op Google News`
 		};
 		hyperlinks = [newsLink];
+		sociallinks = [];
 		for (const key in kandidaat.urls) {
 			if (key.includes('wikidata')) continue;
-			hyperlinks.push({
+			let link = {
 				'url': kandidaat.urls[key],
 				'description': key
-			});
+			};
+			if (['Twitter', 'LinkedIn', 'Instagram', 'Facebook', 'Bluesky'].includes(key)) {
+				sociallinks.push(link);
+			} else {
+				hyperlinks.push(link);
+			}
 		}
+
 
 	}
 </script>
@@ -124,6 +132,18 @@
 						</li>
 					{/each}
 				</ul>
+				{#if sociallinks.length > 0}
+					<h3>Social media</h3>
+					<ul>
+						{#each sociallinks as link}
+							<li>
+								<a class="card" href="{link.url}" rel="noreferrer">
+									{link.description}
+								</a>
+							</li>
+						{/each}
+					</ul>
+				{/if}
 			</section>
 
 			<section class="kieskringen">
