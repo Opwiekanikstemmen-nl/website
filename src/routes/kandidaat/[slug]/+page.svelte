@@ -32,7 +32,7 @@
 				'url': kandidaat.urls[key],
 				'description': key
 			};
-			if (['Twitter', 'LinkedIn', 'Instagram', 'Facebook', 'Bluesky'].includes(key)) {
+			if (['Twitter', 'LinkedIn', 'Instagram', 'Facebook', 'BlueSky'].includes(key)) {
 				sociallinks.push(link);
 			} else {
 				hyperlinks.push(link);
