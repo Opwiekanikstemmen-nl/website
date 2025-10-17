@@ -59,7 +59,7 @@
 		</li>
 		<li>
 			<h3>Vind een kandidaat</h3>
-			<p>Filter de kandidatenlijst op dingen die jij belangrijk vindt en duik in de kandidaten die
+			<p>Filter de kandidatenlijst op basis van wat jij belangrijk vindt en duik in de kandidaten die
 				eruit komen.</p>
 			<p><a href="/kandidaten">Naar de kandidatenlijst</a></p>
 			<p class="tip">
