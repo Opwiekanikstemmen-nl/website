@@ -89,7 +89,8 @@
 					</li>
 					{/if}
 					<li>
-						Woonplaats: <strong>{verkiezing.woonplaats}</strong> ({verkiezing.gemeente.stedelijkheid})
+						Woonplaats: <strong>{verkiezing.woonplaats}</strong>
+						{#if verkiezing.gemeente}({verkiezing.gemeente.stedelijkheid}){/if}
 					</li>
 					<li>
 						Geslacht: <strong>{kandidaat.geslacht === null ? 'Onbekend' : kandidaat.geslacht === 'v' ? 'Vrouw' : kandidaat.geslacht === 'x' ? 'X' : 'Man' }</strong>
