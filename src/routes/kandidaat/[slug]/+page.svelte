@@ -15,9 +15,11 @@
 	let verkiezing;
 	let hyperlinks;
 	let sociallinks;
+	let partij;
 	if (kandidaat) {
 		
 		verkiezing = kandidaat.verkiezingen.tk2025;
+		partij = $page.data.partijen.find(partij => partij.naam === verkiezing.partij_naam);
 		shareText = `Ik denk dat ik op ${kandidaat.naam} van ${verkiezing.partij_naam} ga stemmen! Weet jij het al?`;
 
 		const newsLink = {
@@ -73,7 +75,7 @@
 			<section class="basics card">
 				<ul>
 					<li>
-						Partij: <strong><a href="/partij/{$page.data.partijen.find(partij => partij.naam === verkiezing.partij_naam).simpele_naam}">{verkiezing.partij_naam}</a></strong>
+						Partij: <strong><a href="/partij/{partij.simpele_naam}">{verkiezing.partij_naam}</a></strong>
 					</li>
 					<li>
 						Lijstnummer: <strong>{verkiezing.lijstnummer}</strong>
