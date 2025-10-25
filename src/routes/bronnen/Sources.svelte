@@ -1,6 +1,6 @@
 <section class="sources">
 	<h2><a href="/bronnen">Bronnen -></a></h2>
-	<p>Onze informatie komt uit verschillende bronnen, zoals de Kiesraad, het CBS, Kadaster, Stem op een Vrouw, Stem Jong, Vind de bèta en de Tweede Kamer.</p>
+	<p>Onze informatie komt uit verschillende bronnen, zoals de Kiesraad, het CBS, Kadaster, Peilingwijzer, Stem op een Vrouw, Stem Jong, Vind de bèta en de Tweede Kamer.</p>
 </section>
 
 <style lang="scss">

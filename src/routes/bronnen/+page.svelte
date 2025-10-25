@@ -19,6 +19,9 @@
 			<li>
 				Dankzij de API van de <a href="https://opendata.tweedekamer.nl/documentatie/informatiemodel">Tweede Kamer</a> weten we of kandidaten eerder in een Kamer hebben gezeten, hebben we extra links en opleidingen.
 			</li>
+			<li>
+				Van <a href="https://peilingwijzer.tomlouwerse.nl/">Peilingwijzer</a> door Tom Louwerse halen we de laatste peilingen, zodat je kunt zien of jouw kandidaat al een grote kans heeft om in de Kamer te komen.
+			</li>
 		</ul>
 	</section>
 

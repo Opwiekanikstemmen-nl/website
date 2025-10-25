@@ -9,6 +9,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://boerburgerbeweging.nl/"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 2,
+			"max": 4
 		}
 	},
 	{
@@ -47,6 +52,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://www.cda.nl/"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 22,
+			"max": 26
 		}
 	},
 	{
@@ -59,6 +69,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://www.christenunie.nl/"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 2,
+			"max": 4
 		}
 	},
 	{
@@ -71,6 +86,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://www.bewegingdenk.nl/"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 2,
+			"max": 4
 		}
 	},
 	{
@@ -84,6 +104,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://d66.nl/"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 14,
+			"max": 19
 		}
 	},
 	{
@@ -96,6 +121,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://fvd.nl"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 3,
+			"max": 5
 		}
 	},
 	{
@@ -111,6 +141,11 @@
 			"partijwebsite": "https://groenlinkspvda.nl/",
 			"GroenLinks": "https://groenlinks.nl/",
 			"PvdA": "https://pvda.nl"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 22,
+			"max": 26
 		}
 	},
 	{
@@ -123,6 +158,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://ja21.nl/"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 10,
+			"max": 14
 		}
 	},
 	{
@@ -161,6 +201,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://partijnieuwsociaalcontract.nl/"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 0,
+			"max": 1
 		}
 	},
 	{
@@ -173,6 +218,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://www.partijvoordedieren.nl/"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 3,
+			"max": 5
 		}
 	},
 	{
@@ -198,6 +248,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://www.pvv.nl/"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 29,
+			"max": 35
 		}
 	},
 	{
@@ -210,6 +265,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://www.sp.nl/"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 3,
+			"max": 5
 		}
 	},
 	{
@@ -222,6 +282,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://sgp.nl/home"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 2,
+			"max": 4
 		}
 	},
 	{
@@ -234,6 +299,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://voltnederland.org/"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 2,
+			"max": 4
 		}
 	},
 	{
@@ -246,6 +316,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://www.vvd.nl/"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 12,
+			"max": 16
 		}
 	},
 	{
@@ -258,6 +333,11 @@
 		},
 		"urls": {
 			"partijwebsite": "https://50pluspartij.nl/"
+		},
+		"polls": {
+			"updated": "2025-10-21T10:00",
+			"min": 0,
+			"max": 2
 		}
 	},
 	{

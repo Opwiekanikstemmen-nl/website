@@ -72,7 +72,39 @@
 		<h1>{kandidaat.naam}</h1>
 
 		<div class="properties">
+			<section class="polls card">
+				{#if partij.polls}
+					<p>
+						{kandidaat.voornaam} heeft een
+						<strong>
+							{#if verkiezing.lijstnummer < partij.polls.min}
+								grote kans om in de kamer te komen.
+							{:else if verkiezing.lijstnummer < partij.polls.max}
+								redelijke kans om in de kamer te komen.
+							{:else}
+								kleine kans om in de kamer te komen.
+							{/if}
+						</strong>
+					</p>
+					<p>
+						{partij.simpele_naam} staat namelijk op {partij.polls.min} tot {partij.polls.max}
+						zetels in de peilingen en {kandidaat.voornaam} staat op plek {verkiezing.lijstnummer}.
+						Met jouw stem wordt die kans natuurlijk (nog) groter!
+					</p>
+				{:else}
+					<p>
+						{kandidaat.voornaam} heeft een <strong>kleine kans om in de kamer te komen.</strong>
+					</p>
+					<p>
+						{partij.simpele_naam} staat namelijk op 0 zetels in de peilingen.
+						Met jouw stem wordt de kans natuurlijk groter!
+					</p>
+				{/if}
+				<p class="source">Peilinginformatie van <a href="https://peilingwijzer.tomlouwerse.nl/">Peilingwijzer</a>, laatst bijgewerkt: 21-10-2025.</p>
+			</section>
+
 			<section class="basics card">
+				<h2>De basis</h2>
 				<ul>
 					<li>
 						Partij: <strong><a href="/partij/{partij.simpele_naam}">{verkiezing.partij_naam}</a></strong>
@@ -265,10 +297,26 @@
 
 .card {
 	grid-column-start: left;
+
+	& h2 {
+		margin-top: .5em;
+	}
 }
 
 li {
 	margin: .75em 0;
+}
+
+.polls {
+	& p {
+		margin-block: .75em;
+	}
+
+	& .source {
+		display: block;
+		font-size: .9em;
+		color: rgba(var(--foreground), .8);
+	}
 }
 
 [aria-label="overzichten"] ul {
@@ -279,6 +327,14 @@ li {
 
 .links {
 	grid-column: right;
+
+	&:not(aside) {
+		grid-row-start: 1;
+
+		&:has(:nth-child(3)) {
+			grid-row: 1 / span 2;
+		}
+	}
 
 	& > h2 {
 		@media (min-width: 50em) {
