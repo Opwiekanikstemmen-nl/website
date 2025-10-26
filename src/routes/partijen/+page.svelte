@@ -1,10 +1,12 @@
 <script>
 	export let data;
 
+	import { page } from '$app/stores';
 	import { groupByParty } from '$lib/util/candidates';
 
 	const parties = groupByParty(data.kandidaten);
 	const partijen = data.partijen.sort((a, b) => a['lijstnummers']['2025'] > b['lijstnummers']['2025']);
+	const partijen_meta = $page.data.partijen;
 
 </script>
 
@@ -26,11 +28,12 @@
 	<p>Zoals ze ook te zien zijn op jouw stembiljet.</p>
 	<section id="ballot-list">
 		{#each partijen as party}
+			{@const polls = partijen_meta.find(partij => partij.naam === party['naam']).polls}
 			<article>
 				<h3>{party['naam']}</h3>
 				<ol>
 					{#each parties[party['naam']] as kandidaat, i}
-						<li>
+						<li class="{(polls && i <= polls.min) ? 'polled' : (polls && i <= polls.max) ? 'maybe-polled' : 'not-polled'}">
 							<a href="{`/kandidaat/${kandidaat.id}`}">{kandidaat.naam}</a>
 							{#if kandidaat.verkiezingen.tk2025.lijstnummer !== i + 1}
 								<span class="lijstnummer">(lijstnummer {kandidaat.verkiezingen.tk2025.lijstnummer})</span>
@@ -121,7 +124,26 @@
 		}
 	}
 
-	.lijstnummer {
+	.polled:has(+ .maybe-polled)::after,
+	.maybe-polled:has(+ .not-polled)::after {
+		border-top: 1px solid rgba(var(--foreground), .75);
+		content: "Minimale peiling";
+		display: block;
+		text-align: center;
+		margin-block: 1.5em 1em;
+		padding-block-start: .5em;
+		margin-inline-start: -1.8em;
+		text-transform: uppercase;
+		letter-spacing: .15em;
+		color: rgba(var(--foreground), .75);
+		font-size: .8em;
+	}
+	.maybe-polled:has(+ .not-polled)::after {
+		content: "Maximale peiling";
+  }
+
+
+    .lijstnummer {
 		opacity: .8;
 	}
 </style>
