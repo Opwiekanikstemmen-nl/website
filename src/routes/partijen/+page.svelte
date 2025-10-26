@@ -140,10 +140,9 @@
 	}
 	.maybe-polled:has(+ .not-polled)::after {
 		content: "Maximale peiling";
-  }
+	}
 
-
-    .lijstnummer {
+	.lijstnummer {
 		opacity: .8;
 	}
 </style>
