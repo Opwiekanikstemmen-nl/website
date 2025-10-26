@@ -100,7 +100,9 @@
 						Met jouw stem wordt de kans natuurlijk groter!
 					</p>
 				{/if}
-				<p class="source">Peilinginformatie van <a href="https://peilingwijzer.tomlouwerse.nl/">Peilingwijzer</a>, laatst bijgewerkt: 21-10-2025.</p>
+				<p class="source">Peilinginformatie van
+					<a href="https://peilingwijzer.tomlouwerse.nl/">Peilingwijzer</a>, laatst bijgewerkt:
+					{new Date(partij.polls.updated).toLocaleDateString('nl-NL', dateOptions)}.</p>
 			</section>
 
 			<section class="basics card">
