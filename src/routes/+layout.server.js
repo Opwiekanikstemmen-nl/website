@@ -3,6 +3,8 @@ import partijen from '$lib/data/partijen.json';
 import kieskringen from '$lib/data/gemeente-kieskringen.json';
 import provincies from '$lib/data/provincies.json';
 
+const polls_update = partijen[0].polls.updated;
+
 /** @type {import('./$types').LayoutServerLoad} */
 export async function load() {
 	return {
@@ -10,5 +12,6 @@ export async function load() {
 		partijen: partijen,
 		kieskringen: kieskringen,
 		provincies: provincies,
+		polls_update: polls_update
 	};
 }

@@ -102,7 +102,7 @@
 				{/if}
 				<p class="source">Peilinginformatie van
 					<a href="https://peilingwijzer.tomlouwerse.nl/">Peilingwijzer</a>, laatst bijgewerkt:
-					{new Date(partij.polls.updated).toLocaleDateString('nl-NL', dateOptions)}.</p>
+					{new Date($page.data.polls_update).toLocaleDateString('nl-NL', dateOptions)}.</p>
 			</section>
 
 			<section class="basics card">
