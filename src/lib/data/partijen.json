@@ -11,7 +11,7 @@
 			"partijwebsite": "https://boerburgerbeweging.nl/"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
+			"updated": "2025-10-25T10:00",
 			"min": 2,
 			"max": 4
 		}
@@ -54,9 +54,9 @@
 			"partijwebsite": "https://www.cda.nl/"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
-			"min": 22,
-			"max": 26
+			"updated": "2025-10-25T10:00",
+			"min": 18,
+			"max": 22
 		}
 	},
 	{
@@ -71,7 +71,7 @@
 			"partijwebsite": "https://www.christenunie.nl/"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
+			"updated": "2025-10-25T10:00",
 			"min": 2,
 			"max": 4
 		}
@@ -88,7 +88,7 @@
 			"partijwebsite": "https://www.bewegingdenk.nl/"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
+			"updated": "2025-10-25T10:00",
 			"min": 2,
 			"max": 4
 		}
@@ -106,9 +106,9 @@
 			"partijwebsite": "https://d66.nl/"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
-			"min": 14,
-			"max": 19
+			"updated": "2025-10-25T10:00",
+			"min": 19,
+			"max": 23
 		}
 	},
 	{
@@ -123,7 +123,7 @@
 			"partijwebsite": "https://fvd.nl"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
+			"updated": "2025-10-25T10:00",
 			"min": 3,
 			"max": 5
 		}
@@ -143,7 +143,7 @@
 			"PvdA": "https://pvda.nl"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
+			"updated": "2025-10-25T10:00",
 			"min": 22,
 			"max": 26
 		}
@@ -160,7 +160,7 @@
 			"partijwebsite": "https://ja21.nl/"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
+			"updated": "2025-10-25T10:00",
 			"min": 10,
 			"max": 14
 		}
@@ -203,7 +203,7 @@
 			"partijwebsite": "https://partijnieuwsociaalcontract.nl/"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
+			"updated": "2025-10-25T10:00",
 			"min": 0,
 			"max": 1
 		}
@@ -220,7 +220,7 @@
 			"partijwebsite": "https://www.partijvoordedieren.nl/"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
+			"updated": "2025-10-25T10:00",
 			"min": 3,
 			"max": 5
 		}
@@ -250,9 +250,9 @@
 			"partijwebsite": "https://www.pvv.nl/"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
-			"min": 29,
-			"max": 35
+			"updated": "2025-10-25T10:00",
+			"min": 25,
+			"max": 31
 		}
 	},
 	{
@@ -267,7 +267,7 @@
 			"partijwebsite": "https://www.sp.nl/"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
+			"updated": "2025-10-25T10:00",
 			"min": 3,
 			"max": 5
 		}
@@ -284,7 +284,7 @@
 			"partijwebsite": "https://sgp.nl/home"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
+			"updated": "2025-10-25T10:00",
 			"min": 2,
 			"max": 4
 		}
@@ -301,7 +301,7 @@
 			"partijwebsite": "https://voltnederland.org/"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
+			"updated": "2025-10-25T10:00",
 			"min": 2,
 			"max": 4
 		}
@@ -318,9 +318,9 @@
 			"partijwebsite": "https://www.vvd.nl/"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
-			"min": 12,
-			"max": 16
+			"updated": "2025-10-25T10:00",
+			"min": 14,
+			"max": 18
 		}
 	},
 	{
@@ -335,9 +335,9 @@
 			"partijwebsite": "https://50pluspartij.nl/"
 		},
 		"polls": {
-			"updated": "2025-10-21T10:00",
-			"min": 0,
-			"max": 2
+			"updated": "2025-10-25T10:00",
+			"min": 1,
+			"max": 3
 		}
 	},
 	{
