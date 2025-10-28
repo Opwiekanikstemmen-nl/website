@@ -8,6 +8,7 @@ export const filters = writable({
 	'verkiezingen.tk2025.gemeente.stedelijkheid': [],
 	'verkiezingen.tk2025.kieskringen': [],
 	'verkiezingen.tk2025.woonplaats': [],
+	'peilingpositie': [],
 	'rainbowvote': [],
 	'kleurdekamer': [],
 	'vinddebeta': [],

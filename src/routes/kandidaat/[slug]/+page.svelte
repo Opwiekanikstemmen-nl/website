@@ -7,32 +7,32 @@
 
 	import Sources from '../../bronnen/Sources.svelte';
 
-	const kandidaat = $page.data.kandidaten.find(kandidaat => kandidaat.id === $page.params.slug);
+	const kandidaat = $page.data.kandidaten.find((kandidaat) => kandidaat.id === $page.params.slug);
 
-	const dateOptions = { year: "numeric", month: "long", day: "numeric" }
+	const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
 	let shareText;
 	let verkiezing;
 	let hyperlinks;
 	let sociallinks;
 	let partij;
+
 	if (kandidaat) {
-		
 		verkiezing = kandidaat.verkiezingen.tk2025;
-		partij = $page.data.partijen.find(partij => partij.naam === verkiezing.partij_naam);
+		partij = $page.data.partijen.find((partij) => partij.naam === verkiezing.partij_naam);
 		shareText = `Ik denk dat ik op ${kandidaat.naam} van ${verkiezing.partij_naam} ga stemmen! Weet jij het al?`;
 
 		const newsLink = {
-			'url': `https://news.google.com/search?q=${kandidaat.naam} ${verkiezing.partij_naam}&hl=nl&gl=NL&ceid=NL:nl`,
-			'description': `${kandidaat.naam} op Google News`
+			url: `https://news.google.com/search?q=${kandidaat.naam} ${verkiezing.partij_naam}&hl=nl&gl=NL&ceid=NL:nl`,
+			description: `${kandidaat.naam} op Google News`
 		};
 		hyperlinks = [newsLink];
 		sociallinks = [];
 		for (const key in kandidaat.urls) {
 			if (key.includes('wikidata')) continue;
 			let link = {
-				'url': kandidaat.urls[key],
-				'description': key
+				url: kandidaat.urls[key],
+				description: key
 			};
 			if (['Twitter', 'LinkedIn', 'Instagram', 'Facebook', 'BlueSky'].includes(key)) {
 				sociallinks.push(link);
@@ -40,14 +40,15 @@
 				hyperlinks.push(link);
 			}
 		}
-
-
 	}
 </script>
 
 <svelte:head>
 	<title>{kandidaat ? kandidaat.naam : 'Niet gevonden'} - Op wie kan ik stemmen?</title>
-	<meta name="description" content="{kandidaat ? `Wat wij weten over ${kandidaat.naam}` : 'Deze kandidaat is niet gevonden'}">
+	<meta
+		name="description"
+		content={kandidaat ? `Wat wij weten over ${kandidaat.naam}` : 'Deze kandidaat is niet gevonden'}
+	/>
 </svelte:head>
 
 <main>
@@ -68,7 +69,7 @@
 				</li>
 			</ul>
 		</nav>
-	
+
 		<h1>{kandidaat.naam}</h1>
 
 		<div class="properties">
@@ -96,49 +97,61 @@
 						{kandidaat.voornaam} heeft een <strong>kleine kans om in de kamer te komen.</strong>
 					</p>
 					<p>
-						{partij.simpele_naam} staat namelijk op 0 zetels in de peilingen.
-						Met jouw stem wordt de kans natuurlijk groter!
+						{partij.simpele_naam} staat namelijk op 0 zetels in de peilingen. Met jouw stem wordt de
+						kans natuurlijk groter!
 					</p>
 				{/if}
-				<p class="source">Peilinginformatie van
+				<p class="source">
+					Peilinginformatie van
 					<a href="https://peilingwijzer.tomlouwerse.nl/">Peilingwijzer</a>, laatst bijgewerkt:
-					{new Date($page.data.polls_update).toLocaleDateString('nl-NL', dateOptions)}.</p>
+					{new Date($page.data.polls_update).toLocaleDateString('nl-NL', dateOptions)}.
+				</p>
 			</section>
 
 			<section class="basics card">
 				<h2>De basis</h2>
 				<ul>
 					<li>
-						Partij: <strong><a href="/partij/{partij.simpele_naam}">{verkiezing.partij_naam}</a></strong>
+						Partij: <strong
+							><a href="/partij/{partij.simpele_naam}">{verkiezing.partij_naam}</a></strong
+						>
 					</li>
 					<li>
 						Lijstnummer: <strong>{verkiezing.lijstnummer}</strong>
 					</li>
 					{#if kandidaat.tweedekamer}
-					<li>
-						Zat al eerder in de <strong>Tweede Kamer</strong>
-					</li>
+						<li>
+							Zat al eerder in de <strong>Tweede Kamer</strong>
+						</li>
 					{/if}
 					{#if kandidaat.eerstekamer}
-					<li>
-						Zat al eerder in de <strong>Eerste Kamer</strong>
-					</li>
+						<li>
+							Zat al eerder in de <strong>Eerste Kamer</strong>
+						</li>
 					{/if}
 					<li>
 						Woonplaats: <strong>{verkiezing.woonplaats}</strong>
 						{#if verkiezing.gemeente}({verkiezing.gemeente.stedelijkheid}){/if}
 					</li>
 					<li>
-						Geslacht: <strong>{kandidaat.geslacht === null ? 'Onbekend' : kandidaat.geslacht === 'v' ? 'Vrouw' : kandidaat.geslacht === 'x' ? 'X' : 'Man' }</strong>
+						Geslacht: <strong
+							>{kandidaat.geslacht === null
+								? 'Onbekend'
+								: kandidaat.geslacht === 'v'
+								? 'Vrouw'
+								: kandidaat.geslacht === 'x'
+								? 'X'
+								: 'Man'}</strong
+						>
 					</li>
 					{#if kandidaat.geboortedatum && getAge(kandidaat.geboortedatum)}
-					<li>
-						Leeftijd: <strong>{getAge(kandidaat.geboortedatum)}</strong>
-					</li>
+						<li>
+							Leeftijd: <strong>{getAge(kandidaat.geboortedatum)}</strong>
+						</li>
 					{:else if kandidaat.leeftijd}
-					<li>
-						Leeftijd: <strong>{kandidaat.leeftijd}</strong>
-					</li>
+						<li>
+							Leeftijd: <strong>{kandidaat.leeftijd}</strong>
+						</li>
 					{/if}
 					{#if kandidaat.nerdvote}
 						<li>
@@ -168,7 +181,7 @@
 				<ul>
 					{#each hyperlinks as link}
 						<li>
-							<a class="card" href="{link.url}" rel="noreferrer">
+							<a class="card" href={link.url} rel="noreferrer">
 								{link.description}
 							</a>
 						</li>
@@ -179,7 +192,7 @@
 					<ul>
 						{#each sociallinks as link}
 							<li>
-								<a class="card" href="{link.url}" rel="noreferrer">
+								<a class="card" href={link.url} rel="noreferrer">
 									{link.description}
 								</a>
 							</li>
@@ -209,17 +222,24 @@
 				<p>Ben je eruit?</p>
 				<ul>
 					{#if $user.stemlocatie}
-					<li>
-						<a class="card" href="https://waarismijnstemlokaal.nl/s/{$user.stemlocatie}">Vind een stemlokaal in {$user.stemlocatie}</a>
-					</li>
+						<li>
+							<a class="card" href="https://waarismijnstemlokaal.nl/s/{$user.stemlocatie}"
+								>Vind een stemlokaal in {$user.stemlocatie}</a
+							>
+						</li>
 					{:else}
-					<li>
-						<a class="card" href="https://waarismijnstemlokaal.nl/">Vind een stemlokaal in de buurt</a>
-					</li>
+						<li>
+							<a class="card" href="https://waarismijnstemlokaal.nl/"
+								>Vind een stemlokaal in de buurt</a
+							>
+						</li>
 					{/if}
 					<li>
-						<a class="card" data-action="share/whatsapp/share"
-							href="whatsapp://send?text={shareText} {$page.url}">Deel het op WhatsApp</a>
+						<a
+							class="card"
+							data-action="share/whatsapp/share"
+							href="whatsapp://send?text={shareText} {$page.url}">Deel het op WhatsApp</a
+						>
 					</li>
 				</ul>
 			</aside>
@@ -233,7 +253,9 @@
 								<li>
 									Namens <strong>{fraction.partij}</strong>
 									{#if fraction.end}
-										van {new Date(fraction.start).toLocaleDateString('nl-NL', dateOptions)} tot {new Date(fraction.end).toLocaleDateString('nl-NL', dateOptions)}
+										van {new Date(fraction.start).toLocaleDateString('nl-NL', dateOptions)} tot {new Date(
+											fraction.end
+										).toLocaleDateString('nl-NL', dateOptions)}
 									{:else}
 										sinds {new Date(fraction.start).toLocaleDateString('nl-NL', dateOptions)}
 									{/if}
@@ -253,7 +275,9 @@
 								<li>
 									<strong>{fraction.partij}</strong>
 									{#if fraction.end}
-										van {new Date(fraction.start).toLocaleDateString('nl-NL', dateOptions)} tot {new Date(fraction.end).toLocaleDateString('nl-NL', dateOptions)}
+										van {new Date(fraction.start).toLocaleDateString('nl-NL', dateOptions)} tot {new Date(
+											fraction.end
+										).toLocaleDateString('nl-NL', dateOptions)}
 									{:else}
 										sinds {new Date(fraction.start).toLocaleDateString('nl-NL', dateOptions)}
 									{/if}
@@ -289,85 +313,85 @@
 </main>
 
 <style lang="scss">
-.properties {
-	@media (min-width: 50em) {
-		display: grid;
-		grid-column-gap: 3em;
-		grid-template-columns: [left] 1fr [right] 40vw;
-	}
-}
-
-.card {
-	grid-column-start: left;
-
-	& h2 {
-		margin-top: .5em;
-	}
-}
-
-li {
-	margin: .75em 0;
-}
-
-.polls {
-	& p {
-		margin-block: .75em;
-	}
-
-	& .source {
-		display: block;
-		font-size: .9em;
-		color: rgba(var(--foreground), .8);
-	}
-}
-
-[aria-label="overzichten"] ul {
-	display: flex;
-	flex-flow: row wrap;
-	gap: 2em
-}
-
-.links {
-	grid-column: right;
-
-	&:not(aside) {
-		grid-row-start: 1;
-
-		&:has(:nth-child(3)) {
-			grid-row: 1 / span 2;
-		}
-	}
-
-	& > h2 {
+	.properties {
 		@media (min-width: 50em) {
-			margin-top: 0;
+			display: grid;
+			grid-column-gap: 3em;
+			grid-template-columns: [left] 1fr [right] 40vw;
 		}
 	}
 
-	& > ul .card {
-		background: rgb(var(--background), .5);
+	.card {
+		grid-column-start: left;
 
-		&:hover {
-			background: rgb(var(--background), 1);
+		& h2 {
+			margin-top: 0.5em;
 		}
 	}
-}
 
-.links a {
-	display: block;
-
-	&::first-letter {
-		text-transform: capitalize;
+	li {
+		margin: 0.75em 0;
 	}
 
-	&::after {
-		float: right;
-	}
-}
+	.polls {
+		& p {
+			margin-block: 0.75em;
+		}
 
-aside {
-	border-top: 1px solid rgba(var(--foreground), .8);
-	margin-top: 2em;
-	padding-top: 2em;
-}
+		& .source {
+			display: block;
+			font-size: 0.9em;
+			color: rgba(var(--foreground), 0.8);
+		}
+	}
+
+	[aria-label='overzichten'] ul {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 2em;
+	}
+
+	.links {
+		grid-column: right;
+
+		&:not(aside) {
+			grid-row-start: 1;
+
+			&:has(:nth-child(3)) {
+				grid-row: 1 / span 2;
+			}
+		}
+
+		& > h2 {
+			@media (min-width: 50em) {
+				margin-top: 0;
+			}
+		}
+
+		& > ul .card {
+			background: rgb(var(--background), 0.5);
+
+			&:hover {
+				background: rgb(var(--background), 1);
+			}
+		}
+	}
+
+	.links a {
+		display: block;
+
+		&::first-letter {
+			text-transform: capitalize;
+		}
+
+		&::after {
+			float: right;
+		}
+	}
+
+	aside {
+		border-top: 1px solid rgba(var(--foreground), 0.8);
+		margin-top: 2em;
+		padding-top: 2em;
+	}
 </style>
