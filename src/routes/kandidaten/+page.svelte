@@ -1,4 +1,7 @@
 <script>
+	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+
 	import { meta } from '$lib/stores/meta';
 	import { filters } from '$lib/stores/filters';
 	import { user } from '$lib/stores/filters';
@@ -10,14 +13,19 @@
 
 	import Map from '../cijfers/Map.svelte';
 
-	import { onMount } from 'svelte';
-
 	export let data;
 
 	let filterMenu;
 
 	let parties = groupByParty(data.kandidaten);
+	const partiesByName = data.partijen.reduce((acc, partij) => {
+		acc[partij.naam] = partij;
+		return acc;
+	}, {});
 	let mounted = false;
+
+	const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+
 	$: kandidaten = sortData(data.kandidaten, 'naam', 'desc');
 
 	// Initial-only open flags (computed once on init)
@@ -28,6 +36,7 @@
 	let initOpenLeeftijd = false;
 	let initOpenWoonplaats = false;
 	let initOpenStedelijkheid = false;
+	let initOpenPeilingpositie = false;
 	let initOpenNerdvote = false;
 	let initOpenRainbowvote = false;
 	let initOpenVinddebeta = false;
@@ -45,6 +54,7 @@
 		rainbowvote: 'rainbowvote',
 		nerdvote: 'nerdvote',
 		vinddebeta: 'vinddebeta',
+		peilingpositie: 'peilingpositie',
 		'tweedekamer.member': 'tweedekamer',
 		'eerstekamer.member': 'eerstekamer'
 	};
@@ -129,7 +139,11 @@
 	filters.subscribe((update) => {
 		console.log('[filters.subscribe] update:', update);
 		if (update) {
-			kandidaten = sortData(applyFilters(data.kandidaten, update), 'naam', 'desc');
+			kandidaten = sortData(
+				applyFilters(data.kandidaten, update, { partiesByName }),
+				'naam',
+				'desc'
+			);
 		}
 
 		if (mounted && browser) {
@@ -173,7 +187,7 @@
 	const applyStemJong = () => {
 		$filters.leeftijd.min = null;
 		$filters.leeftijd.max = 30;
-	}
+	};
 
 	function changeMenu(event) {
 		filterMenu.classList.toggle('is-open');
@@ -243,15 +257,18 @@
 		initOpenStedelijkheid =
 			Array.isArray($filters['verkiezingen.tk2025.gemeente.stedelijkheid']) &&
 			$filters['verkiezingen.tk2025.gemeente.stedelijkheid'].length > 0;
+		initOpenPeilingpositie =
+			Array.isArray($filters['peilingpositie']) && $filters['peilingpositie'].length > 0;
 		initOpenNerdvote = Array.isArray($filters['nerdvote']) && $filters['nerdvote'].length > 0;
 		initOpenRainbowvote =
 			Array.isArray($filters['rainbowvote']) && $filters['rainbowvote'].length > 0;
 		initOpenKleurdekamer =
 			Array.isArray($filters['kleurdekamer']) && $filters['kleurdekamer'].length > 0;
-		initOpenVinddebeta =
-			Array.isArray($filters['vinddebeta']) && $filters['vinddebeta'].length > 0;
-		initOpenKamers = Array.isArray($filters['tweedekamer.member']) && $filters['tweedekamer.member'].length > 0 ||
-			Array.isArray($filters['eerstekamer.member']) && $filters['eerstekamer.member'].length > 0;
+		initOpenVinddebeta = Array.isArray($filters['vinddebeta']) && $filters['vinddebeta'].length > 0;
+		initOpenKamers =
+			(Array.isArray($filters['tweedekamer.member']) &&
+				$filters['tweedekamer.member'].length > 0) ||
+			(Array.isArray($filters['eerstekamer.member']) && $filters['eerstekamer.member'].length > 0);
 		mounted = true;
 	});
 </script>
@@ -513,6 +530,52 @@
 					</details>
 				</li>
 				<li>
+					<h3>Peilingen</h3>
+					<p>
+						Filter kandidaten op hun positie in de <a href="https://peilingwijzer.tomlouwerse.nl/"
+							>Peilingwijzer</a
+						>, deze zijn voor het laatst bijgewerkt op:
+						{new Date($page.data.polls_update).toLocaleDateString('nl-NL', dateOptions)}
+					</p>
+				</li>
+				<li>
+					<details open={initOpenPeilingpositie}>
+						<summary><h3>Kans op zetel</h3></summary>
+						<ul>
+							<li>
+								<input
+									bind:group={$filters['peilingpositie']}
+									type="checkbox"
+									id="grote-kans"
+									value="grote-kans"
+									name="grote-kans"
+								/>
+								<label class="option" for="grote-kans">Grote kans op een zetel</label>
+							</li>
+							<li>
+								<input
+									bind:group={$filters['peilingpositie']}
+									type="checkbox"
+									id="redelijke-kans"
+									value="redelijke-kans"
+									name="redelijke-kans"
+								/>
+								<label class="option" for="redelijke-kans">Redelijke kans op een zetel</label>
+							</li>
+							<li>
+								<input
+									bind:group={$filters['peilingpositie']}
+									type="checkbox"
+									id="kleine-kans"
+									value="kleine-kans"
+									name="kleine-kans"
+								/>
+								<label class="option" for="kleine-kans">Weinig kans op een zetel</label>
+							</li>
+						</ul>
+					</details>
+				</li>
+				<li>
 					<h3>Partners</h3>
 					<p>
 						Dankzij een aantal <a href="/bronnen">partners</a> hebben we meer informatie en deze extra
@@ -567,7 +630,11 @@
 				<li>
 					<details open={initOpenVinddebeta}>
 						<summary><h4>Vind de bèta op de lijst</h4></summary>
-						<p>De kandidaten waarvan <a href="https://vinddebetaopdelijst.nl/">Vind de bèta op de lijst</a> weet dat ze een bèta-studie hebben gedaan.</p>
+						<p>
+							De kandidaten waarvan <a href="https://vinddebetaopdelijst.nl/"
+								>Vind de bèta op de lijst</a
+							> weet dat ze een bèta-studie hebben gedaan.
+						</p>
 						<ul>
 							<li class="inputWrapper">
 								<input
@@ -585,10 +652,20 @@
 				<li open={initOpenKleurdekamer}>
 					<details>
 						<summary><h4>Kleur de Kamer</h4></summary>
-						<p>Kandidaten van kleur met een profiel bij onze partner <a href="https://kleurdekamer.nl/">kleurdekamer.nl</a></p>
+						<p>
+							Kandidaten van kleur met een profiel bij onze partner <a
+								href="https://kleurdekamer.nl/">kleurdekamer.nl</a
+							>
+						</p>
 						<ul>
 							<li class="inputWrapper">
-								<input bind:group={$filters['kleurdekamer']} type="checkbox" id="kleurdekamer" value="kleurdekamer" name="kleurdekamer">
+								<input
+									bind:group={$filters['kleurdekamer']}
+									type="checkbox"
+									id="kleurdekamer"
+									value="kleurdekamer"
+									name="kleurdekamer"
+								/>
 								<label class="option" for="kleurdekamer">Kleur de Kamer</label>
 							</li>
 						</ul>
@@ -597,7 +674,10 @@
 				<li>
 					<details>
 						<summary><h4>Stem Jong</h4></summary>
-						<p>De kandidaten waarvan <a href="http://stemjong.nl">Stem Jong</a> heeft gevonden dat ze jonger zijn dan 30.</p>
+						<p>
+							De kandidaten waarvan <a href="http://stemjong.nl">Stem Jong</a> heeft gevonden dat ze
+							jonger zijn dan 30.
+						</p>
 						<button on:click={applyStemJong}>Pas Stem Jong filter toe</button>
 						<p>Hiermee pas je een filter toe op <a href="#leeftijd">leeftijd</a>.</p>
 					</details>
