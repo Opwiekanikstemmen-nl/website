@@ -74,6 +74,9 @@
 
 		<div class="properties">
 			<section class="polls card">
+				<p class="votes">
+					{kandidaat.voornaam} kreeg <strong>{kandidaat.votes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} stemmen</strong> deze verkiezingen.
+				</p>
 				{#if partij.polls}
 					<p>
 						{kandidaat.voornaam} had een
@@ -331,6 +334,13 @@
 
 	li {
 		margin: 0.75em 0;
+	}
+
+	.votes {
+		font-size: 1.4em;
+		line-height: 1.2;
+		border-bottom: 1px solid rgba(var(--foreground), .8);
+		padding-bottom: 1em;
 	}
 
 	.polls {
