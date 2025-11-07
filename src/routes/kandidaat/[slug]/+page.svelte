@@ -76,7 +76,7 @@
 			<section class="polls card">
 				{#if partij.polls}
 					<p>
-						{kandidaat.voornaam} heeft een
+						{kandidaat.voornaam} had een
 						<strong>
 							{#if verkiezing.lijstnummer < partij.polls.min}
 								grote kans om in de kamer te komen.
@@ -88,16 +88,16 @@
 						</strong>
 					</p>
 					<p>
-						{partij.simpele_naam} staat namelijk op {partij.polls.min} tot {partij.polls.max}
-						zetels in de peilingen en {kandidaat.voornaam} staat op plek {verkiezing.lijstnummer}.
-						Met jouw stem wordt die kans natuurlijk (nog) groter!
+						{partij.simpele_naam} stond namelijk op {partij.polls.min} tot {partij.polls.max}
+						zetels in de peilingen en {kandidaat.voornaam} stond op plek {verkiezing.lijstnummer}.
+						Met jouw stem werd die kans natuurlijk (nog) groter!
 					</p>
 				{:else}
 					<p>
-						{kandidaat.voornaam} heeft een <strong>kleine kans om in de kamer te komen.</strong>
+						{kandidaat.voornaam} had een <strong>kleine kans om in de kamer te komen.</strong>
 					</p>
 					<p>
-						{partij.simpele_naam} staat namelijk op 0 zetels in de peilingen. Met jouw stem wordt de
+						{partij.simpele_naam} stond namelijk op 0 zetels in de peilingen. Met jouw stem werd de
 						kans natuurlijk groter!
 					</p>
 				{/if}
